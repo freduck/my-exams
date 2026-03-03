@@ -1,0 +1,161 @@
+[ {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What does 'aquatics' refer to?",
+    "options": ["Land sports", "Water sports", "Indoor games", "Outdoor games"],
+    "correct": "Water sports"
+  }]
+},
+
+{"title":"P.H.E",
+  "questions":[
+  {
+    "question": "Which of the following is an aquatic sport?",
+    "options": ["Football", "Basketball", "Swimming", "Tennis"],
+    "answer": "Correct"
+  }]
+}
+  ,
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is the purpose of a chlorinating machine in a swimming pool?",
+    "options": ["To heat the water", "To purify the water", "To change the water color", "To create waves"],
+    "answer": "To purify the water"
+  }
+]
+}
+  ,
+
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is buoyancy in swimming?",
+    "options": ["The ability to sink in water", "The ability to float in water", "The ability to swim fast", "The ability to dive deep"],
+    "answer": "The ability to float in water"
+  }
+]
+}
+
+  ,
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What should swimmers do before entering the pool?",
+    "options": ["Run around the pool", "Jump into the pool", "Take a shower", "Eat a snack"],
+    "answer": "Take a shower"
+  }
+]
+}
+  ,
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is first aid?",
+    "options": ["Medical treatment in a hospital", "Immediate care given to an injured person", "A type of medicine", "A type of surgery"],
+    "answer": "Immediate care given to an injured person"
+  }]
+},
+{"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is in a first aid box?",
+    "options": ["Only bandages", "Only medicines", "Various medical supplies", "Only water"],
+    "answer": "Various medical supplies"
+  }]
+},
+{"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is a quality of a good first aider?",
+    "options": ["Being lazy", "Being careless", "Being resourceful", "Being noisy"],
+    "answer": "Being resourceful"
+  }
+]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is health?",
+    "options": ["A state of physical well-being only", "A state of mental well-being only", "A state of complete physical, mental, and social well-being", "A state of illness"],
+    "answer": "A state of complete physical, mental, and social well-being"
+  }
+]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What are the determinants of health?",
+    "options": ["Hereditary only", "Environment only", "Lifestyle only", "Hereditary, environment, lifestyle, and health care services"],
+    "answer": "Hereditary, environment, lifestyle, and health care services"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is sewage?",
+    "options": ["Solid waste", "Liquid waste", "Gaseous waste", "Hazardous waste"],
+    "answer": "Liquid waste"
+  }
+]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is refuse?",
+    "options": ["Liquid waste", "Solid waste", "Gaseous waste", "Hazardous waste"],
+    "answer": "Solid waste"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is a method of sewage disposal?",
+    "options": ["Open dump", "Composting", "Incineration", "Recycling"],
+    "answer": "Open dump"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is a method of refuse disposal?",
+    "options": ["Open dump", "Water system", "Incineration", "Composting"],
+    "answer": "Open dump"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "Why is proper waste disposal important?",
+    "options": ["To pollute the environment", "To maintain a clean environment", "To waste resources", "To harm humans"],
+    "answer": "To maintain a clean environment"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is a characteristic of a healthy person?",
+    "options": ["Easily fatigued", "Resistant to infection", "Always sick", "Always tired"],
+    "answer": "Resistant to infection"
+  }]},
+{"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is the role of a life guard in aquatic sports?",
+    "options": ["To swim with the athletes", "To provide safety and assistance", "To clean the pool", "To sell food"],
+    "answer": "To provide safety and assistance"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is a safety measure in aquatic sports?",
+    "options": ["Running around the pool", "Jumping into the pool", "Taking a shower before swimming", "Swimming alone"],
+    "answer": "Taking a shower before swimming"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "What is a skill required for aquatic sports?",
+    "options": ["Adjustment and confidence gaining", "Propulsion methods", "Buoyancy", "All of the above"],
+    "answer": "All of the above"
+  }]},
+  {"title":"P.H.E",
+  "questions":[
+  {
+    "question": "Why is warm-up important in aquatic sports?",
+    "options": ["To stimulate the body for vigorous actions", "To relax the body", "To cool down the body", "To waste time"],
+    "answer": "To stimulate the body for vigorous actions"
+  }]}
+]

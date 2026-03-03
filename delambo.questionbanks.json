@@ -1,0 +1,506 @@
+[{
+  "_id": {
+    "$oid": "698f079efba29b73b8a6e786"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "my mother prepared a ______ meal to mark my birthday yesterday",
+      "options": [
+        "usual",
+        "delicious",
+        "sour",
+        "dilecious"
+      ],
+      "correct": "delicious",
+      "_id": {
+        "$oid": "698f079efba29b73b8a6e787"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f07f4fba29b73b8a6e789"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "Tunde has gone home, he has a _____ headache",
+      "options": [
+        "severee",
+        "sefer",
+        "severe",
+        "several"
+      ],
+      "correct": "severe",
+      "_id": {
+        "$oid": "698f07f4fba29b73b8a6e78a"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0865fba29b73b8a6e78f"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "The gift were divided _____ the triplet",
+      "options": [
+        "between",
+        "among",
+        "among",
+        "within"
+      ],
+      "correct": "among",
+      "_id": {
+        "$oid": "698f0865fba29b73b8a6e790"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f08c4fba29b73b8a6e792"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "yesterday we ______ our boat down the lake",
+      "options": [
+        "role",
+        "rode",
+        "crowed",
+        "rowed"
+      ],
+      "correct": "rode",
+      "_id": {
+        "$oid": "698f08c4fba29b73b8a6e793"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0933fba29b73b8a6e795"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "The _____ of food coming out of our neighbour's kitchen is tantalizing ",
+      "options": [
+        "aroma",
+        "fragrance",
+        "perfume",
+        "scent"
+      ],
+      "correct": "aroma",
+      "_id": {
+        "$oid": "698f0933fba29b73b8a6e796"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f09b1fba29b73b8a6e79b"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "cholera is the most dreadful ______",
+      "options": [
+        "attack",
+        "danger",
+        "disease",
+        "disturbance"
+      ],
+      "correct": "disease",
+      "_id": {
+        "$oid": "698f09b1fba29b73b8a6e79c"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f09f8fba29b73b8a6e79e"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "My cousin is the son of my _______",
+      "options": [
+        "brother",
+        "nephew",
+        "step-brother",
+        "uncle"
+      ],
+      "correct": "uncle",
+      "_id": {
+        "$oid": "698f09f8fba29b73b8a6e79f"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0a80fba29b73b8a6e7a4"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "while everyone's attention was distracted, the thief made _______ with the cash box",
+      "options": [
+        "in",
+        "up",
+        "away",
+        "out"
+      ],
+      "correct": "away",
+      "_id": {
+        "$oid": "698f0a80fba29b73b8a6e7a5"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0acbfba29b73b8a6e7a7"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "my friend's room ____ i cannot sit there",
+      "options": [
+        "odour",
+        "stinks",
+        "sting",
+        "stinked"
+      ],
+      "correct": "stinks",
+      "_id": {
+        "$oid": "698f0acbfba29b73b8a6e7a8"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0b15fba29b73b8a6e7aa"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "the chief described his wife as a jwel of ___ values",
+      "options": [
+        "estimated",
+        "inestimable",
+        "perfect",
+        "modest"
+      ],
+      "correct": "inestimable",
+      "_id": {
+        "$oid": "698f0b15fba29b73b8a6e7ab"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0b57fba29b73b8a6e7b2"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "Nobody will be ___ ever",
+      "options": [
+        "after",
+        "for",
+        "there",
+        "around"
+      ],
+      "correct": "for",
+      "_id": {
+        "$oid": "698f0b57fba29b73b8a6e7b3"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0ba8fba29b73b8a6e7b8"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "the baby cried ___ than the brother",
+      "options": [
+        "loud",
+        "loudest",
+        "loudly",
+        "louder"
+      ],
+      "correct": "louder",
+      "_id": {
+        "$oid": "698f0ba8fba29b73b8a6e7b9"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0bebfba29b73b8a6e7bb"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "the widow is the ____ woman in the village",
+      "options": [
+        "poorest",
+        "poorer",
+        "poor",
+        "richer"
+      ],
+      "correct": "poorest",
+      "_id": {
+        "$oid": "698f0bebfba29b73b8a6e7bc"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0c31fba29b73b8a6e7be"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "Netball is _____ interesting game",
+      "options": [
+        "a",
+        "some",
+        "an",
+        "many"
+      ],
+      "correct": "an",
+      "_id": {
+        "$oid": "698f0c31fba29b73b8a6e7bf"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0c7cfba29b73b8a6e7c1"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "the criminal ran __ an uncompleted building",
+      "options": [
+        "into",
+        "after",
+        "in",
+        "over"
+      ],
+      "correct": "into",
+      "_id": {
+        "$oid": "698f0c7cfba29b73b8a6e7c2"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0d5efba29b73b8a6e7c4"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": " <table><tr><th> A </th><th>    B</th>        <th>   C</th><th>      D</th></tr>\n<tr><td>problem</td><td>  infections</td><td>    curse</td><td>  vaccine</td></tr><table>",
+      "options": [
+        "problem",
+        "infections",
+        "curse",
+        "vaccine"
+      ],
+      "correct": "infections",
+      "_id": {
+        "$oid": "698f0d5efba29b73b8a6e7c5"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f0fddfba29b73b8a6e7e1"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": " <table>\n <tr><th> A </th><th>    B</th>        <th>   C</th><th>      D</th></tr>\n<tr>\n<td>Body</td>\n<td>  Man</td>\n<td>    Animal</td>\n<td>  Plants</td>\n\n</tr><table>",
+      "options": [
+        "Body",
+        "Man",
+        "Animal",
+        "Plants"
+      ],
+      "correct": "Body",
+      "_id": {
+        "$oid": "698f0fddfba29b73b8a6e7e2"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f1071fba29b73b8a6e7ed"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": " <table>\n <tr><th> A </th><th>    B</th>        <th>   C</th><th>      D</th></tr>\n<tr>\n<td>Scars</td>\n<td>  Infections</td>\n<td>    Sings</td>\n<td>  Bacterial</td>\n\n</tr><table>",
+      "options": [
+        "Scars",
+        "Infections",
+        "Sings",
+        "Bacterials"
+      ],
+      "correct": "Infections",
+      "_id": {
+        "$oid": "698f1071fba29b73b8a6e7ee"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f1105fba29b73b8a6e7f8"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": " <table>\n <tr><th> A </th><th>    B</th>        <th>   C</th><th>      D</th></tr>\n<tr>\n<td>Embrace</td>\n<td>  Welcome</td>\n<td>    Resist</td>\n<td>  Understand</td>\n\n</tr><table>",
+      "options": [
+        "Resist",
+        "Embrace",
+        "Welcome",
+        "Understand"
+      ],
+      "correct": "Resist",
+      "_id": {
+        "$oid": "698f1105fba29b73b8a6e7f9"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f1173fba29b73b8a6e801"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": " <table>\n <tr><th> A </th><th>    B</th>        <th>   C</th><th>      D</th></tr>\n<tr>\n<td>Cure</td>\n<td>  Answer</td>\n<td>    Solution</td>\n<td>  Hospital</td>\n\n</tr><table>",
+      "options": [
+        "Cure",
+        "Answer",
+        "Solution",
+        "Hospital"
+      ],
+      "correct": "Cure",
+      "_id": {
+        "$oid": "698f1173fba29b73b8a6e802"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f3112455bd844542c2f47"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "which of the following is a source of water for aquatic sport",
+      "options": [
+        "river",
+        "football field",
+        "main road",
+        "assembly ground"
+      ],
+      "correct": "river",
+      "_id": {
+        "$oid": "698f3112455bd844542c2f48"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f3a39f78c3fa4396687e8"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "the following are equipment use in swimming except",
+      "options": [
+        "the swimming suits or trunks",
+        "the head gear  (for women)",
+        "football boots",
+        "the floaters for novices"
+      ],
+      "correct": "football boots",
+      "_id": {
+        "$oid": "698f3a39f78c3fa4396687e9"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698f4586ee39037d4ff7eece"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "the following are the safety measures in aquatic sport except ____",
+      "options": [
+        "Swimmers should take a shower before swimming to adjust the body to the water temperature ",
+        "swimmers should always eat heavy food before swimming",
+        "Never use the pool where there is no life guard",
+        "Beginners should start from the shallow end of the pool"
+      ],
+      "correct": "swimmers should always eat heavy food before swimming",
+      "_id": {
+        "$oid": "698f4586ee39037d4ff7eecf"
+      }
+    }
+  ],
+  "__v": 0
+}]
