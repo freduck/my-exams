@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="top">
+		<h1>DE-LAMBO COLLEGE</h1>
+		<div class="head-right">
+			
+		</div>
+	</div>
+	<div class="content">
+		<div class="left">
+			<ul>
+				<li><a href="/add-score">Add Score</a></li>
+				<li><a href="/add-question">Add Question</a></li>
+				<li><a href="/logout">Log Out</a></li>
+			</ul>
+		</div>
+		<div class="right">
+			
+		</div>
+	</div>
+</div>
+
+
+<style>
+	*{
+		padding:0;
+		margin: 0;
+	}
+	.top{
+		padding: 60px;
+		border-bottom: 1px solid whitesmoke;
+		display:  flex;
+		flex-direction: row;
+	}.top .head-right{
+		float: right;
+		margin-left: 700px;
+	}
+	.container{
+
+	}
+	.content{
+		display: flex;
+	}.left{
+		padding: 30px;
+	}.left ul li {
+		padding: 10px;
+		/*border: 1px solid whitesmoke;*/
+		list-style-type: none;
+	}
+</style>
+
+<script>
+	const name = localStorage.getItem('admin-name');
+	document.querySelector('.head-right').textContent= name;
+	console.log(name)
+</script>

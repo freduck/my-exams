@@ -1,0 +1,97 @@
+const Admin = require('.././models/Admin');
+		 	const bcrypt = require('bcryptjs');
+const crypto= require('crypto');
+const jwt = require('jsonwebtoken');
+// Secret key
+const secretKey = crypto.randomBytes(32).toString('base64');
+class AdminClass{
+	constructor(app,path){
+		this.app = app;
+		this.path = path;
+// console.log(secretKey);
+		this.secrete= '9Q11mISVPdruk6Ipwd8DtULh9ukTXY1eS53CeZ4lnn0=';
+	}
+
+	loginAdmin(){
+    this.app.get('/login-admin', async (req,resp)=>{
+    resp.sendFile(this.path.join(__dirname,'.././views/admin/login.html'));
+
+    })
+	}
+	AdminLogin(){
+		this.app.post('/login-admin', async (req,resp)=>{
+			const {username,password}= req.body;
+			// console.log(password)
+      let adminlogin= await Admin.findOne({username});
+      console.log(adminlogin)
+     let validPassword = bcrypt.compare(req.body.password,adminlogin.password);
+      // console.log(login.password);
+       if(!validPassword){
+resp.status(404).json({message:' Invalid Details Provided'});
+       }
+const token = jwt.sign({ adminId: adminlogin._id }, this.secrete, { expiresIn: '1h' });
+       resp.status(200).json({message:' Login Succesfull',name:adminlogin.name,email:adminlogin.email,username:adminlogin.username,token:token,adminId:adminlogin._id, status:1})
+		})
+	}
+	addAdmin(){
+ this.app.get('/add-admin', async (req,resp)=>{
+    resp.sendFile(this.path.join(__dirname,'.././views/admin/add-admin.html'));
+
+    })
+	}
+	uploadAdmin(){
+		 this.app.post('/add-admin', async (req,resp)=>{
+    // resp.sendFile(this.path.join(__dirname,'.././views/admin/login.html'));
+		 	const {name,email,username,password}=req.body;
+		 	const salt = bcrypt.genSaltSync(10);
+let has = bcrypt.genSaltSync(parseInt(req.body.password),salt);
+		 	// let newPassword = bcrypt.hash(req.body.password,10);
+		 	let add = await Admin.create({name:name,email:email,username:username,password:hash});
+
+		 	if(add){
+
+		 	resp.status(200).json({"response":'Admin Added'});
+		 	}else{
+            resp.status(500).json({"response":"Error Uploading Admin"});
+		 	}
+
+
+
+    })
+	}
+	validateAdmin(){
+	const authenticate =(req, res, next)=>{
+  const token = req.header('Authorization');
+  if (!token) {
+    return res.status(401).json({ message: 'Access denied. No token provided.' });
+  }
+  jwt.verify(token, this.secrete, (err, decoded) => {
+    if (err) {
+      return res.status(400).json({ message: 'Invalid token.' });
+    }
+    req.admin = decoded;
+    next();
+  });
+};
+	this.app.get('/protected', authenticate, (req, res) => {
+  res.json({ message: 'Hello, authenticated user!' });
+});
+};
+verify(){
+	this.app.get('/verify', async (req,resp)=>{
+		resp.sendFile(this.path.join(__dirname,'.././views/admin/verifyAdmin.html'));
+	})
+}
+adminAddScore(){
+	this.app.get('/add-score', async (req,resp)=>{
+		resp.sendFile(this.path.join(__dirname,'.././views/admin/add-score.html'));
+	})
+}
+dashboard(){
+	this.app.get('/dashboard', async (req,resp)=>{
+resp.sendFile(this.path.join(__dirname,'.././views/admin/dashboard.html'));
+	})
+}
+}
+
+module.exports = AdminClass;

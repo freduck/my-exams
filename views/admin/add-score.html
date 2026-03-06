@@ -17,3 +17,16 @@
 	<input type="number" id="score" placeholder="Score">
 
 </div>
+<script>
+	window.onload = async function(){
+await new Promise(resolve=>setTimeout(resolve,3000));
+let item = await fetch('/getstudents',{
+	method:'GET',
+	headers:{
+		'Content-Type':'application/json'
+	}
+
+})
+let result = await item.json();
+	}
+</script>

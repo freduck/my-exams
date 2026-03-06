@@ -12,7 +12,7 @@ class ExamController{
     }
     startExam(){
         this.app.get('/start-exam', async function(req,resp){
-resp.sendFile(path.join(__dirname,'.././test.html'));
+resp.sendFile(path.join(__dirname,'.././views/exam-page.html'));
 });
     }
 
@@ -77,7 +77,7 @@ const page = parseInt(req.query.page) || 1;
     }
 addQuestion(){
     this.app.get('/add-question', async (req,resp)=>{
-  await  resp.sendFile(this.path.join(__dirname , '.././add-questions.html'));
+  await  resp.sendFile(this.path.join(__dirname , '.././views/add-questions.html'));
 });
 }
 
@@ -94,7 +94,7 @@ let q = await QuestionBank.create({title:title,questions:questions})
 }
 addScore(){
     this.app.get('/add-score', (req,resp)=>{
-        resp.sendFile(this.path.join(__dirname,'.././add-score.html'));
+        resp.sendFile(this.path.join(__dirname,'.././views/add-score.html'));
     });
     // console.log();
 }

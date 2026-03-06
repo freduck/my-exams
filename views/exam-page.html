@@ -9,6 +9,9 @@
       padding: 0;
       margin: 0;
     }
+    .result{
+
+    }
     #question-banks {
       margin-bottom: 20px;
     }
@@ -89,7 +92,13 @@ td,th{
   display: flex;
   flex-direction: column;
   padding: 30px;
-
+  box-shadow: rgba(99, 99, 99, .17) 2px 2px 2px 2px;
+  border: 1px solid whitesmoke;
+  width: 950px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 60px;
+animation: moveDown 5s;
 }.score{
   text-align: center;
   font-size: 130%;
@@ -98,6 +107,30 @@ td,th{
   text-align: center;
     font-size: 130%;
     font-weight: bolder;
+}
+.hidden{
+  display: none;
+}.head{
+  padding: 30px;
+  border-bottom: 1px solid whitesmoke;
+  margin-bottom: 20px;
+} .para{
+  padding: 30px;
+}
+.result-heed{
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid whitesmoke;
+  margin-bottom: 30px;
+}
+
+@keyframes moveDown {
+  0%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translate(0);
+  }
 }
 
   </style>
@@ -147,6 +180,16 @@ td,th{
   <hr class="i"><br>
     </div>
   <div class='container'>
+    <div class="para hidden">
+      <div class="head">
+        <h2>Read The Passage Bellow and Choose The Correct Option To Fill The Blank Spaces Between Question <b>16</b> and <b>21</b></h2>
+      </div>
+      Aids is an (a) __16 of the human system caused by the human immune deficiency virus. AIDS is a virus that weakens or destroys the immune system of the ____ 17 leaving its prey to many ____ 18  that would have been easily suppressed. Immunity is the ability of the body to _____ 19  an infection. There is no known ____ 20 for HIV/AIDS. HIV/AIDS is ____ 21 through sexual intercourse, mother to child transmission, blood transfusion and sharing of sharp objects. 
+
+    </div>
+    <div class="22 hidden">
+      Choose the word that has the same vowel sound as the one represented by the letter underlined.
+    </div>
   <br>
   <hr><br/>
   
@@ -160,7 +203,8 @@ td,th{
   <button id="submit-btn" style="display: none;">Submit</button>
 </div>
 
-<div class="result">
+<div class="result hidden">
+  <h2 class="result-heed">Result Sleep</h2>
   <p class="student-name"></p>
   <p class="score"></p>
   <p class="total-questions"></p>
@@ -239,6 +283,32 @@ td,th{
        }
         if (i === currentPage) {
           button.disabled = true;
+        if(button.textContent==16){
+          document.querySelector('.para').classList.remove('hidden');
+          document.querySelector('.para').scrollIntoView({ behavior: "smooth"});
+        }else if(button.textContent==17){
+          document.querySelector('.para').classList.remove('hidden');
+          document.querySelector('.para').scrollIntoView({ behavior: "smooth"});
+        }
+        else if(button.textContent==18){
+          document.querySelector('.para').classList.remove('hidden');
+          document.querySelector('.para').scrollIntoView({ behavior: "smooth"});
+        }
+        else if(button.textContent==19){
+          document.querySelector('.para').classList.remove('hidden');
+          document.querySelector('.para').scrollIntoView({ behavior: "smooth"});
+        }
+        else if(button.textContent==20){
+          document.querySelector('.para').classList.remove('hidden');
+          document.querySelector('.para').scrollIntoView({ behavior: "smooth"});
+        }else if(button.textContent==21){
+          document.querySelector('.para').classList.remove('hidden');
+          document.querySelector('.para').scrollIntoView({ behavior: "smooth"});
+        }
+        else if(button.textContent==22){
+          document.querySelector('.22').classList.remove('hidden');
+          document.querySelector('.22').scrollIntoView({ behavior: "smooth"});
+        }
         }
         button.setAttribute('class','paginate');
         paginationDiv.appendChild(button);
@@ -258,6 +328,7 @@ td,th{
       let student_name = document.getElementById('student-name');
       if(student_name.value ==""){
         alert('Enter Student Name');
+        student_name.scrollIntoView({behavior:'smooth'});
         return
       }
       let data={
@@ -274,6 +345,7 @@ td,th{
         });
         const result = await response.json();
         console.log(result);
+        document.querySelector('.result').classList.remove('hidden');
           document.querySelector('.student-name').textContent=` Name : ${result.student_name}`;
         document.querySelector('.percentage').textContent=` Percentage : ${result.percentage}%`;
           document.querySelector('.score').textContent=` Score: ${result.score}`;
@@ -375,6 +447,7 @@ async function clearTimer(isAutoSubmit = false) {
 
         const result = await response.json();
         
+        document.querySelector('.result').classList.remove('hidden');
         // Display Results from MongoDB response
         document.querySelector('.student-name').textContent = ` Name : ${result.student_name}`;
         document.querySelector('.percentage').textContent = ` Percentage : ${result.percentage}%`;

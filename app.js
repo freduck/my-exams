@@ -10,20 +10,31 @@ app.use(bodyParser.json())
 app.use(cors());
 const homeControll =  require('./controllers/HomeController');
 const ExamController = require('./controllers/ExamController');
+const AdminCon = require('./controllers/AdminController');
+const StudentController = require('./controllers/StudentController');
+const Admin = new AdminCon(app,path); 
 const Home =  new homeControll(app,path);
-const exams =  new ExamController(app,path);
-exams.startExam();
+const Exams =  new ExamController(app,path);
+const Student = new StudentController(app,path);
+Student.getStudents();
+Student.addStudent();
+Admin.loginAdmin();
+Admin.AdminLogin();
+Admin.addAdmin();
+Admin.uploadAdmin();
+Admin.validateAdmin();
+Admin.verify();
+Admin.adminAddScore();
+Admin.dashboard();
+Exams.startExam();
 Home.AppListening ();
 const port = 3000;
-exams.addQuestion();
-exams.saveQuestion();
-exams.showExam();
-exams.SubmitExam();
-exams.addScore();
-app.get('/t',function(req,resp){
-	// resp.send('hi');
-	console.log('hello');
-})
+Exams.addQuestion();
+Exams.saveQuestion();
+Exams.showExam();
+Exams.SubmitExam();
+Exams.addScore();
+Home.goHome();
 app.listen(port,function(){
 console.log('application is running on port',port);
 });

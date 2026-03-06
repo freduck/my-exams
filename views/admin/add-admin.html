@@ -1,0 +1,68 @@
+
+
+<style>
+	.container{
+		width: 950px;
+		margin: 0 auto;
+		padding: 30px;
+		margin-top: 10%;
+	}
+	.space{
+		padding: 6px;
+	}
+	input{
+		padding: 8px;
+		width: 100%;
+	}
+button{
+	padding: 10px;
+}
+h2{
+	text-align: center;
+}
+</style>
+<div class="container">
+	<div class="space">
+		<h2>Add Admin</h2>
+	</div>
+	<div class="space">
+		<input type="text" name="" id="name" placeholder="Name">
+	</div>
+	<div class="space"><input type="email" name="" id="email" placeholder="E-mail"></div>
+	<div class="space">
+		<input type="text" name="" id="user-name" placeholder="user-name">
+	</div>
+	<div class="space">
+		<input type="password" name="" id="password" placeholder="Password">
+	</div>
+	<div class="space">
+		<button type="button" class="btn-login">Upload</button>
+	</div>
+</div>
+
+<script>
+	const button = document.querySelector('.btn-login');
+	const name = document.getElementById('name')
+	const email = document.getElementById('email')
+	const username = document.getElementById('user-name');
+	const password = document.getElementById('password');
+	button.addEventListener('click', async function(){
+		const data = {
+			name:name.value,email:email.value,
+			username:username.value,password:password.value
+		}
+		this.textContent = 'Uploading Adming !';
+   await  new Promise(resolve=>setTimeout(resolve,3000));
+      // console.log(data);
+   let login = await fetch('/add-admin',{
+   	method:'POST',
+   	headers:{
+   		'Content-Type':'application/json'
+   	},
+   	body:JSON.stringify(data)
+   });
+   const result = await login.json();
+   console.log(result);
+   this.textContent = 'Upload'
+	})
+</script>

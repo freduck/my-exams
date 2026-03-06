@@ -6,7 +6,7 @@ this.path = path
 	}
 	goHome(){
  this.app.get('/', async (req,resp)=>{
-await resp.sendFile(this.path.join(__dirname,'./home.html'));
+await resp.sendFile(this.path.join(__dirname,'.././views/home.html'));
 });
 
 	}
