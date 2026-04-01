@@ -170,11 +170,12 @@ animation: moveDown 5s;
     <option>Yoruba</option>
     <option>P.H.E</option>
     <option>Intermediate Science</option>
-    <option>Digital Technologies</option>
+    <option>Digital Technology</option>
         <option>S.C.S</option>
             <option>Literature</option>
             <option>C.C.A</option>
             <option>History</option>
+            <option>C.R.S</option>
   </select><br>
 </div><br>
   <hr class="i"><br>
@@ -392,7 +393,7 @@ function updateTimer() {
     const seconds = Math.floor((elapsed / 1000) % 60);
 
     // 2. CHECK FOR 20 MINUTE LIMIT
-    if (minutes >= 15) {
+    if (minutes >= 20) {
         document.getElementById("timer").textContent = "00:20:00 - Time Up!";
         // Trigger submission automatically
         clearTimer(true); // Pass true to indicate it was an auto-submit
