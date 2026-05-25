@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "6a0d531a54c3bdf767716dcd"
+  },
+  "name": "SHEHU ZAINAB",
+  "address": "Aregbe, Abeokuta",
+  "class": "JSS1",
+  "username": "zainab001",
+  "email": "shehuumairah@gmail.com",
+  "tel": "080-3895-113",
+  "password": "zainab",
+  "image": "/uploads/1779258138087.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0d536a54c3bdf767716dd2"
+  },
+  "name": "SHEHU UMAIRAH",
+  "address": "Aregbe, Abeokuta",
+  "class": "JSS1",
+  "username": "UMAIRAH001",
+  "email": "shehuumairah@gmail.com",
+  "tel": "080-3895-113",
+  "password": "umairah",
+  "image": "/uploads/1779258218262.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0d53a354c3bdf767716dd5"
+  },
+  "name": "ADENIJI JUBRIL",
+  "address": "Aregbe, Abeokuta",
+  "class": "",
+  "username": "JUBRIL001",
+  "email": "adenijijubril@gmail.com",
+  "tel": "080-456-7890",
+  "password": "JUBRIL",
+  "image": "/uploads/1779258275377.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0d53f254c3bdf767716dd8"
+  },
+  "name": "OLAREWAJU AYOMIDE",
+  "address": "Aregbe, Abeokuta",
+  "class": "JSS1",
+  "username": "VICTOR001",
+  "email": "ayomide@gmail.com",
+  "tel": "080-456-7890",
+  "password": "victor",
+  "image": "/uploads/1779258354573.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0d547c54c3bdf767716de0"
+  },
+  "name": "OYELAMI AYANFE JOSEPH",
+  "address": "Aregbe,Abeokuta",
+  "class": "JSS1",
+  "username": "JOSEPH001",
+  "email": "joseph@gmail.com",
+  "tel": "080-3895-113",
+  "password": "JOSEPH",
+  "image": "/uploads/1779258492489.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a0d54b354c3bdf767716de3"
+  },
+  "name": "OLALEKAN AL-AMEEN",
+  "address": "OSHIELE",
+  "class": "JSS1",
+  "username": "AL-AMEEN001",
+  "email": "olalekanalameen@gmail.com",
+  "tel": "080-3895-113",
+  "password": "AL-AMEEN",
+  "image": "/uploads/1779258547791.jpg",
+  "__v": 0
+}]
