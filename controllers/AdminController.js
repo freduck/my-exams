@@ -1,13 +1,17 @@
 const Admin = require('.././models/Admin');
+const Student = require('.././models/Student');
 		 	const bcrypt = require('bcryptjs');
 const crypto= require('crypto');
 const jwt = require('jsonwebtoken');
+const express = require('express');
+
 // Secret key
 const secretKey = crypto.randomBytes(32).toString('base64');
 class AdminClass{
 	constructor(app,path){
 		this.app = app;
 		this.path = path;
+		this.app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // console.log(secretKey);
 		this.secrete= '9Q11mISVPdruk6Ipwd8DtULh9ukTXY1eS53CeZ4lnn0=';
 	}
@@ -20,11 +24,12 @@ class AdminClass{
 	}
 	AdminLogin(){
 		this.app.post('/login-admin', async (req,resp)=>{
+			console.log(req.body);
 			const {username,password}= req.body;
 			// console.log(password)
-      let adminlogin= await Admin.findOne({username});
+      let adminlogin= await Admin.findOne({username:username});
       console.log(adminlogin)
-     let validPassword = bcrypt.compare(req.body.password,adminlogin.password);
+     let validPassword = bcrypt.compare(password,adminlogin.password);
       // console.log(login.password);
        if(!validPassword){
 resp.status(404).json({message:' Invalid Details Provided'});
@@ -88,9 +93,16 @@ adminAddScore(){
 	})
 }
 dashboard(){
-	this.app.get('/dashboard', async (req,resp)=>{
+	this.app.get('/admin/dashboard', async (req,resp)=>{
 resp.sendFile(this.path.join(__dirname,'.././views/admin/dashboard.html'));
 	})
+}
+getStudents(){
+	this.app.get('/getstudents', async (req,resp)=>{
+				 const students = await Student.find({});
+		resp.json(students);
+	
+});
 }
 }
 

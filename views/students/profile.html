@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "top top"
+    "left main"
+    "footer footer";
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 60px 1fr 50px;
+  min-height: 100vh;
+  gap: 80px;
+}
+
+.top-bar {
+  grid-area: top;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  
+
+}
+.top-bar,.left-bar,.footer{
+  background: crimson !important;
+}
+.left-bar {
+  grid-area: left;
+  background: #334155;
+  color: white;
+  padding: 20px;
+}
+
+.main {
+  grid-area: main;
+  background: #f8fafc;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  width: 100px;
+  height: 100px;
+}
+div.right{
+  float: right;
+  width: 300px;
+  margin-left: 800px;
+}
+ul.left-bar-menu-list li{
+list-style-type: none;
+margin: 8px;
+padding: 5px;
+}
+ul.left-bar-menu-list li a{
+  text-decoration: none;
+  color: white;
+}
+.date-menu{
+  margin-left: 30px;
+}
+/* Mobile: stack everything */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-areas:
+      "top"
+      "left"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px auto 1fr auto;
+  }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <header class="top-bar">
+<h2>
+    DE-LAMBO COLLEGE
+</h2>
+<div class="right">
+  <h4 class="student-name"></h4>
+</div>
+
+  </header>
+  <aside class="left-bar">
+    <div class="image">
+      
+    </div><br>
+    <hr>
+    <br>
+    <ul class="left-bar-menu-list">
+      <li><a href="/start-exam">Take Exam </a></li>
+      <li><a href="/result">View Result</a></li>
+      <li><a href="/information">View Information</a></li>
+      <li><a href="/contact-school">Contact School</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </aside>
+  <main class="main">Main Content</main>
+  <footer class="footer">
+    &copy; DE-LAMBO COLLEGE   <h4 class="date-menu"></h4>
+  </footer>
+</div>
+  <script>
+    let name = localStorage.getItem('name');
+    window.onload= function(){
+      if(name=null){
+        location.href = '/login-student';
+      }
+      813649
+      8025
+    }
+    document.querySelector('.student-name').textContent = `${name}`;
+     document.querySelector('.image').innerHTML = `<img src='${localStorage.getItem('image')}'>`;
+
+     let today = new Intl.DateTimeFormat('en-us',{
+      timeZone:"Africa/Lagos"
+     }).format(new Date());
+     console.log(today)
+
+      document.querySelector('.date-menu').textContent = `${today}`;
+      setInterval(function(){
+        location.reload()
+      },10000)
+
+  </script>
+</body>
+</html>

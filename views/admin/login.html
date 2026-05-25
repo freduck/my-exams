@@ -1,4 +1,33 @@
+
+<style>
+	.container{
+		width: 500px;
+		border: 1px solid whitesmoke;
+		padding: 20px;
+		box-shadow: rgba(99,99,99,.05)2px 2px 2px;
+		margin:0 auto;
+	}
+	.space{
+		margin: 5px;
+		width: 100%;
+		padding: 5px;
+	}
+	#user-name,#password{
+		width: 100%;
+		padding: 8px;
+	}
+	button[type='button']{
+		padding: 10px;
+		width: 100%;
+		text-align: center;
+	}h2{
+		text-align: center;
+	}
+</style>
 <div class="container">
+	<h2>
+		Admin Login
+	</h2>
 	<div class="space">
 		<input type="text" name="" id="user-name" placeholder="user-name">
 	</div>
@@ -16,7 +45,8 @@
 	const password = document.getElementById('password');
 	button.addEventListener('click', async function(){
 		const data = {
-			username:username.value,password:password.value
+			username:username.value,
+			password:password.value
 		}
 		this.textContent = 'Loggin in';
    await  new Promise(resolve=>setTimeout(resolve,3000));
@@ -36,7 +66,7 @@
    localStorage.setItem('admin-email',result.email);
    localStorage.setItem('user-name',result.username);
 
-   location.href = '/dashboard';
+   location.href = '/admin/dashboard';
    }
 // console.log()
 	})

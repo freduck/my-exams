@@ -1,0 +1,196 @@
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .top{
+        padding: 60px;
+        background-color: crimson;
+    }
+    .loader{
+            border:1px solid white;
+            width:10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: rotate 2s infinite;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+        .hidden{
+            display:none;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(360deg);
+            }
+        }
+        .login-container{
+            width: 400px;
+            margin: 0 auto;
+            border:1px solid whitesmoke;
+            box-shadow: rgba(99,99,99,.10) 2px 2px 2px 2px;
+            padding: 50px;
+            margin-top: 10% ;
+        }
+        button{
+            display: flex;
+            padding: 6px;
+            background-color: crimson;
+            border: 1px solid whitesmoke;
+            color: white;
+        }
+        div.space{
+            margin: 6px;
+        }
+        div.space input[type='text'],input[type='password']{
+            width:100%;
+            padding: 6px;
+        }
+        h2{
+            text-align: center;
+            color: crimson;
+        }
+        .head{
+            color:white;
+        }
+        div.top{
+            display: flex;
+        }
+        .right{
+            width: 300px;
+            float: right;
+            border: 1px solid white;
+            margin-left: 600px;
+        }
+        .over-lay{
+            position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it sits on top of everything */
+  
+  /* Hidden by default */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+        }
+
+        .active{
+            visibility: visible;
+  opacity: 1;
+        }
+        .success p{
+color: green;
+padding: 10px;
+animation: slide 0.6s ease-in-out;
+
+        }
+        .success{
+            padding: 30px;
+        }
+        @keyframes slide{
+            0%{
+                transform:translateX(200px);
+            }
+            100%{
+                transform: translate(0);
+            }
+        }
+</style>
+
+<div class="over-lay"></div>
+<div class="top">
+    <div class="left">
+        <h2 class="head">
+            DE-LAMBO COLLEGE
+        </h2>
+    </div>
+    <div class="right">
+        <h2 class="head">
+            STUDENT PANNEL
+        </h2>
+    </div>
+</div>
+<div class="login-container">
+    <div class="space"></div>
+    <h2>Student Login</h2>
+    <div class="space">
+        <input type="text" name="username" id="username" placeholder="username">
+    </div>
+    <div class="space">
+        <input type="password" name="password" id="password" placeholder="password">
+    </div>
+    <div class="space">
+        <button type="button" id="login">Login
+
+            <div class="loader hidden" id="loader"></div>
+        </button>
+    </div>
+    <div class="space">
+        <p class="loading hidden">Loading...</p>
+    </div>
+    <div class="space">
+        <div class="success"></div>
+    </div>
+    <div class="space">
+        <div class="error"></div>
+    </div>
+</div>
+<script>
+    document.getElementById('login').addEventListener('click', async function(){
+        // console.log();
+        let username = document.querySelector('#username').value;
+        let password = document.querySelector('#password').value;
+        const data = {
+username,
+password
+        }
+        toggleStyle(document.querySelector('.loader'),'hidden');
+
+     toggleStyle(document.querySelector('.loading'),'hidden');
+  toggleStyle(document.querySelector('.over-lay'),'active');
+
+
+  await new Promise(resolve=>setTimeout(resolve,3000));
+    let login = await fetch('/loging-student',{
+        method:'POST',
+   	headers:{
+   		'Content-Type':'application/json'
+   	},
+   	body:JSON.stringify(data)
+    })
+      
+    let response = await login.json();
+    console.log(response);
+    if(response.message=='Login Successful'){
+        // document.querySelector('.over-lay').classList.add('hidden');
+        //  toggleStyle(document.querySelector('.over-lay'),'hidden')
+          document.querySelector('.over-lay').style.display= 'none'
+          toggleStyle(document.querySelector('.loader'),'hidden')
+           toggleStyle(document.querySelector('.loading'),'hidden')
+        document.querySelector('.success').innerHTML += `<p>You have Succeeded in login to your account<br/><a href='/student-profile'>Click Here to continue</a></p>`;
+
+   document.querySelector('.over-lay').style.display= 'none'
+  localStorage.setItem('image',response.Student.image);
+   localStorage.setItem('username',response.Student.username);
+ localStorage.setItem('id',response.Student._id);
+ localStorage.setItem('name',response.Student.name);
+
+ console.log(localStorage.getItem('name'));
+    }else if(response.message=='Student not found'){
+        document.querySelector('.error').innerHTML += `<p>Invalid Login Details<br/><a href='/login-student'>Click Here to try again</a></p>`;
+  
+    }
+   
+    })
+    function toggleStyle(element,elementClass){
+           return element.classList.toggle(elementClass);
+       }
+</script>

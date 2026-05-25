@@ -1,23 +1,4 @@
-<div class="container">
-	<div class="top">
-		<h1>DE-LAMBO COLLEGE</h1>
-		<div class="head-right">
-			
-		</div>
-	</div>
-	<div class="content">
-		<div class="left">
-			<ul>
-				<li><a href="/add-score">Add Score</a></li>
-				<li><a href="/add-question">Add Question</a></li>
-				<li><a href="/logout">Log Out</a></li>
-			</ul>
-		</div>
-		<div class="right">
-			
-		</div>
-	</div>
-</div>
+
 
 
 <style>
@@ -35,10 +16,19 @@
 		margin-left: 700px;
 	}
 	.container{
-
-	}
-	.content{
+ border: 1px solid #f5f5f5;
+ 
+}
+.right{
+	border: 1px solid whitesmoke;
+	margin: 10px;
+	width: 80%;
+	position: relative;
+}
+.content{
+		margin-top: 30px;
 		display: flex;
+		border: 1px solid whitesmoke;
 	}.left{
 		padding: 30px;
 	}.left ul li {
@@ -46,10 +36,349 @@
 		/*border: 1px solid whitesmoke;*/
 		list-style-type: none;
 	}
+	table{
+		width: 1000px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+	tr{
+		border: 1px solid whitesmoke;
+	}
+	#edit-student{
+		padding: 10px;
+		width: 60px;
+		background-color: lightgreen;
+		border: 1px solid whitesmoke;
+		color: white;
+		border-radius: 6px;
+	}
+
+tr>th{
+	background-color: crimson;
+	color: white;
+	padding: 30px;
+}
+tr td{
+	border: 1px solid whitesmoke;
+}
+.hidden{
+	display:none;
+}
+.container{
+	width: 1300px;
+	border:1px solid whitesmoke;
+	margin: 0 auto;
+	padding: 30px;
+	/* margin-top: 200px; */
+}
+.space{
+	padding: 6px;
+}
+.space select,input,textarea,button{
+	padding: 6px;
+	width: 100%;
+}
+.edit-student-modal{
+	/* top:60px; */
+	width: 1000px;
+	margin: 0 auto;
+	animation: move 1s;
+	margin-top: 0;
+	position: absolute;
+	padding: 50px;
+	border: 1px solid whitesmoke;
+	box-shadow: rgba(99,99, 99, .017) 2px 2px 2px 2px;
+}
+@keyframes move {
+	0%{
+		transform: translateY(-300px);
+	}
+	100%{
+		transform: translate(0);
+	}
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it sits on top of everything */
+  
+  /* Hidden by default */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* The Modal Box */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+/* Class to show the modal (toggled via JS) */
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.close-btn {
+  /* margin-top: 1rem;
+  top */ top:3;
+  float: right;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background:red;
+  color: white;
+  border-radius: 4px;
+  position: absolute;
+  width: 30px;
+  margin-left: 240px;
+  margin-top: 20px;
+}
+#delete-student{
+	background-color: red;
+	color: white;
+	border: 1px solid whitesmoke;
+	border-radius: 6px;
+}
+
+
+.top{
+background-color: crimson;
+color: white;
+}
+
 </style>
+<div class="container">
+	<div class="top">
+		<h1>DE-LAMBO COLLEGE</h1>
+		<div class="head-right">
+			
+		</div>
+	</div>
+	<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+
+    <button class="close-btn" id="closeBtn">
+		X
+	</button>
+
+	
+		<form action="/update-student" enctype="multipart/form-data" method="post" enctype="multipart/form-data">
+<input type="hidden" name="student-id" class="student-id">
+			<div class="modal-header">
+				<h3>Edit Student Information</h3>
+			</div>
+			<div class="modal-body">
+
+				<div id="image">
+
+				</div>
+				<div class="space">
+		<input type="text" name="name" id="student-name" placeholder="Student Name">
+	</div>
+	<div class="space">
+		<input type="tel" name="tel" id="student-tel" placeholder="080-123-456">
+	</div>
+	<div class="space">
+		<input type="email" name="email" id="email" placeholder="E-mail">
+	</div>
+	<div class="space">
+		<select name="class" id="class">
+			<option value=""></option>
+			<option value="JSS1">JSS1</option>
+			<option value="JSS2">JSS2</option>
+			<option value="JSS3">JSS3</option>
+			<option value="SSS1">SSS1</option>
+			<option value="SSS2">SSS2</option>
+			<option value="SSS3">SSS3</option>
+		</select>
+	</div>
+	<div class="space">
+		<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
+	</div>
+	<div class="space">
+		<input type="text" name="username" id="username" placeholder="username">
+	</div>
+	<div class="space">
+		<input type="file" name="image" id="image">
+	</div>
+	<div class="space">
+		<button id="add" type="submit">Update Student</button>
+	</div>
+			</div>
+			<div class="modal-footer">
+				
+			</div>
+		</form>
+	
+  </div>
+</div>
+	<div class="content">
+		<div class="left">
+			<ul>
+				<li><a href="/add-score">Add Score</a></li>
+				<li><a href="/add-question">Add Question</a></li>
+				<li>
+					<a href="/add-student">Add Student</a>
+				</li>
+				<li><a href="/logout">Log Out</a></li>
+			</ul>
+		</div>
+		<div class="right">
+			<table id="students-table">
+
+				<tr><th>S/N</th><th>Name</th><th>Username</th><th>Email</th><th>Tel</th><th>Image</th><th rowspan="2">Action</th></tr>
+			</table>
+		</div>
+	</div>
+
+</div>
+
 
 <script>
+
+
+
+	 const overlay = document.getElementById('modalOverlay');
+const closeBtn = document.getElementById('closeBtn');
 	const name = localStorage.getItem('admin-name');
 	document.querySelector('.head-right').textContent= name;
 	console.log(name)
+if(!name){
+	location.href='/admin/';
+}
+
+
+	window.onload = async function(){
+		 fetch('/getstudents')
+      .then(res => res.json())
+      .then(students => {
+        const table = document.getElementById('students-table');
+        students.forEach(student => {
+			console.log(student.image)
+          table.innerHTML += `
+            
+				<tr>
+					<td>
+						${student._id}
+						</td>
+						<td>
+							${student.name}
+							</td>
+							<td>${student.username}</td>
+							<td>
+								${student.email}
+								</td>
+								<td>
+									${student.tel}
+								</td>
+								<td>
+								
+									<img src="${student.image}" alt="${student.name}" style="width:100px; display:block; margin:10px 0;">
+								
+									</td>
+								<td><button type='button' data-id=${student._id} id='edit-student'>Edit</button><td>
+									<button type='button' data-id=${student._id} id='delete-student'>Delete</button>
+									</td></td>
+					</tr>
+              
+          `;
+
+		  let editButton=document.querySelectorAll('#edit-student');
+		  let deleteId = document.querySelectorAll('#delete-student');
+		  for(let i = 0; i < editButton.length;i++){
+deleteId[i].addEventListener('click', async function(){
+					alert(this.getAttribute('data-id'))
+					let deleteData = {id:this.getAttribute('data-id')}
+					let deleteStudent = await fetch('/delete-student',{
+mathod:'POST',
+headers:{
+						'Content-Type':'application/json'
+					},
+
+
+body:JSON.stringify({
+	id:this.getAttribute('data-id')
+})
+					});
+					let result = await deleteStudent.json();
+					alert(result)
+				});
+			  editButton[i].addEventListener('click', async function(){
+				this.id = this.getAttribute('data-id');
+				// alert(this.id)
+
+				
+				overlay.classList.add('active');
+				// document.querySelector('.edit-student-modal').classList.remove('hidden');
+				let edit = await fetch('/edit',{
+					method:'POST',
+					headers:{
+						'Content-Type':'application/json'
+					},
+					body:JSON.stringify({
+						id:this.id
+					})
+				})
+				let single = await edit.json()
+				console.log(single.image);
+				document.querySelector('.student-id').value = `${single.Student._id}`;
+				document.getElementById('student-name').value = `${single.Student.name}`;
+				document.getElementById('student-tel').value = `${single.Student.tel}`;
+				document.getElementById('email').value = `${single.Student.email}`;
+				document.getElementById('username').value = `${single.Student.username}`;
+				document.getElementById('address').value = `${single.Student.address}`;
+				let image = `<img src="${single.Student.image}" alt="${single.Student.name}" style="width:100px; display:block; margin:10px 0;">`
+				document.getElementById('image').innerHTML = `<img src="${single.Student.image}" alt="${student.name}" style="width:100px; display:block; margin:10px 0;">`;
+				document.getElementById('class').innerHTML = '';
+				document.getElementById('class').innerHTML +=`<option>${single.Student.class}</option>`;
+								
+
+			  })
+		  }
+        });
+      });
+
+	 
+
+// To show the modal:
+// overlay.classList.add('active');
+
+// To hide the modal:
+closeBtn.addEventListener('click', () => {
+  overlay.classList.remove('active');
+  location.reload();
+});
+
+// Close when clicking the overlay background
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    overlay.classList.remove('active');
+  }
+});
+
+
+	}
 </script>

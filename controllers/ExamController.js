@@ -77,7 +77,7 @@ const page = parseInt(req.query.page) || 1;
     }
 addQuestion(){
     this.app.get('/add-question', async (req,resp)=>{
-  await  resp.sendFile(this.path.join(__dirname , '.././views/add-questions.html'));
+  await  resp.sendFile(this.path.join(__dirname , '.././views/admin/add-questions.html'));
 });
 }
 

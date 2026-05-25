@@ -25,8 +25,12 @@
 </style>
 <div class="container">
 	<h2>Add New Student</h2>
+	<form action="/add-student" enctype="multipart/form-data" method="post">
 	<div class="space">
 		<input type="text" name="name" id="student-name" placeholder="Student Name">
+	</div>
+	<div class="space">
+		<input type="tel" name="tel" id="tel" placeholder="080-123-456">
 	</div>
 	<div class="space">
 		<input type="email" name="email" id="email" placeholder="E-mail">
@@ -52,6 +56,10 @@
 		<input type="file" name="image" id="image">
 	</div>
 	<div class="space">
-		<button id="add">Add Student</button>
+		<input type="password" name="password" id="password" placeholder="Password">
 	</div>
+	<div class="space">
+		<button id="add" type="submit">Add Student</button>
+	</div>
+</form>
 </div>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Application</title>
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+            font-family: Arial, sans-serif;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 400px;
+            margin-bottom: 40px;
+        }
+        #submit-btn:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            position: relative;
+            margin: 0 auto;
+            width: 400px;
+            margin-top: 20px;
+            font-size: 18px;
+
+            font-weight: bold;
+            display: none;
+            animation: drop .3s ease-in;
+            padding: 20px;
+            font-size: 30px;
+        }
+        #quiz-container{
+            width: 600px;
+            border: 1px solid whitesmoke;
+            margin: 0 auto;
+            padding: 50px;
+        }.top{
+            background-color: crimson;
+            color: white;
+            padding: 60px;
+            margin:0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+
+        <h1>DE-LAMBO COLLEGE Computer-Based Exam  (CBE)</h1>
+    </div>
+    <div id="result"></div>
+    <div id="quiz-container"></div>
+    
+
+<div id="timer"></div>
+
+
+    <button id="submit-btn">Submit</button>
+
+    <script>
+        const startCountdown=function(){
+
+        }
+    //      let startCountdown=function () {
+    // let timer = setInterval(() => {
+    //     let hours = Math.floor(examDuration / 3600);
+    //     let minutes = Math.floor((examDuration % 3600) / 60);
+    //     let seconds = examDuration % 60;
+
+    //     // Display the countdown
+    //     document.getElementById("timer").innerHTML = 
+    //         `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    //     // Check if time's up
+    //     if (examDuration <= 0) {
+    //         clearInterval(timer);
+    //         document.getElementById("timer").innerHTML = "Time's up!";
+    //     }
+
+    //     // Decrement the exam duration
+    //     examDuration--;
+    // }, 1000);
+// }
+        // JSON data for questions
+        const addquestion=[
+          
+[
+  
+
+]
+
+
+        ]
+        const questions = 
+          
+[
+  { "question": "What is 7 × 9?", "options": ["54", "63", "72", "81"], "answer": "63"},
+  { "question": "Solve: 2x + 5 = 13. What is x?", "options": ["4", "5", "6", "9"], "answer": "4"},
+  { "question": "What is the square root of 144?", "options": ["10", "12", "14", "16"], "answer": "12"},
+  { "question": "If a triangle has angles 45°, 45°, what is the third angle?", "options": ["30°", "45°", "90°", "60°"], "answer": "90°"},
+  { "question": "Convert 0.75 to a fraction.", "options": ["1/2", "3/4", "2/3", "5/6"], "answer": "3/4"},
+
+  { "question": "When did Nigeria gain independence?", "options": ["1945", "1957", "1960", "1963"], "answer": "1960"},
+  { "question": "Who was the first Nigerian Governor‑General?", "options": ["Nnamdi Azikiwe", "Obafemi Awolowo", "Ahmadu Bello", "Tafawa Balewa"], "answer": "Nnamdi Azikiwe"},
+  { "question": "What year was the amalgamation of Northern & Southern Protectorates?", "options": ["1900", "1914", "1929", "1945"], "answer": "1914"},
+  { "question": "Name one major pre‑colonial kingdom in Nigeria.", "options": ["Benin", "Kano", "Lagos", "All of the above"], "answer": "All of the above"},
+  { "question": "What was the capital of the Sokoto Caliphate?", "options": ["Sokoto", "Kano", "Zaria", "Kaduna"], "answer": "Sokoto"},
+
+  { "question": "What does CCA stand for in Nigerian education?", "options": ["Civic & Citizenship Awareness", "Christian & Cultural Activities", "Cultural & Creative Arts", "Computer & Coding Academy"], "answer": "Cultural & Creative Arts"},
+  { "question": "Name one element of culture studied in CCA.", "options": ["Language", "Mathematics", "Physics", "Chemistry"], "answer": "Language"},
+  { "question": "What is the purpose of a national anthem?", "options": ["To entertain", "To unite citizens", "To advertise", "To educate"], "answer": "To unite citizens"},
+  { "question": "Define 'heritage' in CCA terms.", "options": ["Modern inventions", "Things passed down from ancestors", "Foreign goods", "None of the above"], "answer": "Things passed down from ancestors"},
+  { "question": "Mention one Nigerian traditional festival.", "options": ["Eid", "Christmas", "New Yam Festival", "Diwali"], "answer": "New Yam Festival"},
+
+  { "question": "How do you say 'Thank you' in Yoruba?", "options": ["E se", "Bawo ni", "O dabo", "Mo ni"], "answer": "E se"},
+  { "question": "What is the Yoruba word for 'father'?", "options": ["Baba", "Iya", "Ọmọ", "Egbon"], "answer": "Baba"},
+  { "question": "Translate 'Good morning' to Yoruba.", "options": ["O ku ile", "E ku ojọ", "O ku aro", "E ku iṣẹ"], "answer": "E ku aro"}
+  
+
+,
+            {
+                "question": "Who is the Chief Justice of Nigeria?",
+                "options": ["Bola Alhamed Tinubu", "Chief Godswill Akpanbio", "Justice Uwaise", "Justice Kekere Ekun"],
+                "answer": "Abuja"
+            },
+           
+            {
+                "question": "What is 5 + 3?",
+                "options": ["5", "8", "10", "15"],
+                "answer": "8"
+            },
+            {
+                "question": "What is 5 + 6?",
+                "options": ["5", "8", "10", "11"],
+                "answer": "11"
+            },
+            {
+                "question": "What is agriculture?",
+                "options": ["it is the planting of rice and stew ", "it is the growing of crops and the rearing of animals for man's use", "it is the process of exporting goods", "it is a processed data"],
+                "answer": "it is the growing of crops and the rearing of animals for man's use"
+            }
+            ,
+            {
+      "question": "Which of the following is a type of matter?",
+      "options": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "What is the importance of plants in climate regulation?",
+      "options": [
+        "They absorb carbon dioxide",
+        "They release oxygen",
+        "They regulate temperature",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "Which of the following animals is used for transportation?",
+      "options": [
+        "Horses",
+        "Donkeys",
+        "Camels",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+             {
+      "question": "What is the importance of biodiversity?",
+      "options": [
+        "It maintains ecological balance",
+        "It provides food security",
+        "It supports economic development",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+     {
+      "question": "Which of the following animals is a source of milk?",
+      "options": [
+        "Cows",
+        "Goats",
+        "Sheep",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "What is the importance of conservation of matter?",
+      "options": [
+        "To reduce waste",
+        "To save energy",
+        "To protect the environment",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "5.	The following except _______ are the function of an office?",
+      "options": [
+        "receiving information",
+        "arranging information",
+        "recording information",
+        "scattering information"
+      ],
+      "answer": "scattering information"
+    },
+    {
+      "question": "The means through which information is received in an office are as follows except?",
+      "options": [
+        "letter",
+        "fax",
+        "e-mail",
+        "running"
+      ],
+      "answer": "running"
+    },
+    {
+      "question": "A building that is partitioned into small office is called?",
+      "options": [
+        "Cotton",
+        "Jute",
+        "Flax",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "A place where clerical work is done is called a/an?",
+      "options": [
+        "office",
+        "department",
+        "firm",
+        "organization"
+      ],
+      "answer": "office"
+    },
+    {
+      "question": "A single room with a table, telephone, fax machine, computer is called?",
+      "options": [
+        "big office",
+        "small office",
+        "large office",
+        "complex office"
+      ],
+      "answer": "small office"
+    },
+    {
+      "question": "The means through which people in a society earn their living by engaging in commercial activities or occupation is called?",
+      "options": [
+        "social studies",
+        "school studies",
+        "business studies",
+        "financial studies"
+      ],
+      "answer": "business studies"
+    },
+    {
+      "question": "The subject covered by business studies are the following except?",
+      "options": [
+        "shorthand",
+        "commerce",
+        "book-keeping",
+        "biology"
+      ],
+      "answer": "biology"
+    },
+    {
+      "question": "The activities or services engaged in by people in the society in order to earn a living are called?",
+      "options":[
+        "commercial occupation",
+        "commercial services",
+        "commercial and art",
+        "art and service"
+      ],
+      "answer": "Anything that has mass and occupies space"
+    },
+    {
+      "question": "The exchange of goods for goods and services for services is called ?",
+      "options": [
+        " trade by barter",
+        "trade by exchange",
+        "trade by engage",
+        "trade by moving"
+      ],
+      "answer": "trade by barter"
+    },
+    {
+      "question": "The legal means by which people earn their living is called ?",
+      "options": [
+        "business",
+        " services",
+        "Goods",
+        "Trade"
+      ],
+      "answer": "business"
+    }
+
+        ];
+
+        // Load questions into the quiz container
+        const quizContainer = document.getElementById('quiz-container');
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `
+            
+                <p><strong>Q${index + 1}: ${q.question}</strong></p>
+                <div class="options">
+                    ${q.options.map(option => `
+                        <label>
+                            <input type="radio" name="question${index}" value="${option}">
+                            ${option}
+                        </label>
+                    `).join('')}
+                    
+                    <hr style='margin-top:30px;'><br/>
+                </div>
+            `;
+            quizContainer.appendChild(questionDiv);
+        });
+
+        // Handle form submission
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            let score = 0;
+
+            // Check answers
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                if (selectedOption && selectedOption.value === q.answer) {
+                    score++;
+                    const users={};
+                    users.newKey=selectedOption;
+                    users.newKey
+                }
+            });
+
+            // Display result
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display='block';
+            resultDiv.textContent = `You scored ${score} out of ${questions.length}`;
+            resultDiv.scrollIntoView({
+                behavior:'smooth',block:"center"
+            })
+        });
+       
+
+
+
+    </script>
+</body>
+</html>
+
+
+

@@ -6,8 +6,11 @@ mongoose.connect('mongodb://localhost:27017/delambo', {
 
  const studentSchema = new mongoose.Schema({
     name:String,
+    address:String,
     class:String,
     username:String,
+    email:String,
+    tel:String,
     password:String,
     image:String
   });
