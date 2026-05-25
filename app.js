@@ -20,6 +20,7 @@ const Home =  new homeControll(app,path);
 const Exams =  new ExamController(app,path);
 const Student = new StudentController(app,path);
 // Student.getStudents();
+Student.updateStudent();
 Student.deleteStudent();
 Student.uploadStudent();
 Student.editStudent();
@@ -48,6 +49,8 @@ Home.goHome();
 app.get('/admin/',(req,resp)=>{
     resp.sendFile(path.join(__dirname,'./views/admin/login.html'))
 })
-app.listen(port,function(){
-console.log('application is running on port',port);
-});
+// app.listen(port,function(){
+// console.log('application is running on port',port);
+// });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
