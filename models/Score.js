@@ -1,15 +1,19 @@
-const mongoose = require ('mongoose');
-mongoose.connect('mongodb://localhost:27017/delambo',{}).then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('Error connecting to MongoDB:', err));
+const mongoose = require('mongoose');
+const Connection = require('./Connection');
 
-const scoreSchema = mongoose.Schema({
+const conn = new Connection().getConnection();
+
+
+
+const scoreSchema = new mongoose.Schema({
 	student_name:String,
 	subject:String,
 	score:Number,
+	type:[],
 	totalQuestions:Number,
 	percentage: String
 });
 
-const Score = mongoose.model('Score',scoreSchema);
+const Score = conn.model('Score',scoreSchema);
 
 module.exports = Score;

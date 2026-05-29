@@ -3,6 +3,7 @@ class HomeController{
  this.port = port;
 this.app = app 
 this.path = path
+// this.port = 300
 	}
 	goHome(){
  this.app.get('/', async (req,resp)=>{

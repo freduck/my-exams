@@ -125,6 +125,19 @@ ul.left-bar-menu-list li a{
   </footer>
 </div>
   <script>
+    function formatDate(date) {
+  const d = new Date(date);
+  const day = d.getDate();
+  const suffix = (day > 3 && day < 21) ? 'th' : ['th','st','nd','rd','th','th','th','th','th','th'][day % 10];
+  const monthYear=new Intl.DateTimeFormat('en-GB',{month:'long',year:'numeric'}).format(d);
+  
+  const timpart = new Intl.DateTimeFormat('en-GB',{
+    hour:'2-digit',
+    minute:'2-digit',
+    hour12:true
+  }).format(d);
+  return `Today's Date is : ${day}${suffix} ${monthYear} Time is: ${timpart}`;
+}
     let name = localStorage.getItem('name');
     window.onload= function(){
       if(name=null){
@@ -136,10 +149,7 @@ ul.left-bar-menu-list li a{
     document.querySelector('.student-name').textContent = `${name}`;
      document.querySelector('.image').innerHTML = `<img src='${localStorage.getItem('image')}'>`;
 
-     let today = new Intl.DateTimeFormat('en-us',{
-      timeZone:"Africa/Lagos"
-     }).format(new Date());
-     console.log(today)
+     let today = formatDate( new Date());
 
       document.querySelector('.date-menu').textContent = `${today}`;
       setInterval(function(){

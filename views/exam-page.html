@@ -247,6 +247,9 @@ animation: moveDown 5s;
       questionBanks.forEach((qb) => {
         const html = `
           <h2>${qb.title}</h2>
+            <select id='question-type'>
+<option>${qb.type}</option>
+          </select>
           <ul>
           <br><hr/><br/>
             ${qb.questions.map((q, index) => `

@@ -159,7 +159,7 @@ password
 
 
   await new Promise(resolve=>setTimeout(resolve,3000));
-    let login = await fetch('/loging-student',{
+    let login = await fetch('/login-student',{
         method:'POST',
    	headers:{
    		'Content-Type':'application/json'
@@ -186,6 +186,10 @@ password
  console.log(localStorage.getItem('name'));
     }else if(response.message=='Student not found'){
         document.querySelector('.error').innerHTML += `<p>Invalid Login Details<br/><a href='/login-student'>Click Here to try again</a></p>`;
+
+   document.querySelector('.over-lay').style.display= 'none'
+   toggleStyle(document.querySelector('.loader'),'hidden')
+           toggleStyle(document.querySelector('.loading'),'hidden')
   
     }
    

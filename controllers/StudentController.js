@@ -8,6 +8,7 @@ class StudentController {
   constructor(app, basePath) {
     this.app = app;
     this.basePath = basePath;
+    this.basePath=__dirname;
 
     // Serve uploaded files statically
     const uploadPath = path.join(process.cwd(), 'uploads');
@@ -117,15 +118,19 @@ class StudentController {
 
   loginStudent() {
     this.app.get('/login-student', (req, resp) => {
-      resp.sendFile(path.join(this.basePath, 'views/login-student.html'));
+      resp.sendFile(path.join(this.basePath, '.././views/login-student.html'));
     });
   }
 
   studentLogin() {
+      
     this.app.post('/login-student', async (req, response) => {
       const { username, password } = req.body;
-      const student = await Student.findOne({ username });
+      console.log(req.body)
+      const student = await Student.findOne({ username});
+     
       if (student) {
+        console.log(student)
         response.json({ message: 'Login Successful', Student: student });
       } else {
         response.json({ message: 'Student not found' });
@@ -135,7 +140,7 @@ class StudentController {
 
   studentProfile() {
     this.app.get('/student-profile', (req, response) => {
-      response.sendFile(path.join(this.basePath, 'views/students/profile.html'));
+      response.sendFile(path.join(this.basePath, '.././views/students/profile.html'));
     });
   }
 }

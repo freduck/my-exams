@@ -1,13 +1,11 @@
-const mongoose = require ('mongoose');
-// mongoose.connect('mongodb+srv://school:school@cluster0.fl8is4a.mongodb.net/delambo',{}).then(() => console.log('Connected to MongoDB'))
-// .catch((err) => console.error('Error connecting to MongoDB:', err));
-const conn = mongoose.createConnection('mongodb+srv://school:school@cluster0.fl8is4a.mongodb.net/delambo', {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
-});
+const mongoose = require('mongoose');
+const Connection = require('./Connection');
+
+const conn = new Connection().getConnection();
 
 const questionBankSchema = new mongoose.Schema({
-  title: { type: String, required: true }, // e.g., 'Maths'
+  title: { type: String, required: true },
+  type: String,
   questions: [{
     question: { type: String, required: true },
     options: [String],
@@ -15,5 +13,5 @@ const questionBankSchema = new mongoose.Schema({
   }]
 });
 
-const QuestionBank = mongoose.model('QuestionBank', questionBankSchema);
+const QuestionBank = conn.model('QuestionBank', questionBankSchema);
 module.exports = QuestionBank;

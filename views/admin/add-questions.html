@@ -12,13 +12,25 @@
         .btn-add { background: #10b981; color: white; margin-bottom: 20px; }
         .btn-submit { background: #4F46E5; color: white; width: 100%; font-size: 1.1rem; }
         h3 { margin-top: 0; color: #333; border-bottom: 2px solid #4F46E5; display: inline-block; }
+        select{
+            padding: 10px;
+            width: 100%;
+            /*width: ;*/
+        }
     </style>
 </head>
 <body>
 
 <div class="admin-container">
-    <h1>Create New Quiz</h1>
+    <h1>Create Question</h1>
     <input type="text" id="quiz-title" placeholder="Quiz Title (e.g. Maths Level 1)" style="font-size: 1.2rem; font-weight: bold;">
+    <select name="exam-type" id="question-type">
+        <option value="">Exam Type</option>
+        <option>
+            Exam
+        </option>
+        <option >Test</option>
+    </select>
     
     <div id="questions-wrapper">
         </div>
@@ -76,6 +88,7 @@
 
     async function submitQuiz() {
         const title = document.getElementById('quiz-title').value;
+        const questionType= document.querySelector('#question-type').value;
         const blocks = document.querySelectorAll('.question-block');
         const questions = [];
 
@@ -89,14 +102,16 @@
             });
         });
 
-        const payload = { title, questions };
+        const payload = { title, questions, questionType };
   console.log(payload);
         // Sending to your Node.js route
         const response = await fetch('/create', {
             method:'POST',
             headers:{ 'Content-Type': 'application/json' },
             body:JSON.stringify({
-                title:payload.title,questions:payload.questions
+                title:payload.title,
+                questions:payload.questions,
+                questionType:payload.questionType
             })
         });
 

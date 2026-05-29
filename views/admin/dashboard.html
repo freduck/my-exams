@@ -168,7 +168,10 @@ tr td{
 background-color: crimson;
 color: white;
 }
-
+.q-title{
+	display: flex;
+	flex-direction: row;
+}
 </style>
 <div class="container">
 	<div class="top">
@@ -243,10 +246,12 @@ color: white;
 				<li>
 					<a href="/add-student">Add Student</a>
 				</li>
+				<li><a href="#" class="question">Questions</a></li>
 				<li><a href="/logout">Log Out</a></li>
 			</ul>
 		</div>
 		<div class="right">
+			<div class="q"></div>
 			<table id="students-table">
 
 				<tr><th>S/N</th><th>Name</th><th>Username</th><th>Email</th><th>Tel</th><th>Image</th><th rowspan="2">Action</th></tr>
@@ -381,4 +386,31 @@ overlay.addEventListener('click', (e) => {
 
 
 	}
+	const questionButton = document.querySelector('.question').addEventListener('click',async function(){
+let qu = await fetch('/questions',{
+	method:'GET',
+	headers:{
+		'Content-Type':'application/json'
+	}
+});
+let result = await qu.json()
+console.log(result);
+
+const table = document.getElementById('students-table');
+table.innerHTML='';
+
+const p = document.createElement('p');
+// table.innerHTML += `<tr>${}`
+table.innerHTML +=`<th>question</th><th>Option1</th><th>Option2</th><th>Option3</th><th>Option4</th><th>Answer</th></tr>`;
+result.forEach(e=>{
+e.questions.forEach(el=>{
+table.innerHTML += `<tr><td>${el.question}</td><td>${el.options[0]}</td>
+<td>${el.options[1]}</td>
+<td>${el.options[2]}</td>
+<td>${el.options[3]}</td>
+<td>${el.correct}</td>
+</tr>`;
+})
+})
+	})
 </script>

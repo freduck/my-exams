@@ -11,7 +11,7 @@ git commit -m "Initial commit"
 git branch -M main
 
 # Add your GitHub remote (replace with your repo URL)
-git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git remote add origin https://github.com/freduck/my-exams.git
 
 # Push your code to GitHub main branch
-git push -u origin main
+git push -u origin second-main

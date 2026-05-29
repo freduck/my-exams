@@ -83,9 +83,9 @@ addQuestion(){
 
 saveQuestion(){
     this.app.post('/create', async (req,resp)=>{
-const {title,questions}= req.body
-// console.log(req.body);
-let q = await QuestionBank.create({title:title,questions:questions})
+const {title,questions,questionType}= req.body
+console.log(req.body);
+let q = await QuestionBank.create({title:title,questions:questions,type:questionType})
     resp.status(200).json({message:'Question Added'});
     // console.log(req.body);
    let p = QuestionBank.find({});

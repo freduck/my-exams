@@ -1,5 +1,6 @@
 const Admin = require('.././models/Admin');
 const Student = require('.././models/Student');
+const Question = require('.././models/QuestionBank');
 		 	const bcrypt = require('bcryptjs');
 const crypto= require('crypto');
 const jwt = require('jsonwebtoken');
@@ -104,6 +105,12 @@ getStudents(){
 	
 });
 }
+	getQuestions(){
+		this.app.get('/questions', async(req,resp)=>{
+const questions = await Question.find({});
+resp.json(questions); 
+		});
+	}
 }
 
 module.exports = AdminClass;
