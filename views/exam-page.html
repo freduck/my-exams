@@ -341,7 +341,14 @@
 
     document.getElementById('subject').addEventListener('change', function() {
       fetchQuestionBanks(currentPage);
-       document.querySelector('#pagination').scrollIntoView({ behavior: "smooth" });
+       const paginationElement = document.getElementById("pagination");
+
+// Scroll it into view
+paginationElement.scrollIntoView({
+  behavior: "smooth",   // Smooth scrolling animation
+  block: "center",      // Aligns the element vertically in the center of the viewport
+  inline: "nearest"     // Aligns horizontally if needed
+});
     });
 
     let startTime = localStorage.getItem('timerStart');
