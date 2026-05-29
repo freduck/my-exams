@@ -341,7 +341,7 @@
 
     document.getElementById('subject').addEventListener('change', function() {
       fetchQuestionBanks(currentPage);
-       document.querySelector('#title').scrollIntoView({ behavior: "smooth" });
+       document.querySelector('#pagination').scrollIntoView({ behavior: "smooth" });
     });
 
     let startTime = localStorage.getItem('timerStart');
