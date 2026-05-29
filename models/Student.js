@@ -4,11 +4,11 @@
 
 
 
-const mongoose = require('mongoose');
+this.conn = mongoose.createConnection(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
 
   const studentSchema = new mongoose.Schema({
     name:String,
