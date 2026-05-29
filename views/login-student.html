@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login - DE-LAMBO COLLEGE</title>
 <style>
     * {
         padding: 0;
@@ -8,7 +14,7 @@
         font-family: system-ui, -apple-system, sans-serif;
     }
     .top {
-        padding: clamp(20px, 5vw, 60px);
+        padding: clamp(15px, 3vw, 40px);
         background-color: crimson;
         display: flex;
         justify-content: space-between;
@@ -46,7 +52,7 @@
     .login-container {
         max-width: 400px;
         width: 90%;
-        margin: 10vh auto;
+        margin: clamp(20px, 5vh, 50px) auto;
         border: 1px solid whitesmoke;
         box-shadow: rgba(99,99,99,.10) 2px 2px 6px 2px;
         padding: clamp(20px, 5vw, 50px);
@@ -126,21 +132,23 @@
         color: white;
     }
     @media (max-width: 600px) {
-    .top {
-        flex-direction: column;
-        text-align: center;
+        .top {
+            flex-direction: column;
+            text-align: center;
+        }
+        .login-container {
+            width: 95%;
+            margin: 5vh auto;
+            border: none;
+            box-shadow: none;
+        }
+        .right {
+            border: none;
+        }
     }
-    .login-container {
-        width: 95%;
-        margin: 5vh auto;
-        border: none;           /* remove border on mobile */
-        box-shadow: none;       /* optional: also kill shadow for cleaner look */
-    }
-    .right {
-        border: none;           /* remove border on mobile */
-    }
-}
 </style>
+</head>
+<body>
 
 <div class="over-lay">
     <p class="loading hidden">Loading...</p>
@@ -234,3 +242,6 @@
         element.classList.toggle(elementClass);
     }
 </script>
+
+</body>
+</html>
