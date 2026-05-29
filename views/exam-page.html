@@ -216,7 +216,7 @@
     <div class="pagination" id="pagination"></div>
     <button id="submit-btn" style="display: none;">Submit</button>
   </div>
-<div class='test'></div>
+
   <div class="result hidden">
     <h2 class="result-heed">Result Slip</h2>
     <p class="student-name"></p>
@@ -224,7 +224,7 @@
     <p class="total-questions"></p>
     <p class="percentage"></p>
   </div>
-
+<div class='test'></div>
   <script>
     let currentPage = 1;
     const questionBanksDiv = document.getElementById('question-banks');
@@ -358,7 +358,7 @@
     // binding an event listener to it globally on window load throws a "Cannot read properties of null" error.
     document.querySelector('#subject').addEventListener('change', function(e) {
 
-        const paginationElement = document.getElementById("pagination");
+        const paginationElement = document.querySelector(".test");
         paginationElement.scrollIntoView({
           behavior: "smooth",
           block: "center",
