@@ -216,7 +216,7 @@
     <div class="pagination" id="pagination"></div>
     <button id="submit-btn" style="display: none;">Submit</button>
   </div>
-
+<div class='test'></div>
   <div class="result hidden">
     <h2 class="result-heed">Result Slip</h2>
     <p class="student-name"></p>
@@ -356,7 +356,7 @@
 
     // FIX: Using Event Delegation here. Because #question-type is injected dynamically inside `renderQuestionBanks`, 
     // binding an event listener to it globally on window load throws a "Cannot read properties of null" error.
-    document.addEventListener('change', function(e) {
+    document.querySelector('.test').addEventListener('change', function(e) {
       if (e.target && e.target.id === 'question-type') {
         const paginationElement = document.getElementById("pagination");
         paginationElement.scrollIntoView({
