@@ -357,7 +357,7 @@
     // FIX: Using Event Delegation here. Because #question-type is injected dynamically inside `renderQuestionBanks`, 
     // binding an event listener to it globally on window load throws a "Cannot read properties of null" error.
     document.querySelector('#subject').addEventListener('change', function(e) {
-
+e.preventDefault();
         const paginationElement = document.querySelector(".test");
         paginationElement.scrollIntoView({
           behavior: "smooth",
