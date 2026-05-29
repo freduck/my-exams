@@ -3,10 +3,12 @@
 
 
 
-const mongoose = require('mongoose');
-const Connection = require('./Connection');
 
-const conn = new Connection().getConnection();
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error(err));
 
   const studentSchema = new mongoose.Schema({
     name:String,
@@ -18,7 +20,7 @@ const conn = new Connection().getConnection();
     password:String,
     image:String
   });
- const Student = conn.model('Student',studentSchema);
+ const Student = mongoose.model('Student',studentSchema);
  module.exports = Student;
 
 
