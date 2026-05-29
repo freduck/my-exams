@@ -1,140 +1,168 @@
-
-
 <style>
-    *{
+    * {
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
     }
-    .top{
-        padding: 60px;
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+    .top {
+        padding: clamp(20px, 5vw, 60px);
         background-color: crimson;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
-    .loader{
-            border:1px solid white;
-            width:10px;
-            height: 10px;
-            border-radius: 50%;
-            animation: rotate 2s infinite;
-            margin-left: 10px;
-            margin-top: 2px;
-        }
-        .hidden{
-            display:none;
-        }
-        @keyframes rotate {
-            0%{
-                transform: rotate(360deg);
-            }
-        }
-        .login-container{
-            width: 400px;
-            margin: 0 auto;
-            border:1px solid whitesmoke;
-            box-shadow: rgba(99,99,99,.10) 2px 2px 2px 2px;
-            padding: 50px;
-            margin-top: 10% ;
-        }
-        button{
-            display: flex;
-            padding: 6px;
-            background-color: crimson;
-            border: 1px solid whitesmoke;
-            color: white;
-        }
-        div.space{
-            margin: 6px;
-        }
-        div.space input[type='text'],input[type='password']{
-            width:100%;
-            padding: 6px;
-        }
-        h2{
+    .head {
+        color: white;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        text-align: center;
+    }
+    .left, .right {
+        flex: 1 1 250px;
+    }
+    .right {
+        border: 1px solid white;
+        padding: 10px;
+    }
+    .loader {
+        border: 2px solid white;
+        border-top: 2px solid transparent;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        animation: rotate 1s linear infinite;
+        margin-left: 10px;
+    }
+    .hidden {
+        display: none;
+    }
+    @keyframes rotate {
+        100% { transform: rotate(360deg); }
+    }
+    .login-container {
+        max-width: 400px;
+        width: 90%;
+        margin: 10vh auto;
+        border: 1px solid whitesmoke;
+        box-shadow: rgba(99,99,99,.10) 2px 2px 6px 2px;
+        padding: clamp(20px, 5vw, 50px);
+        border-radius: 10px;
+    }
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        width: 100%;
+        background-color: crimson;
+        border: 1px solid whitesmoke;
+        color: white;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    button:hover {
+        opacity: 0.9;
+    }
+    div.space {
+        margin: 12px 0;
+    }
+    div.space input[type='text'],
+    div.space input[type='password'] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+    h2 {
+        text-align: center;
+        color: crimson;
+        margin-bottom: 20px;
+    }
+    .over-lay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .active {
+        visibility: visible;
+        opacity: 1;
+    }
+    .success p {
+        color: green;
+        padding: 10px;
+        animation: slide 0.6s ease-in-out;
+        text-align: center;
+    }
+    .success {
+        padding: 20px;
+    }
+    .error p {
+        color: crimson;
+        padding: 10px;
+        text-align: center;
+    }
+    @keyframes slide {
+        0% { transform: translateX(50px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+    .loading {
+        text-align: center;
+        color: white;
+    }
+    @media (max-width: 600px) {
+        .top {
+            flex-direction: column;
             text-align: center;
-            color: crimson;
         }
-        .head{
-            color:white;
+        .login-container {
+            width: 95%;
+            margin: 5vh auto;
         }
-        div.top{
-            display: flex;
-        }
-        .right{
-            width: 300px;
-            float: right;
-            border: 1px solid white;
-            margin-left: 600px;
-        }
-        .over-lay{
-            position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensures it sits on top of everything */
-  
-  /* Hidden by default */
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-        }
-
-        .active{
-            visibility: visible;
-  opacity: 1;
-        }
-        .success p{
-color: green;
-padding: 10px;
-animation: slide 0.6s ease-in-out;
-
-        }
-        .success{
-            padding: 30px;
-        }
-        @keyframes slide{
-            0%{
-                transform:translateX(200px);
-            }
-            100%{
-                transform: translate(0);
-            }
-        }
+    }
 </style>
 
-<div class="over-lay"></div>
+<div class="over-lay">
+    <p class="loading hidden">Loading...</p>
+</div>
+
 <div class="top">
     <div class="left">
-        <h2 class="head">
-            DE-LAMBO COLLEGE
-        </h2>
+        <h2 class="head">DE-LAMBO COLLEGE</h2>
     </div>
     <div class="right">
-        <h2 class="head">
-            STUDENT PANNEL
-        </h2>
+        <h2 class="head">STUDENT PANEL</h2>
     </div>
 </div>
+
 <div class="login-container">
-    <div class="space"></div>
     <h2>Student Login</h2>
     <div class="space">
-        <input type="text" name="username" id="username" placeholder="username">
+        <input type="text" name="username" id="username" placeholder="Username" autocomplete="username">
     </div>
     <div class="space">
-        <input type="password" name="password" id="password" placeholder="password">
+        <input type="password" name="password" id="password" placeholder="Password" autocomplete="current-password">
     </div>
     <div class="space">
-        <button type="button" id="login">Login
-
+        <button type="button" id="login">
+            Login
             <div class="loader hidden" id="loader"></div>
         </button>
-    </div>
-    <div class="space">
-        <p class="loading hidden">Loading...</p>
     </div>
     <div class="space">
         <div class="success"></div>
@@ -143,58 +171,61 @@ animation: slide 0.6s ease-in-out;
         <div class="error"></div>
     </div>
 </div>
+
 <script>
-    document.getElementById('login').addEventListener('click', async function(){
-        // console.log();
-        let username = document.querySelector('#username').value;
-        let password = document.querySelector('#password').value;
-        const data = {
-username,
-password
+    document.getElementById('login').addEventListener('click', async function() {
+        let username = document.querySelector('#username').value.trim();
+        let password = document.querySelector('#password').value.trim();
+
+        if (!username || !password) {
+            document.querySelector('.error').innerHTML = `<p>Please enter username and password</p>`;
+            return;
         }
-        toggleStyle(document.querySelector('.loader'),'hidden');
 
-     toggleStyle(document.querySelector('.loading'),'hidden');
-  toggleStyle(document.querySelector('.over-lay'),'active');
+        const data = { username, password };
+        
+        toggleStyle(document.querySelector('.loader'), 'hidden');
+        toggleStyle(document.querySelector('.loading'), 'hidden');
+        toggleStyle(document.querySelector('.over-lay'), 'active');
+        document.querySelector('.error').innerHTML = '';
+        document.querySelector('.success').innerHTML = '';
 
+        try {
+            await new Promise(resolve => setTimeout(resolve, 1000)); // remove this in production
+            let login = await fetch('/login-student', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            let response = await login.json();
+            console.log(response);
 
-  await new Promise(resolve=>setTimeout(resolve,3000));
-    let login = await fetch('/login-student',{
-        method:'POST',
-   	headers:{
-   		'Content-Type':'application/json'
-   	},
-   	body:JSON.stringify(data)
-    })
-      
-    let response = await login.json();
-    console.log(response);
-    if(response.message=='Login Successful'){
-        // document.querySelector('.over-lay').classList.add('hidden');
-        //  toggleStyle(document.querySelector('.over-lay'),'hidden')
-          document.querySelector('.over-lay').style.display= 'none'
-          toggleStyle(document.querySelector('.loader'),'hidden')
-           toggleStyle(document.querySelector('.loading'),'hidden')
-        document.querySelector('.success').innerHTML += `<p>You have Succeeded in login to your account<br/><a href='/student-profile'>Click Here to continue</a></p>`;
+            toggleStyle(document.querySelector('.over-lay'), 'active');
+            toggleStyle(document.querySelector('.loader'), 'hidden');
+            toggleStyle(document.querySelector('.loading'), 'hidden');
 
-   document.querySelector('.over-lay').style.display= 'none'
-  localStorage.setItem('image',response.Student.image);
-   localStorage.setItem('username',response.Student.username);
- localStorage.setItem('id',response.Student._id);
- localStorage.setItem('name',response.Student.name);
+            if (response.message == 'Login Successful') {
+                document.querySelector('.success').innerHTML = 
+                    `<p>Login successful!<br/><a href='/student-profile'>Click here to continue</a></p>`;
 
- console.log(localStorage.getItem('name'));
-    }else if(response.message=='Student not found'){
-        document.querySelector('.error').innerHTML += `<p>Invalid Login Details<br/><a href='/login-student'>Click Here to try again</a></p>`;
+                localStorage.setItem('image', response.Student.image);
+                localStorage.setItem('username', response.Student.username);
+                localStorage.setItem('id', response.Student._id);
+                localStorage.setItem('name', response.Student.name);
+            } else if (response.message == 'Student not found') {
+                document.querySelector('.error').innerHTML = 
+                    `<p>Invalid Login Details<br/><a href='/login-student'>Try again</a></p>`;
+            }
+        } catch (err) {
+            toggleStyle(document.querySelector('.over-lay'), 'active');
+            toggleStyle(document.querySelector('.loader'), 'hidden');
+            toggleStyle(document.querySelector('.loading'), 'hidden');
+            document.querySelector('.error').innerHTML = `<p>Network error. Please try again.</p>`;
+        }
+    });
 
-   document.querySelector('.over-lay').style.display= 'none'
-   toggleStyle(document.querySelector('.loader'),'hidden')
-           toggleStyle(document.querySelector('.loading'),'hidden')
-  
+    function toggleStyle(element, elementClass) {
+        element.classList.toggle(elementClass);
     }
-   
-    })
-    function toggleStyle(element,elementClass){
-           return element.classList.toggle(elementClass);
-       }
 </script>
