@@ -1,42 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		*{
-			padding: 0;
-			margin: 0;
-		}
-		div.top{
-			padding: 60px;
-			background-color: crimson;
-			color: white;
-		}
-		div.divider{
-			float: right;
-			width: 300px;
-			color: white;
-		}
-		div.divider a{
-			color: white;
-		}
-	</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DE-LAMBO COLLEGE</title>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.top {
+  padding: clamp(20px, 4vw, 60px);
+  background-color: crimson;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.top h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+.divider {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.divider a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.divider a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Main content + Carousel */
+main {
+  flex: 1;
+  padding: 30px 20px;
+  background: #f8fafc;
+}
+
+.carousel {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: white;
+  font-weight: 600;
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel-slide:nth-child(1) { background: linear-gradient(135deg, #dc2626, #991b1b); }
+.carousel-slide:nth-child(2) { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.carousel-slide:nth-child(3) { background: linear-gradient(135deg, #16a34a, #15803d); }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.carousel-btn:hover { background: rgba(0,0,0,0.7); }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active { background: crimson; }
+
+/* Footer */
+footer {
+  background: crimson;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .top {
+    flex-direction: column;
+    text-align: center;
+  }
+  .carousel-slide {
+    height: 200px;
+  }
+}
+</style>
 </head>
 <body>
-	<div class="container">
+  <div class="top">
+    <h2>DE-LAMBO COLLEGE</h2>
+    <div class="divider">
+      <a href="/login-admin">Admin</a>
+      <a href="/login-student">Students</a>	
+      <a href="/parent-login">Parents</a>
+    </div>
+  </div>
 
-		
-		<div class="top">
-			<h2>DE-LAMBO COLLEGE</h2>
-			<div class="divider">
+  <main>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">Welcome to DE-LAMBO COLLEGE</div>
+        <div class="carousel-slide">Excellence in Education Since 2005</div>
+        <div class="carousel-slide">Join Us Today – Admissions Open</div>
+      </div>
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+      <div class="carousel-dots"></div>
+    </div>
+  </main>
 
-				<a href="/login-admin">Admin</a>
-				<a href="/login-student">Students</a>	
-				<a href="/parent-login">Parents</a>
-			</div>
-		</div>
-	</div>
+  <footer>
+    <span id="datetime"></span>
+  </footer>
+
+<script>
+// Carousel logic
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector('.carousel-btn.next');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const dotsContainer = document.querySelector('.carousel-dots');
+
+let currentSlide = 0;
+
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if(i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+});
+const dots = Array.from(dotsContainer.children);
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+nextBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+// Auto slide
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+}, 4000);
+
+// Live date and time
+function updateDateTime() {
+  const now = new Date();
+  const options = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  };
+  document.getElementById('datetime').textContent = 
+    now.toLocaleDateString('en-US', options);
+}
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
 </body>
 </html>
