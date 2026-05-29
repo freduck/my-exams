@@ -150,6 +150,16 @@
             padding: 5px 0;
         }
     }
+.date{
+text-align:center;
+background-color:crimson;
+color:white;
+padding:60px;
+bottom:0 ;
+
+
+
+}
 </style>
 </head>
 <body>
@@ -188,7 +198,9 @@
         <div class="error"></div>
     </div>
 </div>
+<div class="date">
 
+</div>
 <script>
     document.getElementById('login').addEventListener('click', async function() {
         let username = document.querySelector('#username').value.trim();
@@ -245,6 +257,38 @@
     function toggleStyle(element, elementClass) {
         element.classList.toggle(elementClass);
     }
+
+const date = new Date()
+  document.querySelector(".date").innerHTML=`<p>
+  
+  ${
+  formatDateTime(new Date())
+  }
+  </p>`;
+  
+function formatDateTime(date) {
+  const d = new Date(date);
+  const day = d.getDate();
+  const suffix = (day > 3 && day < 21) ? 'th' : ['th','st','nd','rd','th','th','th','th','th','th'][day % 10];
+  
+  const datePart = new Intl.DateTimeFormat('en-GB', { 
+    month: 'long', 
+    year: 'numeric' 
+  }).format(d);
+  
+  const timePart = new Intl.DateTimeFormat('en-GB', { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    hour12: true // set to false for 24hr format
+  }).format(d);
+  
+  return `${day}${suffix} ${datePart} at ${timePart}`;
+}
+
+formatDateTime(new Date(2026, 4, 5, 14, 30)); // "5th May 2026 at 02:30 PM"
+console.log(formatDateTime(new Date())); // "27th September 2026 at 08:45 PM" - today’s date + current time
+
+
 </script>
 
 </body>
