@@ -253,6 +253,7 @@
         const html = `
           <h2 id='title'>${qb.title}</h2>
           <select id='question-type'>
+          <option>Select Categories</option>
             <option>${qb.type}</option>
           </select>
           <ul>
@@ -338,10 +339,11 @@
         console.error(error);
       }
     };
+document.getElementById('question-type').addEventListener('change',function(){
 
-    document.getElementById('subject').addEventListener('change', function() {
 
-       const paginationElement = document.getElementById("pagination");
+
+const paginationElement = document.getElementById("pagination");
 
 // Scroll it into view
 paginationElement.scrollIntoView({
@@ -350,6 +352,11 @@ paginationElement.scrollIntoView({
   inline: "nearest"     // Aligns horizontally if needed
 });
 
+
+    });
+    document.getElementById('subject').addEventListener('change', function() {
+
+       
       
       fetchQuestionBanks(currentPage);
 
