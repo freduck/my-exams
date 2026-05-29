@@ -18,6 +18,40 @@
       background-color: crimson;
       padding: clamp(20px, 5vw, 50px);
     }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+select {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  flex: 0 1 280px; /* don't grow, can shrink, base 280px */
+  min-width: 200px;
+  max-width: 320px;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 15px; }
+  h1 { font-size: 1.1rem; }
+  .flex { flex-direction: column; align-items: stretch; }
+  select { 
+    max-width: 100%; 
+    flex: 1 1 auto;
+  }
+  .paginate { padding: 8px 12px; min-width: 40px; }
+}
+
     h1 {
       text-align: center;
       text-transform: uppercase;
