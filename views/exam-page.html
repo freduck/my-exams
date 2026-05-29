@@ -293,7 +293,7 @@
         }
         if (i === currentPage) {
           button.disabled = true;
-          if ([16,17,18,19,20,21].includes(i)) {
+          if ([16,17,18,19,20,21].includes(i)&& subject.value=='English Language') {
             document.querySelector('.para').classList.remove('hidden');
             document.querySelector('.para').scrollIntoView({ behavior: "smooth" });
           } else if (i === 22) {
