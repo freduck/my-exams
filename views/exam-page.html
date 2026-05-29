@@ -286,7 +286,7 @@
         button.textContent = i;
         button.className = 'paginate';
         button.onclick = async function() {
-          this.textContent = '...';
+          this.textContent = 'wait..';
           await new Promise(resolve => setTimeout(resolve, 500));
           fetchQuestionBanks(i);
           this.textContent = i;
