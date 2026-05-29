@@ -126,15 +126,20 @@
         color: white;
     }
     @media (max-width: 600px) {
-        .top {
-            flex-direction: column;
-            text-align: center;
-        }
-        .login-container {
-            width: 95%;
-            margin: 5vh auto;
-        }
+    .top {
+        flex-direction: column;
+        text-align: center;
     }
+    .login-container {
+        width: 95%;
+        margin: 5vh auto;
+        border: none;           /* remove border on mobile */
+        box-shadow: none;       /* optional: also kill shadow for cleaner look */
+    }
+    .right {
+        border: none;           /* remove border on mobile */
+    }
+}
 </style>
 
 <div class="over-lay">
