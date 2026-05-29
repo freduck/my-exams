@@ -61,7 +61,8 @@
       padding: clamp(20px, 4vw, 50px);
       margin: 30px auto;
     }
-    .para, .22 {
+    /* FIX: Changed class '.22' to '.section-22' because CSS class names should not start with an unescaped digit */
+    .para, .section-22 {
       padding: 20px;
       margin-bottom: 20px;
     }
@@ -179,7 +180,7 @@
         <option>Shehu Umairah</option>
       </select>
       <select name="subject" id="subject">
-        <option>Select Subject</option>
+        <option value="">Select Subject</option>
         <option>Maths</option>
         <option>English Language</option>
         <option>Business Studies</option>
@@ -205,7 +206,7 @@
       </div>
       AIDS is an (a) __16 of the human system caused by the human immune deficiency virus. AIDS is a virus that weakens or destroys the immune system of the ____ 17 leaving its prey to many ____ 18 that would have been easily suppressed. Immunity is the ability of the body to _____ 19 an infection. There is no known ____ 20 for HIV/AIDS. HIV/AIDS is ____ 21 through sexual intercourse, mother to child transmission, blood transfusion and sharing of sharp objects.
     </div>
-    <div class="22 hidden">
+    <div class="section-22 hidden">
       Choose the word that has the same vowel sound as the one represented by the letter underlined.
     </div>
     <br><hr><br>
@@ -229,15 +230,22 @@
     const questionBanksDiv = document.getElementById('question-banks');
     const paginationDiv = document.getElementById('pagination');
     const submitBtn = document.getElementById('submit-btn');
+    const subjectSelect = document.getElementById('subject');
     let currentQuestionBanks = [];
     let userAnswers = {};
 
     async function fetchQuestionBanks(page) {
       try {
-        let title = document.getElementById('subject').value;
+        let title = subjectSelect.value;
+        if (!title || title === "Select Subject") return; // Safety check
+        
         const response = await fetch(`/exam?page=${page}&limit=1&title=${title}`);
         const data = await response.json();
         currentQuestionBanks = data.questionBanks;
+        
+        // FIX: Update the tracking variable so the system knows what page it is on globally
+        currentPage = page; 
+
         renderQuestionBanks(data.questionBanks);
         renderPagination(data.pages, page);
         submitBtn.style.display = page == data.total ? 'block' : 'none';
@@ -253,7 +261,7 @@
         const html = `
           <h2 id='title'>${qb.title}</h2>
           <select id='question-type'>
-          <option>Select Categories</option>
+            <option>Select Categories</option>
             <option>${qb.type}</option>
           </select>
           <ul>
@@ -282,6 +290,11 @@
 
     function renderPagination(pages, currentPage) {
       paginationDiv.innerHTML = '';
+      
+      // FIX: Clean up/hide any active instructional divs on page change before re-assessing
+      document.querySelector('.para').classList.add('hidden');
+      document.querySelector('.section-22').classList.add('hidden');
+
       for (let i = 1; i <= pages; i++) {
         const button = document.createElement('button');
         button.textContent = i;
@@ -290,16 +303,17 @@
           this.textContent = 'wait..';
           await new Promise(resolve => setTimeout(resolve, 500));
           fetchQuestionBanks(i);
-          this.textContent = i;
         }
+        
         if (i === currentPage) {
           button.disabled = true;
-          if ([16,17,18,19,20,21].includes(i)&& subject.value=='English Language') {
+          // FIX: Checked `subjectSelect.value` instead of non-existent variable `subject.value`
+          if ([16,17,18,19,20,21].includes(i) && subjectSelect.value === 'English Language') {
             document.querySelector('.para').classList.remove('hidden');
             document.querySelector('.para').scrollIntoView({ behavior: "smooth" });
-          } else if (i === 22) {
-            document.querySelector('.22').classList.remove('hidden');
-            document.querySelector('.22').scrollIntoView({ behavior: "smooth" });
+          } else if (i === 22 && subjectSelect.value === 'English Language') {
+            document.querySelector('.section-22').classList.remove('hidden');
+            document.querySelector('.section-22').scrollIntoView({ behavior: "smooth" });
           }
         }
         paginationDiv.appendChild(button);
@@ -314,7 +328,7 @@
     });
 
     submitBtn.onclick = async () => {
-      let title = document.getElementById('subject').value;
+      let title = subjectSelect.value;
       let student_name = document.getElementById('student-name');
       if (student_name.value == "") {
         alert('Enter Student Name');
@@ -339,27 +353,23 @@
         console.error(error);
       }
     };
-document.getElementById('question-type').addEventListener('change',function(){
 
-
-
-const paginationElement = document.getElementById("pagination");
-
-// Scroll it into view
-paginationElement.scrollIntoView({
-  behavior: "smooth",   // Smooth scrolling animation
-  block: "center",      // Aligns the element vertically in the center of the viewport
-  inline: "nearest"     // Aligns horizontally if needed
-});
-
-
+    // FIX: Using Event Delegation here. Because #question-type is injected dynamically inside `renderQuestionBanks`, 
+    // binding an event listener to it globally on window load throws a "Cannot read properties of null" error.
+    document.addEventListener('change', function(e) {
+      if (e.target && e.target.id === 'question-type') {
+        const paginationElement = document.getElementById("pagination");
+        paginationElement.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest"
+        });
+      }
     });
-    document.getElementById('subject').addEventListener('change', function() {
 
-       
-      
+    subjectSelect.addEventListener('change', function() {
+      currentPage = 1; // Reset to page 1 on subject swap
       fetchQuestionBanks(currentPage);
-
     });
 
     let startTime = localStorage.getItem('timerStart');
@@ -394,7 +404,7 @@ paginationElement.scrollIntoView({
     async function clearTimer(isAutoSubmit = false) {
       clearInterval(timerInterval);
       localStorage.removeItem('timerStart');
-      const title = document.getElementById('subject').value;
+      const title = subjectSelect.value;
       const student_name_input = document.getElementById('student-name');
       let student_name = student_name_input.value;
       if (!student_name && !isAutoSubmit) {
