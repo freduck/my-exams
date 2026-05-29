@@ -11,16 +11,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 
 /* Header */
 .top {
-  padding: clamp(15px, 3vw, 40px);
+  padding: 18px 15px;
   background-color: crimson;
   color: white;
   display: flex;
@@ -31,7 +34,7 @@ body {
 }
 
 .top h2 {
-  font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+  font-size: 1.3rem;
 }
 
 .divider {
@@ -44,28 +47,31 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.2s;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .divider a:hover {
   background: rgba(255,255,255,0.2);
 }
 
-/* Main + Carousel */
+/* Main + Carousel - main now grows to fill space */
 main {
-  padding: 15px 15px 5px 15px;
+  flex: 1; /* fills space between header and footer */
+  padding: 12px 10px 8px 10px;
   background: #f8fafc;
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel {
   position: relative;
   max-width: 1000px;
-  margin: 0 auto 5px auto;
+  margin: 0 auto;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 .carousel-track {
@@ -76,11 +82,11 @@ main {
 
 .carousel-slide {
   flex: 0 0 100%;
-  height: 220px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1rem, 4vw, 1.6rem);
+  font-size: 1.1rem;
   color: white;
   font-weight: 600;
   padding: 15px;
@@ -95,13 +101,13 @@ main {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   color: white;
   border: none;
-  padding: 6px 10px;
+  padding: 5px 9px;
   cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 5px;
+  font-size: 1.1rem;
+  border-radius: 4px;
   z-index: 10;
 }
 
@@ -111,57 +117,36 @@ main {
 .carousel-dots {
   display: flex;
   justify-content: center;
-  gap: 7px;
-  padding: 10px 0 0;
+  gap: 6px;
+  padding: 8px 0 0;
 }
 
 .dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #cbd5e1;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .dot.active { background: crimson; }
 
-/* Footer */
+/* Footer - no margin-top auto, sits right after main */
 footer {
   background: crimson;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 15px;
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: auto;
+  font-size: 0.85rem;
 }
 
-/* Mobile - ultra tight */
-@media (max-width: 600px) {
-  .top {
-    flex-direction: column;
-    text-align: center;
-    padding: 18px 12px;
-  }
-  main {
-    padding: 10px 10px 3px 10px;
-  }
-  .carousel {
-    margin: 0 auto 3px auto;
-    border-radius: 8px;
-  }
-  .carousel-slide {
-    height: 170px;
-    font-size: 1.1rem;
-  }
-  .carousel-btn {
-    padding: 5px 8px;
-    font-size: 1.1rem;
-  }
-  footer {
-    padding: 10px 15px;
-    font-size: 0.85rem;margin-top:10px;
-  }
+/* Desktop tweaks */
+@media (min-width: 601px) {
+  .top { padding: 30px 40px; }
+  .top h2 { font-size: 1.8rem; }
+  main { padding: 25px 20px 15px 20px; }
+  .carousel-slide { height: 240px; font-size: 1.6rem; }
+  footer { padding: 15px 20px; font-size: 0.95rem; }
 }
 </style>
 </head>
@@ -193,7 +178,6 @@ footer {
   </footer>
 
 <script>
-// Carousel logic
 const track = document.querySelector('.carousel-track');
 const slides = Array.from(track.children);
 const nextBtn = document.querySelector('.carousel-btn.next');
@@ -202,7 +186,6 @@ const dotsContainer = document.querySelector('.carousel-dots');
 
 let currentSlide = 0;
 
-// Create dots
 slides.forEach((_, i) => {
   const dot = document.createElement('div');
   dot.classList.add('dot');
@@ -233,20 +216,16 @@ prevBtn.addEventListener('click', () => {
   updateCarousel();
 });
 
-// Auto slide
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateCarousel();
 }, 4000);
 
-// Recalc on resize/orientation change
 window.addEventListener('resize', updateCarousel);
 window.addEventListener('orientationchange', () => setTimeout(updateCarousel, 100));
 
-// Init
 updateCarousel();
 
-// Live date and time
 function updateDateTime() {
   const now = new Date();
   const options = { 
