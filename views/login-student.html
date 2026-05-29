@@ -22,6 +22,19 @@
         gap: 20px;
         flex-wrap: wrap;
     }
+
+.top {
+    padding: clamp(15px, 3vw, 40px);
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 3vw, 40px); /* gap grows slightly on bigger screens */
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
     .head {
         color: white;
         font-size: clamp(1rem, 3vw, 1.5rem);
