@@ -340,7 +340,7 @@
     };
 
     document.getElementById('subject').addEventListener('change', function() {
-      fetchQuestionBanks(currentPage);
+
        const paginationElement = document.getElementById("pagination");
 
 // Scroll it into view
@@ -349,6 +349,10 @@ paginationElement.scrollIntoView({
   block: "center",      // Aligns the element vertically in the center of the viewport
   inline: "nearest"     // Aligns horizontally if needed
 });
+
+      
+      fetchQuestionBanks(currentPage);
+
     });
 
     let startTime = localStorage.getItem('timerStart');
