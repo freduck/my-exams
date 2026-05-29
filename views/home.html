@@ -13,7 +13,7 @@
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  min-height: 100vh;
+  min-height: 100dvh; /* fixes mobile browser bar issue */
   display: flex;
   flex-direction: column;
 }
@@ -55,9 +55,9 @@ body {
 
 /* Main + Carousel */
 main {
-  flex: 1;
   padding: 30px 20px 15px 20px;
   background: #f8fafc;
+  /* removed flex:1 - this was causing the big gap */
 }
 
 .carousel {
@@ -134,6 +134,7 @@ footer {
   padding: 20px;
   text-align: center;
   font-size: 0.95rem;
+  margin-top: auto; /* pushes footer down only if content is short */
 }
 
 /* Mobile */
@@ -143,10 +144,10 @@ footer {
     text-align: center;
   }
   main {
-    padding: 20px 15px 10px 15px;
+    padding: 15px 15px 10px 15px; /* tighter on mobile */
   }
   .carousel {
-    margin: 0 auto 10px auto;
+    margin: 0 auto 8px auto; /* closer to footer */
   }
   .carousel-slide {
     height: 180px;
