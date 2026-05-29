@@ -6,8 +6,11 @@ const mongoose = require('mongoose');
 
 class Connection {
   constructor() {
-    const uri = process.env.MONGO_URI || process.env.MONGO_URI_LOCAL;
-    if (!uri) throw new Error("MongoDB URI is not defined");
+    const uri = process.env.MODE_ENV === 'production'
+  ? process.env.MONGO_URI
+  : process.env.MONGO_URI_LOCAL;
+
+
 
     this.conn = mongoose.createConnection(uri);
     this.conn.on('connected', () => console.log("✅ Connected to MongoDB"));
