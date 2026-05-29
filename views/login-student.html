@@ -17,35 +17,23 @@
         padding: clamp(15px, 3vw, 40px);
         background-color: crimson;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: clamp(8px, 2vw, 30px);
         flex-wrap: wrap;
+        text-align: center;
     }
-
-.top {
-    padding: clamp(15px, 3vw, 40px);
-    background-color: crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(10px, 3vw, 40px); /* gap grows slightly on bigger screens */
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-
     .head {
         color: white;
         font-size: clamp(1rem, 3vw, 1.5rem);
         text-align: center;
     }
     .left, .right {
-        flex: 1 1 250px;
+        flex: 0 0 auto;
     }
     .right {
         border: 1px solid white;
-        padding: 10px;
+        padding: 8px 16px;
     }
     .loader {
         border: 2px solid white;
@@ -148,6 +136,8 @@
         .top {
             flex-direction: column;
             text-align: center;
+            padding: 20px 15px; /* Compact padding on mobile */
+            gap: 10px; /* Tight gap between headers */
         }
         .login-container {
             width: 95%;
@@ -157,6 +147,7 @@
         }
         .right {
             border: none;
+            padding: 5px 0;
         }
     }
 </style>
