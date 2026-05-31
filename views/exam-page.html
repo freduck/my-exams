@@ -5,82 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Question Banks</title>
   <style>
-    /* --- ORIGINAL STYLES --- */
-    * { padding: 0; margin: 0; box-sizing: border-box; }
-    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
-    .top { background-color: crimson; padding: clamp(20px, 5vw, 50px); }
-    h1 { text-align: center; text-transform: uppercase; color: white; font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 15px; }
-    #timer { text-align: center; color: white; font-weight: bold; font-size: clamp(1rem, 3vw, 1.3rem); margin-bottom: 15px; }
-    .flex { display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 900px; margin: 0 auto; }
-    select { padding: 10px 12px; font-size: 1rem; border: 1px solid whitesmoke; border-radius: 8px; flex: 0 1 280px; min-width: 200px; max-width: 320px; background: white; cursor: pointer; }
-    hr.i { border: none; height: 1px; background: rgba(255,255,255,0.3); }
-    .container { max-width: 900px; width: 95%; border: 1px solid whitesmoke; padding: clamp(20px, 4vw, 50px); margin: 30px auto; }
-    .para, .22 { padding: 20px; margin-bottom: 20px; }
-    .head { padding: 20px; border-bottom: 1px solid whitesmoke; margin-bottom: 20px; }
-    #q { padding: 10px; margin: 10px 0; font-weight: 500; }
-    li { list-style-type: none; padding: 8px 0; }
-    input[type="radio"] { margin-right: 8px; cursor: pointer; }
-    label { cursor: pointer; }
-    hr { border: 2px solid crimson; }
-    .pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; margin-top: 20px; }
-    .paginate { padding: 10px 15px; min-width: 45px; border: 1px solid whitesmoke; background-color: crimson; color: white; border-radius: 10px; cursor: pointer; font-size: 1rem; }
-    .paginate:disabled { opacity: 0.6; cursor: not-allowed; }
-    #submit-btn { padding: 12px; width: 100%; max-width: 400px; display: block; margin: 20px auto; background-color: crimson; color: white; border: 1px solid whitesmoke; border-radius: 50px; font-size: 1.1rem; cursor: pointer; }
-    .hidden { display: none; }
-
-    /* --- NEW MODAL & RESULT STYLES --- */
-    .modal-overlay {
-      display: none; 
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 9999;
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+    .top {
+      background-color: crimson;
+      padding: clamp(20px, 5vw, 50px);
+    }
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      color: white;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      margin-bottom: 15px;
+    }
+    #timer {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      margin-bottom: 15px;
+    }
+    .flex {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(5px);
+    }
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid whitesmoke;
+      border-radius: 8px;
+      flex: 1 1 250px;
+      max-width: 400px;
+      background: white;
+    }
+    hr.i {
+      border: 2px solid whitesmoke;
+      border: none;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+    }
+    .container {
+      max-width: 900px;
+      width: 95%;
+      border: 1px solid whitesmoke;
+      padding: clamp(20px, 4vw, 50px);
+      margin: 30px auto;
+    }
+    .para, .22 {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .head {
+      padding: 20px;
+      border-bottom: 1px solid whitesmoke;
+      margin-bottom: 20px;
+    }
+    .result-heed {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid whitesmoke;
+      margin-bottom: 30px;
+    }
+    #q {
+      padding: 10px;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+    li {
+      list-style-type: none;
+      padding: 8px 0;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+    label {
+      cursor: pointer;
+    }
+    hr {
+      border: 2px solid crimson;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 20px;
+    }
+    .paginate {
+      padding: 10px 15px;
+      min-width: 45px;
+      border: 1px solid whitesmoke;
+      background-color: crimson;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .paginate:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    #submit-btn {
+      padding: 12px;
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 20px auto;
+      background-color: crimson;
+      color: white;
+      border: 1px solid whitesmoke;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .percentage, .score, .student-name, .total-questions {
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bolder;
+      font-size: clamp(1rem, 3vw, 1.3rem);
     }
     .result {
       display: flex;
       flex-direction: column;
-      background: white;
-      padding: clamp(20px, 4vw, 35px);
-      border-radius: 15px;
-      max-width: 500px;
+      padding: clamp(20px, 4vw, 30px);
+      box-shadow: rgba(99, 99, 99, .17) 2px 2px 6px 2px;
+      border: 1px solid whitesmoke;
+      max-width: 950px;
       width: 95%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      animation: moveDown 0.4s ease-out;
+      margin: 30px auto 60px;
+      animation: moveDown 1s;
     }
-    .result-heed { padding: 10px; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 15px; }
-    .percentage, .score, .student-name, .total-questions { padding: 8px; text-align: center; text-transform: uppercase; font-weight: bolder; font-size: 1.1rem; }
-    
-    .email-section {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px dashed crimson;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .hidden {
+      display: none;
     }
-    #target-email { padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
-    .send-btn { background: #28a745; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; }
-    .close-modal { background: #666; color: white; border: none; padding: 10px; border-radius: 8px; margin-top: 5px; cursor: pointer; }
+  
+  .flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
+select {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  flex: 0 1 280px; /* don't grow, can shrink, base 280px */
+  min-width: 200px;
+  max-width: 320px;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 15px; }
+  h1 { font-size: 1.1rem; }
+  .flex { flex-direction: column; align-items: stretch; }
+  select { 
+    max-width: 100%; 
+    flex: 1 1 auto;
+  }
+  .paginate { padding: 8px 12px; min-width: 40px; }
+}
+  
     @keyframes moveDown {
       0% { transform: translateY(-50px); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
     }
     @media (max-width: 600px) {
-      .flex { flex-direction: column; align-items: stretch; }
+      .container { padding: 15px; }
+      h1 { font-size: 1.1rem; }
+      .flex { flex-direction: column; }
       select { max-width: 100%; }
+      .paginate { padding: 8px 12px; min-width: 40px; }
     }
   </style>
 </head>
 <body>
-
   <div class="top">
     <h1>DE-LAMBO COLLEGE 2025/2026 academic session Midterm C.A</h1>
-    <h3 id="timer">00:00:00</h3>
+    <h3 id="timer"></h3>
     <hr class="i"><br>
     <div class="flex">
       <select name="student-name" id="student-name">
@@ -93,7 +213,7 @@
         <option>Shehu Umairah</option>
       </select>
       <select name="subject" id="subject">
-        <option value="">Select Subject</option>
+        <option>Select Subject</option>
         <option>Maths</option>
         <option>English Language</option>
         <option>Business Studies</option>
@@ -117,52 +237,47 @@
       <div class="head">
         <h2>Read The Passage Below and Choose The Correct Option To Fill The Blank Spaces Between Question <b>16</b> and <b>21</b></h2>
       </div>
-      AIDS is an (a) __16 of the human system caused by the human immune deficiency virus...
+      AIDS is an (a) __16 of the human system caused by the human immune deficiency virus. AIDS is a virus that weakens or destroys the immune system of the ____ 17 leaving its prey to many ____ 18 that would have been easily suppressed. Immunity is the ability of the body to _____ 19 an infection. There is no known ____ 20 for HIV/AIDS. HIV/AIDS is ____ 21 through sexual intercourse, mother to child transmission, blood transfusion and sharing of sharp objects.
     </div>
-    <div class="22 hidden">Choose the word that has the same vowel sound...</div>
-    
+    <div class="22 hidden">
+      Choose the word that has the same vowel sound as the one represented by the letter underlined.
+    </div>
     <br><hr><br>
     <form id="exam-form">
       <div id="question-banks"></div>
     </form>
     <div class="pagination" id="pagination"></div>
-    <button id="submit-btn" style="display: none;">Submit Exam</button>
+    <button id="submit-btn" style="display: none;">Submit</button>
   </div>
 
-  <div id="resultModal" class="modal-overlay">
-    <div class="result">
-      <h2 class="result-heed">Result Slip</h2>
-      <p class="student-name-res student-name"></p>
-      <p class="score-res score"></p>
-      <p class="total-questions-res total-questions"></p>
-      <p class="percentage-res percentage"></p>
-      
-      <div class="email-section">
-        <input type="email" id="target-email" placeholder="Parent/Guardian Email">
-        <button class="send-btn" onclick="sendResultToEmail()">Send to Email</button>
-        <button class="close-modal" onclick="closeModal()">Close & Restart</button>
-      </div>
-    </div>
+  <div class="result hidden">
+    <h2 class="result-heed">Result Slip</h2>
+    <p class="student-name"></p>
+    <p class="score"></p>
+    <p class="total-questions"></p>
+    <p class="percentage"></p>
   </div>
 
   <script>
     let currentPage = 1;
-    let userAnswers = {};
-    let lastResult = null; // Stores result for email sending
     const questionBanksDiv = document.getElementById('question-banks');
     const paginationDiv = document.getElementById('pagination');
     const submitBtn = document.getElementById('submit-btn');
+    let currentQuestionBanks = [];
+    let userAnswers = {};
 
     async function fetchQuestionBanks(page) {
-      let title = document.getElementById('subject').value;
-      if(!title) return;
       try {
+        let title = document.getElementById('subject').value;
         const response = await fetch(`/exam?page=${page}&limit=1&title=${title}`);
         const data = await response.json();
+        currentQuestionBanks = data.questionBanks;
         renderQuestionBanks(data.questionBanks);
         renderPagination(data.pages, page);
         submitBtn.style.display = page == data.total ? 'block' : 'none';
-      } catch (error) { console.error(error); }
+      } catch (error) {
+        console.error(error);
+      }
     }
 
     function renderQuestionBanks(questionBanks) {
@@ -171,28 +286,31 @@
       questionBanks.forEach((qb) => {
         const html = `
           <h2>${qb.title}</h2>
-          <ul><br><hr/><br/>
+          <select id='question-type'>
+            <option>${qb.type}</option>
+          </select>
+          <ul>
+          <br><hr/><br/>
             ${qb.questions.map((q, index) => `
               <li>
-                <p id='q'>${q.question}</p><hr/><br/>
+              <br/>
+              <p id='q'>${q.question}</p>
+              <hr/><br/>
                 <ul>
                   ${q.options.map((option,i) => `
                     <li>
                       <b>${letters[i]}</b>
-                      <input type="radio" name="${qb._id}-${index}" value="${option}" ${userAnswers[`${qb._id}-${index}`] === option ? 'checked' : ''} onchange="saveAnswer('${qb._id}', ${index}, '${option}')">
-                      <label>${option}</label>
+                      <input type="radio" id="${qb._id}-${index}-${option}" name="${qb._id}-${index}" value="${option}" ${userAnswers[`${qb._id}-${index}`] === option ? 'checked' : ''}>
+                      <label for="${qb._id}-${index}-${option}">${option}</label>
                     </li>
                   `).join('')}
                 </ul>
               </li>
             `).join('')}
-          </ul>`;
+          </ul>
+        `;
         questionBanksDiv.innerHTML += html;
       });
-    }
-
-    function saveAnswer(id, index, val) {
-      userAnswers[`${id}-${index}`] = val;
     }
 
     function renderPagination(pages, currentPage) {
@@ -201,84 +319,123 @@
         const button = document.createElement('button');
         button.textContent = i;
         button.className = 'paginate';
-        button.onclick = () => fetchQuestionBanks(i);
-        if (i === currentPage) button.disabled = true;
+        button.onclick = async function() {
+          this.textContent = '...';
+          await new Promise(resolve => setTimeout(resolve, 500));
+          fetchQuestionBanks(i);
+          this.textContent = i;
+        }
+        if (i === currentPage) {
+          button.disabled = true;
+          if ([16,17,18,19,20,21].includes(i)) {
+            document.querySelector('.para').classList.remove('hidden');
+            document.querySelector('.para').scrollIntoView({ behavior: "smooth" });
+          } else if (i === 22) {
+            document.querySelector('.22').classList.remove('hidden');
+            document.querySelector('.22').scrollIntoView({ behavior: "smooth" });
+          }
+        }
         paginationDiv.appendChild(button);
       }
     }
+
+    questionBanksDiv.addEventListener('change', (e) => {
+      if (e.target.type === 'radio') {
+        const [qbId, qIndex] = e.target.name.split('-');
+        userAnswers[`${qbId}-${qIndex}`] = e.target.value;
+      }
+    });
 
     submitBtn.onclick = async () => {
       let title = document.getElementById('subject').value;
       let student_name = document.getElementById('student-name');
       if (student_name.value == "") {
-        alert('Please select student name');
-        student_name.scrollIntoView();
+        alert('Enter Student Name');
+        student_name.scrollIntoView({ behavior: 'smooth' });
         return;
       }
-
+      let data = { userAnswers, subject: title, student_name: student_name.value };
       try {
         const response = await fetch('/api/submit-exam', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userAnswers, subject: title, student_name: student_name.value }),
+          body: JSON.stringify(data),
         });
         const result = await response.json();
-        showModal(result);
-      } catch (error) { console.error(error); }
+        document.querySelector('.result').classList.remove('hidden');
+        document.querySelector('.student-name').textContent = `Name: ${result.student_name}`;
+        document.querySelector('.percentage').textContent = `Percentage: ${result.percentage}%`;
+        document.querySelector('.score').textContent = `Score: ${result.score}`;
+        document.querySelector('.total-questions').textContent = `Out Of: ${result.totalQuestions} Questions`;
+        document.querySelector('.result').scrollIntoView({ behavior: 'smooth' });
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    function showModal(result) {
-      lastResult = result;
-      document.querySelector('.student-name-res').textContent = `Name: ${result.student_name}`;
-      document.querySelector('.percentage-res').textContent = `Percentage: ${result.percentage}%`;
-      document.querySelector('.score-res').textContent = `Score: ${result.score}`;
-      document.querySelector('.total-questions-res').textContent = `Out Of: ${result.totalQuestions} Questions`;
-      document.getElementById('resultModal').style.display = 'flex';
+    document.getElementById('subject').addEventListener('change', function() {
+      fetchQuestionBanks(currentPage);
+    });
+
+    let startTime = localStorage.getItem('timerStart');
+    if (!startTime) {
+      startTime = Date.now();
+      localStorage.setItem('timerStart', startTime);
+    } else {
+      startTime = parseInt(startTime);
     }
 
-    function closeModal() {
-      document.getElementById('resultModal').style.display = 'none';
-      location.reload(); // Optional: reset for next student
+    function updateTimer() {
+      const now = Date.now();
+      const elapsed = now - startTime;
+      const minutes = Math.floor(elapsed / (1000 * 60));
+      const seconds = Math.floor((elapsed / 1000) % 60);
+      if (minutes >= 20) {
+        document.getElementById("timer").textContent = "00:20:00 - Time Up!";
+        clearTimer(true);
+        return;
+      }
+      const h = Math.floor(minutes / 60);
+      const m = minutes % 60;
+      document.getElementById("timer").textContent =
+        String(h).padStart(2, "0") + ":" +
+        String(m).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
     }
 
-    async function sendResultToEmail() {
-      const email = document.getElementById('target-email').value;
-      if (!email) return alert("Enter an email address");
-      
-      const btn = document.querySelector('.send-btn');
-      btn.textContent = "Sending...";
-      btn.disabled = true;
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
 
+    async function clearTimer(isAutoSubmit = false) {
+      clearInterval(timerInterval);
+      localStorage.removeItem('timerStart');
+      const title = document.getElementById('subject').value;
+      const student_name_input = document.getElementById('student-name');
+      let student_name = student_name_input.value;
+      if (!student_name && !isAutoSubmit) {
+        alert('Enter Student Name');
+        return;
+      } else if (!student_name && isAutoSubmit) {
+        student_name = "Timed Out Student";
+      }
+      let data = { userAnswers: userAnswers || {}, subject: title, student_name: student_name };
       try {
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('/api/submit-exam', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, resultData: lastResult })
+          body: JSON.stringify(data),
         });
-        if (response.ok) alert("Result emailed successfully!");
-        else alert("Failed to send email.");
-      } catch (err) { console.error(err); }
-      finally {
-        btn.textContent = "Send to Email";
-        btn.disabled = false;
+        const result = await response.json();
+        document.querySelector('.result').classList.remove('hidden');
+        document.querySelector('.student-name').textContent = `Name: ${result.student_name}`;
+        document.querySelector('.percentage').textContent = `Percentage: ${result.percentage}%`;
+        document.querySelector('.score').textContent = `Score: ${result.score}`;
+        document.querySelector('.total-questions').textContent = `Out Of: ${result.totalQuestions} Questions`;
+        document.querySelector('.result').scrollIntoView({ behavior: 'smooth' });
+      } catch (error) {
+        console.error("Submission error:", error);
       }
     }
-
-    // Timer Logic
-    let startTime = localStorage.getItem('timerStart') || Date.now();
-    localStorage.setItem('timerStart', startTime);
-
-    setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      const totalSecs = Math.floor(elapsed / 1000);
-      const m = Math.floor(totalSecs / 60);
-      const s = totalSecs % 60;
-      document.getElementById("timer").textContent = `Time: ${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-      if (m >= 20) { alert("Time Up!"); submitBtn.click(); }
-    }, 1000);
-
-    document.getElementById('subject').addEventListener('change', () => fetchQuestionBanks(1));
   </script>
 </body>
 </html>
-
