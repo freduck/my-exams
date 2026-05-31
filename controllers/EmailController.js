@@ -24,7 +24,7 @@ this.app.post('/send-results', async (req, res) => {
 
     // 2. Define email options
     let mailOptions = {
-        from: '"Your App Name" <your-email@gmail.com>',
+        from: 'DE-LAMBO EXAMS" <delambocollege@gmail.com>',
         to: email,
         subject: 'Your Assessment Results',
         text: `Here are your results: \n\n ${results}`
