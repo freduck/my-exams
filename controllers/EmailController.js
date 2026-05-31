@@ -17,7 +17,7 @@ this.app.post('/send-results', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail', // or your preferred service
         auth: {
-            user: 'your-email@gmail.com',
+            user: 'delambocollege@gmail.com',
             pass: 'your-app-password' // Use App Passwords for Gmail
         }
     });
