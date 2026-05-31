@@ -18,7 +18,7 @@ this.app.post('/send-results', async (req, res) => {
         service: 'gmail', // or your preferred service
         auth: {
             user: 'delambocollege@gmail.com',
-            pass: 'your-app-password' // Use App Passwords for Gmail
+            pass: 'lvmc llts xyib jodz' // Use App Passwords for Gmail
         }
     });
 
