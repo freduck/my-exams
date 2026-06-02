@@ -14,7 +14,6 @@
     
     .flex { display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center; }
     
-    /* Original 10px padding */
     select { 
       padding: 10px; 
       font-size: 1rem; 
@@ -147,7 +146,7 @@
       <div class="email-section">
         <input type="email" id="parent-email" placeholder="Enter parent email">
         <button onclick="sendEmail()">Send Result to Email</button>
-        <button class="close-modal" onclick="location.reload()">Finish & Exit</button>
+        <button class="close-modal" onclick="finishAndExit()">Finish & Exit</button>
       </div>
     </div>
   </div>
@@ -156,6 +155,7 @@
     let currentPage = 1;
     let userAnswers = {};
     let finalResultData = null; 
+    const storageKey = 'exam_start_time';
 
     // Fetch only when subject changes
     async function fetchQuestionBanks(page) {
@@ -236,6 +236,9 @@
         const result = await response.json();
         finalResultData = result;
 
+        // Clear the timer from storage upon successful exam submission
+        localStorage.removeItem(storageKey);
+
         // Populate Modal
         document.getElementById('res-student').textContent = `Name: ${result.student_name}`;
         document.getElementById('res-score').textContent = `Score: ${result.score}`;
@@ -267,14 +270,30 @@
       finally { btn.textContent = "Send Result to Email"; }
     }
 
-    // Timer Logic
-    let startTime = Date.now();
+    // Handle Finish & Exit cleanup cleanly
+    function finishAndExit() {
+      localStorage.removeItem(storageKey);
+      location.reload();
+    }
+
+    // --- PERSISTENT TIMER LOGIC ---
+    let startTime = localStorage.getItem(storageKey);
+
+    if (!startTime) {
+        startTime = Date.now().toString();
+        localStorage.setItem(storageKey, startTime);
+    }
+
+    startTime = parseInt(startTime, 10);
+
     setInterval(() => {
         let elapsed = Math.floor((Date.now() - startTime) / 1000);
-        let m = Math.floor(elapsed / 60);
+        let h = Math.floor(elapsed / 3600);
+        let m = Math.floor((elapsed % 3600) / 60);
         let s = elapsed % 60;
+        
         document.getElementById('timer').textContent = 
-            `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+            `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
     }, 1000);
   </script>
 </body>
