@@ -1,152 +1,163 @@
-<link rel="stylesheet" href="css/style.css">
-<style>
-	* {
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box; /* Prevents elements from breaking layout boundaries */
-	}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Student</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-	body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 100vh;
-		background-color: #f0f2f5; /* Light grey background makes the white form pop */
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-		padding: 20px;
-	}
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-	.container {
-		width: 100%;
-		max-width: 550px; 
-		background: #ffffff;
-		border: 2px solid #222222; /* Highly visible, sharp container border */
-		padding: 40px 30px;
-		border-radius: 12px; 
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Heavy shadow for strong depth */
-	}
+        /* Card Container */
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
 
-	h2 {
-		margin-bottom: 24px;
-		color: #111111; /* Near black for maximum readability */
-		font-size: 28px;
-		font-weight: 700;
-		text-align: center;
-	}
+        h2 {
+            text-align: center;
+            color: #000000;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
 
-	.space {
-		padding: 8px 0;
-	}
+        /* Form Groups & Inputs */
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-	/* High-Visibility Form Fields */
-	.space select, 
-	.space input[type="text"], 
-	.space input[type="tel"], 
-	.space input[type="email"], 
-	.space input[type="password"], 
-	.space textarea {
-		padding: 14px; /* Larger tap/click targets */
-		width: 100%;
-		border: 2px solid #4a5568; /* Thick, dark border for clear definition */
-		background-color: #f8fafc; /* Subtle tint so inputs stand out against white background */
-		border-radius: 6px;
-		font-size: 16px; 
-		color: #1a202c;
-		font-weight: 500;
-		outline: none;
-		transition: all 0.2s ease;
-	}
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #758694; /* Grey border matching the layout */
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #333;
+            background-color: #fafafa;
+            outline: none;
+            transition: border-color 0.2s;
+        }
 
-	/* File Input Specific Styling */
-	.space input[type="file"] {
-		width: 100%;
-		padding: 10px;
-		border: 2px dashed #4a5568; /* Dashed border specifically for the file uploader */
-		border-radius: 6px;
-		background: #f8fafc;
-		cursor: pointer;
-	}
+        input::placeholder,
+        textarea::placeholder {
+            color: #8e9bb0;
+        }
 
-	/* Focus state: Field lights up boldly when clicked */
-	.space select:focus, 
-	.space input:focus, 
-	.space textarea:focus {
-		border-color: #dc143c; /* Lights up crimson on focus */
-		background-color: #ffffff;
-		box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.2); 
-	}
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4a90e2;
+        }
 
-	/* Placeholder visibility boost */
-	::placeholder {
-		color: #718096;
-		opacity: 1; 
-		font-weight: 400;
-	}
+        /* Textarea specific */
+        textarea {
+            resize: vertical;
+        }
 
-	/* High-Contrast Crimson Button */
-	.space button {
-		width: 100%;
-		padding: 16px;
-		background-color: #dc143c; /* True Crimson */
-		color: #ffffff;
-		border: 2px solid #b31034;
-		border-radius: 6px;
-		font-size: 18px;
-		font-weight: 700; /* Extra bold text */
-		letter-spacing: 0.5px;
-		cursor: pointer;
-		transition: background-color 0.2s ease, transform 0.1s ease;
-		margin-top: 10px;
-		box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3); /* Crimson shadow makes it pop */
-	}
+        /* File Input container matching the dashed aesthetic */
+        .file-input-wrapper {
+            border: 1px dashed #758694;
+            border-radius: 4px;
+            padding: 8px;
+            background-color: #fafafa;
+        }
 
-	.space button:hover {
-		background-color: #b31034; /* Darker crimson on hover */
-		border-color: #8a0c28;
-	}
+        .file-input-wrapper input[type="file"] {
+            width: 100%;
+            font-size: 0.85rem;
+            color: #555;
+        }
 
-	.space button:active {
-		transform: scale(0.98); /* Tactile press effect */
-	}
-</style>
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #dc143c; /* Crimson Red */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
 
-<div class="container">
-	<h2>Add New Student</h2>
-	<form action="/add-student" enctype="multipart/form-data" method="post">
-		<div class="space">
-			<input type="text" name="name" id="student-name" placeholder="Student Name">
-		</div>
-		<div class="space">
-			<input type="tel" name="tel" id="tel" placeholder="Phone Number (e.g., 080-123-456)">
-		</div>
-		<div class="space">
-			<input type="email" name="email" id="email" placeholder="E-mail Address">
-		</div>
-		<div class="space">
-			<select name="class" id="class">
-				<option value="" disabled selected>-- Select Student Class --</option>
-				<option value="JSS1">JSS1</option>
-				<option value="JSS2">JSS2</option>
-				<option value="JSS3">JSS3</option>
-				<option value="SSS1">SSS1</option>
-				<option value="SSS2">SSS2</option>
-				<option value="SSS3">SSS3</option>
-			</select>
-		</div>
-		<div class="space">
-			<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
-		</div>
-		<div class="space">
-			<input type="text" name="username" id="username" placeholder="Username">
-		</div>
-		<div class="space">
-			<input type="file" name="image" id="image">
-		</div>
-		<div class="space">
-			<input type="password" name="password" id="password" placeholder="Password">
-		</div>
-		<div class="space">
-			<button id="add" type="submit">Add Student</button>
-		</div>
-	</form>
-</div>
+        .submit-btn:hover {
+            background-color: #b80f30;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Add New Student</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Student Name" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="tel" placeholder="Phone Number (e.g., 080-123-456)" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" placeholder="E-mail Address" required>
+            </div>
+            
+            <div class="form-group">
+                <select required>
+                    <option value="" disabled selected>-- Select Student Class --</option>
+                    <option value="class-a">Class A</option>
+                    <option value="class-b">Class B</option>
+                    <option value="class-c">Class C</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <textarea placeholder="Student Address" rows="3" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" placeholder="Username" required>
+            </div>
+            
+            <div class="form-group file-input-wrapper">
+                <input type="file" id="student-photo">
+            </div>
+            
+            <div class="form-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Add Student</button>
+        </form>
+    </div>
+
+</body>
+</html>
