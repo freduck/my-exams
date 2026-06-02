@@ -1,0 +1,5469 @@
+[{
+  "_id": {
+    "$oid": "698c487da726aea04ee48f77"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "____ is an articles that are won on the body to protect and beautify the body",
+      "options": [
+        "blouses ",
+        "Appearance ",
+        "Clothings",
+        "Jewellery"
+      ],
+      "correct": "Clothing",
+      "_id": {
+        "$oid": "698c487da726aea04ee48f78"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c525c48be054edd2801c9"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is a guideline for handling chemicals?",
+      "options": [
+        "Keep boxes containing chemicals closed during storage",
+        "Allow eating inside the storage area",
+        "Avoid using protective equipment",
+        "Ignore Material Safety Data Sheets"
+      ],
+      "correct": "Keep boxes containing chemicals closed during storage",
+      "_id": {
+        "$oid": "698c525c48be054edd2801ca"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c52ff48be054edd2801d1"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Hazardous chemicals such as acids and pesticides should be supplied to:",
+      "options": [
+        "Any buyer without restrictions",
+        "Users with high integrity who will put them to constructive use",
+        "Only students for educational purposes",
+        "Retail shops for resale"
+      ],
+      "correct": "Users with high integrity who will put them to constructive use",
+      "_id": {
+        "$oid": "698c52ff48be054edd2801d2"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c53aa48be054edd2801d7"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is an ethical requirement for sourcing chemicals?",
+      "options": [
+        "Sourcing through licensed vendors with high integrity",
+        "Supplying fake and adulterated chemicals",
+        "Avoiding government permits",
+        "Allowing food in chemical storage areas"
+      ],
+      "correct": "Sourcing through licensed vendors with high integrity",
+      "_id": {
+        "$oid": "698c53aa48be054edd2801d8"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c542948be054edd2801da"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "What does ethics generally refer to?",
+      "options": [
+        "A set of principles guiding right and wrong decisions",
+        "Rules for marketing products",
+        "Government laws on trade",
+        "Scientific experiments"
+      ],
+      "correct": "A set of principles guiding right and wrong decisions",
+      "_id": {
+        "$oid": "698c542948be054edd2801db"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c54ff48be054edd2801e6"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is an attribute of truthfulness?",
+      "options": [
+        "Greed",
+        "Fear",
+        "Straightforwardness",
+        "Laziness"
+      ],
+      "correct": "Straightforwardness",
+      "_id": {
+        "$oid": "698c54ff48be054edd2801e7"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c55b448be054edd2801ec"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Indirect service occupations are usually paid by",
+      "options": [
+        "The final consumer directly",
+        "Private companies",
+        "Non-profit organizations",
+        "The final consumer directly"
+      ],
+      "correct": "The government through public tax",
+      "_id": {
+        "$oid": "698c55b448be054edd2801ed"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c563d48be054edd280204"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is an example of a primary or extractive occupation?",
+      "options": [
+        "Civil engineering",
+        "Fishing",
+        "Teaching",
+        "Bricklaying"
+      ],
+      "correct": "Fishing",
+      "_id": {
+        "$oid": "698c563d48be054edd280205"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c573548be054edd28020a"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "What is the primary purpose of an occupation?",
+      "options": [
+        "To occupy leisure time",
+        "To earn a living",
+        "To provide free services",
+        "To avoid training or education"
+      ],
+      "correct": "To earn a living",
+      "_id": {
+        "$oid": "698c573548be054edd28020b"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c593b48be054edd280222"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Primary production refers to",
+      "options": [
+        "The provision of professional or commercial services",
+        "The conversion of raw materials into finished goods",
+        "The extraction of raw materials provided by nature",
+        "The marketing of goods and services"
+      ],
+      "correct": "The extraction of raw materials provided by nature",
+      "_id": {
+        "$oid": "698c593b48be054edd280223"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c59c948be054edd280230"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is NOT a type of production?",
+      "options": [
+        "Direct production",
+        "Indirect production",
+        "Secondary production",
+        "Tertiary production"
+      ],
+      "correct": "Secondary production",
+      "_id": {
+        "$oid": "698c59c948be054edd280231"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c5abf48be054edd280236"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "What is the primary definition of production?",
+      "options": [
+        "The act of consuming goods and services",
+        "The creation of utility or goods and services to satisfy human wants",
+        "The distribution of finished goods to consumers",
+        "The extraction of raw materials from nature"
+      ],
+      "correct": "The creation of utility or goods and services to satisfy human wants",
+      "_id": {
+        "$oid": "698c5abf48be054edd280237"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c5d4c48be054edd280275"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is NOT a factor of production?",
+      "options": [
+        "Land",
+        "Labour",
+        "Capital",
+        "Technology"
+      ],
+      "correct": "Technology",
+      "_id": {
+        "$oid": "698c5d4c48be054edd280276"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c5dcf48be054edd28027b"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "What is the reward for land as a factor of production?",
+      "options": [
+        "Profit",
+        "Rent",
+        "Interest",
+        "Wages"
+      ],
+      "correct": "Rent",
+      "_id": {
+        "$oid": "698c5dcf48be054edd28027c"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c5e5948be054edd280280"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "Which of the following is a characteristic of capital?",
+      "options": [
+        "Capital is a gift of nature",
+        "Capital is man-made",
+        "Capital is immobile",
+        "Capital is a human factor"
+      ],
+      "correct": "Capital is man-made",
+      "_id": {
+        "$oid": "698c5e5948be054edd280281"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f21b409a8099ca9520e6"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "find the value of x in the equation 2x + 5 = 15",
+      "options": [
+        "20",
+        "2",
+        "5",
+        "6"
+      ],
+      "correct": "5",
+      "_id": {
+        "$oid": "6989f21b409a8099ca9520e7"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f29b409a8099ca9520ec"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Find the value of y in 2y +2x +5y",
+      "options": [
+        "6y",
+        "4y",
+        "5y",
+        "7y"
+      ],
+      "correct": "6y",
+      "_id": {
+        "$oid": "6989f29b409a8099ca9520ed"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f35d409a8099ca9520f2"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "_______ is an act of feeling of extreme tiredness ",
+      "options": [
+        "Fatigue",
+        "Sleep",
+        "Rest",
+        "Task"
+      ],
+      "correct": "Fatigue",
+      "_id": {
+        "$oid": "6989f35d409a8099ca9520f3"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f41f2f9386f233ef5bfd"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "Fatigue can also be called?",
+      "options": [
+        "Tiredness",
+        "restless",
+        "Play",
+        "energy"
+      ],
+      "correct": "Tiredness",
+      "_id": {
+        "$oid": "6989f41f2f9386f233ef5bfe"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f43742c18375b76b7449"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "one of the causes of fatigue is ____",
+      "options": [
+        "Illness",
+        "Energy",
+        "Relaxing",
+        "Adequate Meats"
+      ],
+      "correct": "Illness",
+      "_id": {
+        "$oid": "6989f43742c18375b76b744a"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f45c6fc5c075b0db9f49"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "______ is the act of sitting or lying down after a period of activity in order to refresh the body and mind",
+      "options": [
+        "Dullness",
+        "Rest",
+        "Exercise",
+        "Hunger"
+      ],
+      "correct": "Hunger",
+      "_id": {
+        "$oid": "6989f45c6fc5c075b0db9f4a"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6989f48e44280ec171bc13e3"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "________ is one of the importance of rest?",
+      "options": [
+        "The body relaxes",
+        "Have enough rest",
+        "Slugigishness",
+        "too much exercise"
+      ],
+      "correct": "Fatigue",
+      "_id": {
+        "$oid": "6989f48e44280ec171bc13e4"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c5f1848be054edd280286"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "What is the reward for an entrepreneur?",
+      "options": [
+        "interest",
+        "Profit",
+        "Rent",
+        "Wages"
+      ],
+      "correct": "Profit",
+      "_id": {
+        "$oid": "698c5f1848be054edd280287"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c614a48be054edd2802aa"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "for role identification  ___ helps to reveal our role in the society ",
+      "options": [
+        "Policemen ",
+        "Nurses",
+        "Clothes",
+        "Skirt"
+      ],
+      "correct": "Clothes",
+      "_id": {
+        "$oid": "698c614a48be054edd2802ab"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c649a48be054edd2802b6"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "one of the following is not a guild line for choosing and wearing decent clothes   ",
+      "options": [
+        "Available money ",
+        "peer group ",
+        "Occasion ",
+        "Jewellery"
+      ],
+      "correct": "Available money",
+      "_id": {
+        "$oid": "698c649a48be054edd2802b7"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c652548be054edd2802b9"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "Dirty clothes produces_____",
+      "options": [
+        "Offensive  Smell",
+        "Beautiful Smell",
+        "A Good Smell ",
+        "Indecent Dress"
+      ],
+      "correct": "Offensive Smell",
+      "_id": {
+        "$oid": "698c652548be054edd2802ba"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c659348be054edd2802bf"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "_________ is the process of washing clothes and finishing ",
+      "options": [
+        "Clothes",
+        "Ironing",
+        "underwears",
+        "Laundry"
+      ],
+      "correct": "Laundry",
+      "_id": {
+        "$oid": "698c659348be054edd2802c0"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c661548be054edd2802c5"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "_____ and ___ are equipment used for laundry",
+      "options": [
+        "Buckets and Line ",
+        "Soap and Resources",
+        "Paste and Sponge",
+        "Bottle and Wardrobe"
+      ],
+      "correct": "Buckets and Line",
+      "_id": {
+        "$oid": "698c661548be054edd2802c6"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c667d48be054edd2802c8"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "____ are substances applied on our hair, body or face to look more attractive",
+      "options": [
+        "Launderes",
+        "Cosmetics",
+        "Consumers",
+        "Perspiration"
+      ],
+      "correct": "Cosmetics",
+      "_id": {
+        "$oid": "698c667d48be054edd2802c9"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c66f648be054edd2802ce"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "Deodorants are put on the skin to prevent the body from having ______ ",
+      "options": [
+        "Oils",
+        "Cream",
+        "Unpleasant Smell",
+        "Pleasant Odour"
+      ],
+      "correct": "Unpleasant Smell",
+      "_id": {
+        "$oid": "698c66f648be054edd2802cf"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c685c48be054edd2802da"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "Cosmetics Perfect Your Natural Beauty and make you _____ ",
+      "options": [
+        "persistent",
+        "Attentive",
+        "Attractive",
+        "Productive"
+      ],
+      "correct": "Attractive",
+      "_id": {
+        "$oid": "698c685c48be054edd2802db"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c68f948be054edd2802dd"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "special products or astringents that reduce the amount of perspiration are called ",
+      "options": [
+        "Anti-Perspirations",
+        "Anti-Perspective",
+        "Anti-septic",
+        "Anti-peplum"
+      ],
+      "correct": "Anti-Perspirations",
+      "_id": {
+        "$oid": "698c68f948be054edd2802de"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c699448be054edd2802e0"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "Toing make the skin of the face firm by ______",
+      "options": [
+        "Opennig the pores",
+        "Closing The Pores",
+        "Swelling up",
+        "Strengthening the Pores "
+      ],
+      "correct": "Closing The Pores",
+      "_id": {
+        "$oid": "698c699448be054edd2802e1"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c6b1848be054edd280316"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "one of these are the point to consider in choosing cosmetics",
+      "options": [
+        "Use Heavy make-up",
+        "Treat Skin Problems",
+        "Emphasize on facial cream",
+        "Avoid Heavy Make-up"
+      ],
+      "correct": "Avoid Heavy Make-up",
+      "_id": {
+        "$oid": "698c6b1848be054edd280317"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c6b9048be054edd280319"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "_____ is not suitable for the skin ",
+      "options": [
+        "Cleansing Lotion",
+        "Toilet Soap",
+        "Bleaching Cream",
+        "Moisturizing"
+      ],
+      "correct": "Bleaching Cream",
+      "_id": {
+        "$oid": "698c6b9048be054edd28031a"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c6be648be054edd28031e"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "Domestic violence occurs in______",
+      "options": [
+        "School",
+        "Home",
+        "Church",
+        "Market"
+      ],
+      "correct": "Home",
+      "_id": {
+        "$oid": "698c6be648be054edd28031f"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c6c6848be054edd280321"
+  },
+  "title": "Home Economics",
+  "questions": [
+    {
+      "question": "_________ family is made up of man , his wives and their children",
+      "options": [
+        "Nuclear",
+        "Extended",
+        "Polygamous",
+        "Community"
+      ],
+      "correct": "Polygamous",
+      "_id": {
+        "$oid": "698c6c6848be054edd280322"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c6ffb48be054edd280351"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "The Following are needs for monitoring and Controlling food, drugs and chemicals except",
+      "options": [
+        "To check if they are not harmful to the body",
+        "to ensure they will not kill when consumed",
+        "To ensure they are harmful to the consumer",
+        "To Ensure the safety of the consumers"
+      ],
+      "correct": "To ensure they are harmful to the consumer",
+      "_id": {
+        "$oid": "698c6ffb48be054edd280352"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c70e748be054edd280357"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "one of the features of sole proprietorship is ____ ",
+      "options": [
+        "The Owner takes all the profits and all the risks of the business",
+        "the person mange the business with levity ",
+        "He or She is not usually interested in the business",
+        "it is managed by the government"
+      ],
+      "correct": "The Owner takes all the profits and all the risks of the business",
+      "_id": {
+        "$oid": "698c70e748be054edd280358"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c715148be054edd28035a"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "____ is the business that exists between two or more persons",
+      "options": [
+        "Joint Business",
+        "Partnership Business",
+        "All of the Above",
+        "None of the above"
+      ],
+      "correct": "Partnership Business",
+      "_id": {
+        "$oid": "698c715148be054edd28035b"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c71c948be054edd280360"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "______ is human factor",
+      "options": [
+        "Land",
+        "Labour",
+        "Capital",
+        "Rain"
+      ],
+      "correct": "Capital",
+      "_id": {
+        "$oid": "698c71c948be054edd280361"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c72c448be054edd280369"
+  },
+  "title": "Business Studies",
+  "questions": [
+    {
+      "question": "an organization set up by local, state or federal Government is called _____",
+      "options": [
+        "Public Enterprise",
+        "Individual Enterprise",
+        "Tertiary Enterprise",
+        "Private Enterprise"
+      ],
+      "correct": "Public Enterprise",
+      "_id": {
+        "$oid": "698c72c448be054edd28036a"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8443e44fba528c01364b"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Give 45775 correct to  1 s.f",
+      "options": [
+        "50000",
+        "450000",
+        "60000",
+        "80000"
+      ],
+      "correct": "50000",
+      "_id": {
+        "$oid": "698c8443e44fba528c01364c"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c851fe44fba528c013654"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Give  5.781  correct to 2 s.f",
+      "options": [
+        "5.8",
+        "6.8",
+        "5.78",
+        "5.67"
+      ],
+      "correct": "5.8",
+      "_id": {
+        "$oid": "698c851fe44fba528c013655"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c858fe44fba528c01365d"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Give 0.00244 correct to 2 s.f",
+      "options": [
+        "0.0024",
+        "0.0025",
+        "0.00244",
+        "0.00254"
+      ],
+      "correct": "0.0024",
+      "_id": {
+        "$oid": "698c858fe44fba528c01365e"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c85f6e44fba528c013663"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Give 7.3425 to the nearest hundred",
+      "options": [
+        " 7.3425",
+        " 7.3435",
+        " 7.34   ",
+        " 7.346"
+      ],
+      "correct": " 7.34   ",
+      "_id": {
+        "$oid": "698c85f6e44fba528c013664"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c86cde44fba528c01366c"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "use approximation to find the value of 35. 8 – 8.99",
+      "options": [
+        "25",
+        "27",
+        "38",
+        "37"
+      ],
+      "correct": "27",
+      "_id": {
+        "$oid": "698c86cde44fba528c01366d"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c879ce44fba528c013675"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Expand 2389ten in it base",
+      "options": [
+        "2 x 103 + 3 x 10^2 + 8 x 101  + 9 x 10",
+        "2 x 10^3 + 3 x 102 + 8 x 101  + 9 x 10^0",
+        "2 x 10^3 + 3 x 10^2 + 8 x 10^1  + 9 x 1",
+        "2 x 103 + 3 x 102 + 8 x 101  + 9 x 10^-2"
+      ],
+      "correct": "2 x 10^3 + 3 x 10^2 + 8 x 10^1  + 9 x 1",
+      "_id": {
+        "$oid": "698c879ce44fba528c013676"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8937e44fba528c01367e"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Expand 1 0  0 1two in its base",
+      "options": [
+        "1 x 2^3 + 0 x 2^2 + 0 x 2^1 + 1 x 1",
+        "1 x 23 + 0 x 2^2 + 0 x 21 + 1 x 1",
+        "1 x 23 + 0 x 22 + 0 x 21 + 1 x 2^0",
+        "1 x 23 + 0 x 2^2 + 0 x 2^1 + 1 x 1"
+      ],
+      "correct": "1 x 2^3 + 0 x 2^2 + 0 x 2^1 + 1 x 1",
+      "_id": {
+        "$oid": "698c8937e44fba528c01367f"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8a1fe44fba528c01368d"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Calculate in base two 1  0 1   + 1  0   1\n",
+      "options": [
+        "1  0  1  0 0 0",
+        "1  0  1  0 0",
+        "1  0  1  0",
+        "01  0  1  0"
+      ],
+      "correct": "1  0  1  0",
+      "_id": {
+        "$oid": "698c8a1fe44fba528c01368e"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8b1be44fba528c01369c"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "simplify   1   0   1   0    1 + 1   1    1\n",
+      "options": [
+        "     11   1   0   0",
+        "0 0 1 1 1 0 0",
+        "1 1 0  1  1  1  0  0",
+        "  1 1   1   0   0"
+      ],
+      "correct": "      11   1   0   0",
+      "_id": {
+        "$oid": "698c8b1be44fba528c01369d"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8b98e44fba528c0136ab"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Find the product of 1101two X 111two",
+      "options": [
+        "0 0 1 01 1   0   1    1",
+        "1 01 1   0   1    1",
+        "1 01 1   0   1  0 0  1",
+        " 1 1 1 01 1   0   1    1"
+      ],
+      "correct": "1 01 1   0   1    1",
+      "_id": {
+        "$oid": "698c8b98e44fba528c0136ac"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8ccce44fba528c0136c3"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "The sum of two numbers is equal to 67512. If one of the numbers is 24351, what is the second number? ",
+      "options": [
+        "4     3      1      6      1",
+        "6 4          3      1      6       1",
+        "5 4          3      1      6       1",
+        "4          3      1      6   5    1"
+      ],
+      "correct": "4     3      1      6      1",
+      "_id": {
+        "$oid": "698c8ccce44fba528c0136c4"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8e0fe44fba528c0136da"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Find the value of the symbol in ¥ + 7 = 14",
+      "options": [
+        "¥ = 7",
+        "¥ = 28",
+        "¥ = 21",
+        "¥ = 42"
+      ],
+      "correct": "¥ = 7",
+      "_id": {
+        "$oid": "698c8e0fe44fba528c0136db"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8f08e44fba528c0136e5"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "A man is x years old and his son is 10 years old. What is their total age? ",
+      "options": [
+        "x+10 years",
+        "10-Xyears",
+        "10(x)years",
+        "10/x years"
+      ],
+      "correct": "x+10years",
+      "_id": {
+        "$oid": "698c8f08e44fba528c0136e6"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c8f8ee44fba528c0136ee"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "A man is x years old and his son is 10 years old, if the difference between their ages is 22 years, what is the value of x?",
+      "options": [
+        "32years",
+        "33years",
+        "34years",
+        "45years"
+      ],
+      "correct": "32years",
+      "_id": {
+        "$oid": "698c8f8ee44fba528c0136ef"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c903be44fba528c0136f4"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Think of a number and add 5 to it, if the result is 15.What is the number?",
+      "options": [
+        "8",
+        "9",
+        "11",
+        "10"
+      ],
+      "correct": "10",
+      "_id": {
+        "$oid": "698c903be44fba528c0136f5"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c90d2e44fba528c0136ff"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "A woman is three times as old as her daughter. If the woman is x years old, how old is her daughter?",
+      "options": [
+        "3x years old",
+        "x/3 years old",
+        "3+x years old",
+        "3-x years old"
+      ],
+      "correct": "x/3 years old",
+      "_id": {
+        "$oid": "698c90d2e44fba528c013700"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c91ece44fba528c01370a"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "write out the coefficients of this equation –1/2x + 5y–z      ",
+      "options": [
+        "-1/2 is the coefficient of x and +5 is the coefficient of y",
+        "-1/2x,+5y",
+        "z,y,x",
+        "x,y,z"
+      ],
+      "correct": "-1/2 is the coefficient of x and +5 is the coefficient of y",
+      "_id": {
+        "$oid": "698c91ece44fba528c01370b"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "698c9264e44fba528c013713"
+  },
+  "title": "Maths",
+  "questions": [
+    {
+      "question": "Simplify 12b – 5b  ",
+      "options": [
+        "17b",
+        "12b",
+        "5b",
+        "7b"
+      ],
+      "correct": "7b",
+      "_id": {
+        "$oid": "698c9264e44fba528c013714"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6992bc871b21e3ac6fe360c6"
+  },
+  "title": "English Language",
+  "questions": [
+    {
+      "question": "my mother prepared a ______ meal to mark my birthday yesterday",
+      "options": [
+        "usual",
+        "delicious",
+        "sour",
+        "dilecious"
+      ],
+      "correct": "delicious",
+      "_id": {
+        "$oid": "698f079efba29b73b8a6e787"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360c8"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which output device is also known as the Visual Display Unit (VDU)?",
+      "options": [
+        "Keyboard",
+        "Printer",
+        "Monitor",
+        "Mouse"
+      ],
+      "correct": "Monitor"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360c9"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What is the output displayed on a monitor commonly called?",
+      "options": [
+        "Hardcopy",
+        "Softcopy",
+        "Source document",
+        "File"
+      ],
+      "correct": "Softcopy"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360ca"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which type of monitor can only display text and numbers in a single color?",
+      "options": [
+        "VGA Monitor",
+        "Monochrome Text Monitor",
+        "SVGA Monitor",
+        "CGA Monitor"
+      ],
+      "correct": "Monochrome Text Monitor"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360cb"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What does the acronym 'CRT' stand for in monitor technology?",
+      "options": [
+        "Central Ray Tube",
+        "Cathode Ray Tube",
+        "Color Ray Tube",
+        "Common Ray Tube"
+      ],
+      "correct": "Cathode Ray Tube"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360cc"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which color graphic adapter can display up to 16 colors?",
+      "options": [
+        "VGA",
+        "EGA",
+        "CGA",
+        "SVGA"
+      ],
+      "correct": "CGA"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360cd"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "The system unit is also known as the:",
+      "options": [
+        "Monitor",
+        "Base unit",
+        "Peripheral",
+        "Storage"
+      ],
+      "correct": "Base unit"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360ce"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which part of the CPU is responsible for performing calculations?",
+      "options": [
+        "Control Unit",
+        "Memory Unit",
+        "Arithmetic and Logic Unit (ALU)",
+        "Motherboard"
+      ],
+      "correct": "Arithmetic and Logic Unit (ALU)"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360cf"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which of these is an INTERNAL feature of the system unit?",
+      "options": [
+        "Power button",
+        "Motherboard",
+        "Reset button",
+        "Ports"
+      ],
+      "correct": "Motherboard"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d0"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which drive usually represents the Hard Disk Drive in a computer?",
+      "options": [
+        "Drive A:",
+        "Drive B:",
+        "Drive C:",
+        "Drive D:"
+      ],
+      "correct": "Drive C:"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d1"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What is the purpose of the 'Reset Button' on a system unit?",
+      "options": [
+        "To turn off the power",
+        "To initialize/restart the system",
+        "To lock the keyboard",
+        "To eject a disk"
+      ],
+      "correct": "To initialize/restart the system"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d2"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which of the following is a rule for computer laboratory ethics?",
+      "options": [
+        "Eat inside the lab",
+        "Run in the lab",
+        "Scan flash drives before use",
+        "Repair broken cables yourself"
+      ],
+      "correct": "Scan flash drives before use"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d3"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What device is used to protect the computer from dust after use?",
+      "options": [
+        "UPS",
+        "Stabilizer",
+        "Dust cover",
+        "Surge protector"
+      ],
+      "correct": "Dust cover"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d4"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "A software that turns the computer into a sophisticated typewriter is a:",
+      "options": [
+        "Spreadsheet",
+        "Word Processor",
+        "Database",
+        "Presentation tool"
+      ],
+      "correct": "Word Processor"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d5"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which feature automatically moves text to a new line without pressing 'Enter'?",
+      "options": [
+        "Auto-save",
+        "Spelling checker",
+        "Word wrap",
+        "Formatting"
+      ],
+      "correct": "Word wrap"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d6"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Which of these is NOT an example of a word processor?",
+      "options": [
+        "MS-Word",
+        "Notepad",
+        "WordPad",
+        "Microsoft Excel"
+      ],
+      "correct": "Microsoft Excel"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d7"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What are 'Non-printing characters' in Word Processing?",
+      "options": [
+        "Letters that are invisible",
+        "Symbols like Tab/Space that don't show on paper",
+        "Broken characters",
+        "Deleted words"
+      ],
+      "correct": "Symbols like Tab/Space that don't show on paper"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d8"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "Data processing is the process of converting data into:",
+      "options": [
+        "Programs",
+        "Hard disks",
+        "Meaningful information",
+        "Input devices"
+      ],
+      "correct": "Meaningful information"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360d9"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "The document on which data is first recorded is called the:",
+      "options": [
+        "Result document",
+        "Source document",
+        "File document",
+        "System document"
+      ],
+      "correct": "Source document"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360da"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What stage of data collection involves checking data to ensure it is logically correct?",
+      "options": [
+        "Sorting",
+        "Transmission",
+        "Validation",
+        "Preparation"
+      ],
+      "correct": "Validation"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992d43f1b21e3ac6fe360db"
+  },
+  "title": "Digital Technologies",
+  "questions": [
+    {
+      "question": "What is the process of re-arranging data into a specific sequence?",
+      "options": [
+        "Verification",
+        "Sorting",
+        "Creation",
+        "Conversion"
+      ],
+      "correct": "Sorting"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360de"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which art form is defined as the use of lines to create a picture, image, form, or shape?",
+      "options": [
+        "Painting",
+        "Drawing",
+        "Sculpture",
+        "Mosaic"
+      ],
+      "correct": "Drawing"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360df"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which element of composition ensures that all parts of a work are in agreement and nothing is out of place?",
+      "options": [
+        "Contrast",
+        "Rhythm",
+        "Unity",
+        "Balance"
+      ],
+      "correct": "Unity"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e0"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "What term describes the relative lightness or darkness of a colour?",
+      "options": [
+        "Hue",
+        "Value",
+        "Intensity",
+        "Contrast"
+      ],
+      "correct": "Value"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e1"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which of the following is a primary colour?",
+      "options": [
+        "Green",
+        "Orange",
+        "Purple",
+        "Blue"
+      ],
+      "correct": "Blue"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e2"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Mixing red and blue in equal proportions results in which secondary colour?",
+      "options": [
+        "Green",
+        "Purple",
+        "Orange",
+        "Brown"
+      ],
+      "correct": "Purple"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e3"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "In colour symbolism, which colour is often associated with royalty and exotic items?",
+      "options": [
+        "Yellow",
+        "Purple",
+        "Green",
+        "Pink"
+      ],
+      "correct": "Purple"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e4"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "What is another name for 'art material'?",
+      "options": [
+        "Art Tool",
+        "Art Medium",
+        "Art Technique",
+        "Art Style"
+      ],
+      "correct": "Art Medium"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e5"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which tool is specifically associated with the branch of Ceramics?",
+      "options": [
+        "Chisel",
+        "Kiln",
+        "Tjanting",
+        "Easel"
+      ],
+      "correct": "Kiln"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e6"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "What is the art or craft of making things with beads called?",
+      "options": [
+        "Beadwork",
+        "Collage",
+        "Mosaic",
+        "Textile"
+      ],
+      "correct": "Beadwork"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e7"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which technique involves creating decorative pictures by setting small pieces of glass or pebbles into adhesive?",
+      "options": [
+        "Collage",
+        "Beading",
+        "Mosaic",
+        "Painting"
+      ],
+      "correct": "Mosaic"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e8"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "The term 'Collage' is derived from the French word 'collar', which means:",
+      "options": [
+        "To cut",
+        "To glue",
+        "To draw",
+        "To paint"
+      ],
+      "correct": "To glue"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360e9"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which mosaic method allows the artist to see the pattern face-up exactly as it will appear in the final installation?",
+      "options": [
+        "Direct method",
+        "Indirect method",
+        "Double indirect method",
+        "Triple method"
+      ],
+      "correct": "Double indirect method"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360ea"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "What is a major difference between Mosaic and Collage?",
+      "options": [
+        "Mosaic is younger than collage",
+        "Mosaic is generally more durable and lasts longer",
+        "Collage uses harder materials than mosaic",
+        "Mosaic allows for overlapping materials"
+      ],
+      "correct": "Mosaic is generally more durable and lasts longer"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360eb"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Who were the two cubist painters that coined the term 'Collage'?",
+      "options": [
+        "Leonardo da Vinci and Michelangelo",
+        "George Braque and Pablo Picasso",
+        "Vincent van Gogh and Claude Monet",
+        "Donatello and Raphael"
+      ],
+      "correct": "George Braque and Pablo Picasso"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360ec"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "How many major nutrients are essential to human life and health?",
+      "options": [
+        "Four",
+        "Five",
+        "Six",
+        "Ten"
+      ],
+      "correct": "Six"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360ed"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which nutrient is primarily responsible for the growth and repair of muscles, bones, and skin?",
+      "options": [
+        "Carbohydrates",
+        "Fats",
+        "Protein",
+        "Vitamins"
+      ],
+      "correct": "Protein"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360ee"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Night blindness is a nutritional deficiency caused by low levels of which vitamin?",
+      "options": [
+        "Vitamin B1",
+        "Vitamin C",
+        "Vitamin A",
+        "Vitamin K"
+      ],
+      "correct": "Vitamin A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360ef"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "Which condition is specifically linked to high salt intake affecting blood pressure?",
+      "options": [
+        "Osteoporosis",
+        "Hypertension",
+        "Pellagra",
+        "Beriberi"
+      ],
+      "correct": "Hypertension"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360f0"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "What is the primary function of healthful fats in the body?",
+      "options": [
+        "Building teeth",
+        "Brain functioning and cell growth",
+        "Providing fiber",
+        "Preventing night blindness"
+      ],
+      "correct": "Brain functioning and cell growth"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992e5f81b21e3ac6fe360f1"
+  },
+  "title": "C.C.A",
+  "questions": [
+    {
+      "question": "A lack of Vitamin B1 (found in cereal husks) leads to which deficiency disease?",
+      "options": [
+        "Scurvy",
+        "Beriberi",
+        "Pellagra",
+        "Rickets"
+      ],
+      "correct": "Beriberi"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f2"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "Ancient Nigerian states and kingdoms developed mainly because of ______",
+      "options": [
+        "farming only",
+        "trading activities",
+        "colonial rule",
+        "modern education"
+      ],
+      "correct": "trading activities"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f3"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "One major feature of ancient Nigerian states was ______",
+      "options": [
+        "democracy",
+        "centralised authority",
+        "absence of rulers",
+        "written constitution"
+      ],
+      "correct": "centralised authority"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f4"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "Which of the following is an ancient Nigerian kingdom?",
+      "options": [
+        "Benin",
+        "Lagos",
+        "Abuja",
+        "Port Harcourt"
+      ],
+      "correct": "Benin"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f5"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "Ancient Nigerian states existed mainly before the arrival of _____",
+      "options": [
+        "missionaries",
+        "arabs",
+        "europeans",
+        "traders"
+      ],
+      "correct": "europeans"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f6"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Kanem-Borno empire was located in ____",
+      "options": [
+        "south east",
+        "south west",
+        "North east",
+        "North West"
+      ],
+      "correct": "North east"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f7"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Kanem-Borno Empire was founded by the ______",
+      "options": [
+        "Hausa people",
+        "Kanuri people",
+        "Yoruba people",
+        "Igbo people"
+      ],
+      "correct": "Kanuri people"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f8"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Kanem-Borno empire originated around ____",
+      "options": [
+        "River Niger",
+        "Lake Chad",
+        "River Benue",
+        "Atlantic ocean"
+      ],
+      "correct": "Lake Chad"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360f9"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The early rulers of Kanem-Borno were called _____",
+      "options": [
+        "obas",
+        "emirs",
+        "mais",
+        "alafins"
+      ],
+      "correct": "mais"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360fa"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "One major achievement of the Kanem-Borno empire was _____",
+      "options": [
+        "discovery of oil",
+        "strong military organization",
+        "introduction of christianity",
+        "modern education"
+      ],
+      "correct": "strong military organization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360fb"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "Islam became prominent in Kanem-Borno during the reign of _____",
+      "options": [
+        "Mai Idris Alooma",
+        "Mai Dunama",
+        "Mai Kano",
+        "Mai Atiku"
+      ],
+      "correct": "Mai Idris Alooma"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360fc"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Kanem-Borno Empire was well known for its ______",
+      "options": [
+        "fishing",
+        "trans-sahara trade",
+        "cocoa farming",
+        "palm oil"
+      ],
+      "correct": "trans-sahara trade"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360fd"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The early army of Kanem-Borno empire was strengthened through the use of ______",
+      "options": [
+        "bows and arrows only",
+        "imported weapons",
+        "sticks and stones",
+        "charms"
+      ],
+      "correct": "imported weapons"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360fe"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Hausa states were mainly located in ______",
+      "options": [
+        "Northern central",
+        "north-west Nigeria",
+        "south-west Nigeria",
+        "southeast Nigeria"
+      ],
+      "correct": "north-west Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe360ff"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "How many traditional Hausa states were there?",
+      "options": [
+        "five",
+        "six",
+        "seven",
+        "ten"
+      ],
+      "correct": "seven"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe36100"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The ruler of a Hausa state was called ______",
+      "options": [
+        "Oba",
+        "Emir",
+        "Eze",
+        "Obi"
+      ],
+      "correct": "Emir"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe36101"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Hausa political system was ______",
+      "options": [
+        "Acephalous",
+        "centralized",
+        "republican",
+        "communal"
+      ],
+      "correct": "centralized"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe36102"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The major occupation of the Hausa people was _____",
+      "options": [
+        "fishing",
+        "trading",
+        "mining",
+        "hunting"
+      ],
+      "correct": "trading"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe36103"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "A popular Hausa craft was ________",
+      "options": [
+        "pottery",
+        "bronze casting",
+        "leather work",
+        "wood carving"
+      ],
+      "correct": "leather work"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe36104"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "The Hausa people lived mainly in _____",
+      "options": [
+        "forest",
+        "river areas",
+        "savannah grasslands",
+        "coastal areas"
+      ],
+      "correct": "savannah grasslands"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6992f70c1b21e3ac6fe36105"
+  },
+  "title": "History",
+  "questions": [
+    {
+      "question": "Islam influenced the Hausa people's ______",
+      "options": [
+        "dressing and education",
+        "farming methods",
+        "fishing tools",
+        "house building only"
+      ],
+      "correct": "dressing and education"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268034"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "_____ ni akajopo oro ti oni oro ise ati ise ti on je nibikibi ti oba ti jeyo",
+      "options": [
+        "Ohun",
+        "oro",
+        "gbolohun",
+        "litiresor"
+      ],
+      "correct": "gbolohun"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268035"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "eya gbogbolohun pin si ona _____",
+      "options": [
+        "meji",
+        "meta",
+        "marun",
+        "merin"
+      ],
+      "correct": "meta"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268036"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "gbolohun eleyo ori-ise je ____ oro-ise ati oro",
+      "options": [
+        "aponle atokun",
+        "apole",
+        "oluwa",
+        "apere"
+      ],
+      "correct": "oluwa"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268037"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "_______ ni gbolohun ti afi gbolohun miran bo inu re",
+      "options": [
+        "gbolohun eleyo oro-ise",
+        "bgolohun onibo olopo oro-ise",
+        "gbolohun atokun",
+        "alapejure"
+      ],
+      "correct": "bgolohun onibo olopo oro-ise"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268038"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "_____ je asa imototo ati ise ara losoo",
+      "options": [
+        "oge sise",
+        "iru didi",
+        "asonwwiwo",
+        "egbaowo"
+      ],
+      "correct": "oge sise"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268039"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "gbogbo ona wonyi ni alegba ise oge nile yoruba yato si",
+      "options": [
+        "itoju iru ori",
+        "Asowiwo",
+        "Jije eso",
+        "Lali lile"
+      ],
+      "correct": "Jije eso"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de26803a"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "Awon yoruba ni igbagbo pe ____ lon bo asiri ara",
+      "options": [
+        "Aso",
+        "irun",
+        "bata",
+        "iwe"
+      ],
+      "correct": "Aso"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de26803b"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "itoju irun ori se pataki, nitori na ni yoruba fin pa owe pe irun kikun ni ipilese",
+      "options": [
+        "idaraya",
+        "gbajumo",
+        "obirin",
+        "were"
+      ],
+      "correct": "were"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de26803c"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "_____ ni ohun ti aro ninu okan wa ti a si se akosile re",
+      "options": [
+        "igbeyawo",
+        "ijamba",
+        "ilara",
+        "aroko"
+      ],
+      "correct": "aroko"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de26803d"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "ewo ni ki ise olo oruko?",
+      "options": [
+        "Aso",
+        "iwe",
+        "amo",
+        "iwosan"
+      ],
+      "correct": "iwosan"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de26803e"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "Oro-Oruko aridimu ni ________",
+      "options": [
+        "aisam",
+        "tabili",
+        "gbese",
+        "ekin"
+      ],
+      "correct": "tabili"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de26803f"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "______ ni an lo dipo oro-oruko",
+      "options": [
+        "Oro-aropo-oruko",
+        "Oro-ise",
+        "Oro-aponle",
+        "Oro-apejuwe"
+      ],
+      "correct": "Oro-aropo-oruko"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268040"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "Eyin je apeere _______",
+      "options": [
+        "Oro-aropo oruko",
+        "Oro-ise",
+        "oro aponle",
+        "oro apejuwe"
+      ],
+      "correct": "Oro-aropo oruko"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268041"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "___ ki ise ara ison oro yoruba",
+      "options": [
+        "Oro asopo",
+        "oro asodun",
+        "oro atokun",
+        "oro aperjuwe"
+      ],
+      "correct": "oro asodun"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268042"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "tani kori oorun sun?",
+      "options": [
+        "afolabi",
+        "Adekunle",
+        "Aderinsola"
+      ],
+      "correct": "Adekunle"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268043"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "Kini O faa ti kofi ri oru sin?",
+      "options": [
+        "atori ko ni owo",
+        "Fedo tori oro nro",
+        "ko si in a momana"
+      ],
+      "correct": "Fedo tori oro nro"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268044"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "_______ lowa ba Adekunnle ni aleyo",
+      "options": [
+        "Afolabi",
+        "Jenrola",
+        "Adekunle"
+      ],
+      "correct": "Afolabi"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268045"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "Oro wo ni Afolabi wa fi ro ore re leti?",
+      "options": [
+        "Oro Aso",
+        "Oro illu",
+        "Oro iyipada",
+        "Oro nipa bi won se fe mu"
+      ],
+      "correct": "Oro iyipada"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268046"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "_______ ni won fe mu jenrola lo",
+      "options": [
+        "Omo Egbo iya jenrola",
+        "Tooke",
+        "Eruni Nsini",
+        "ko paro"
+      ],
+      "correct": "Eruni Nsini"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944a6ec8a9e143de268047"
+  },
+  "title": "Yoruba",
+  "questions": [
+    {
+      "question": "Ta ni ko gbodo, maari ohuun ti won nse ninu filmu?",
+      "options": [
+        "Omu ti",
+        "Odaran",
+        "Omoluabi",
+        "Kooppa"
+      ],
+      "correct": "Omoluabi"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268048"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268049"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de26804a"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de26804b"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de26804c"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de26804d"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de26804e"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de26804f"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268050"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268051"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268052"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268053"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268054"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268055"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268056"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268057"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268058"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944debc8a9e143de268059"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26805a"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26805b"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26805c"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26805d"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26805e"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26805f"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268060"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268061"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268062"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268063"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268064"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268065"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268066"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268067"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268068"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de268069"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26806a"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944e06c8a9e143de26806b"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26806c"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26806d"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26806e"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26806f"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268070"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268071"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268072"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268073"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268074"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268075"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268076"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268077"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268078"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de268079"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26807a"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26807b"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26807c"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944ed9c8a9e143de26807d"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26807e"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26807f"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268080"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268081"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268082"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268083"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268084"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268085"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268086"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268087"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268088"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de268089"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26808a"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26808b"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26808c"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26808d"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26808e"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f05c8a9e143de26808f"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944f0fc8a9e143de268090"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de26809a"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de26809b"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de26809c"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de26809d"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de26809e"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de26809f"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a0"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a1"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a2"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a3"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a4"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a5"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a6"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a7"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a8"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680a9"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680aa"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fc7c8a9e143de2680ab"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69944fd3c8a9e143de2680ac"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680ad"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680ae"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680af"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b0"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b1"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b2"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b3"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b4"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b5"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b6"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b7"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b8"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680b9"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680ba"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680bb"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680bc"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680bd"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450a0c8a9e143de2680be"
+  },
+  "title": "S.C.S - Citizenship and Social Issues",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680bf"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "A Nigerian citizen ___________.",
+      "options": [
+        "Enjoys all rights privileges in Nigeria",
+        "Enjoys only rights in Nigeria",
+        "Enjoys privileges in Nigeria"
+      ],
+      "correct": "Enjoys all rights privileges in Nigeria"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c0"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "The constitutional responsibilities of a citizen are known as:",
+      "options": [
+        "Right of a Citizen",
+        "Citizens work in the Society",
+        "Duties",
+        "Constitution Expectations"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c1"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "Which of these is NOT a citizen’s right in Nigeria?",
+      "options": [
+        "Right to Life",
+        "Right to Fair Hearing",
+        "Right to Cheat Others",
+        "Right to Vote"
+      ],
+      "correct": "Right to Cheat Others"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c2"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "If a foreigner decides to become a citizen of a country he has stayed in over a long period of time, this is citizenship acquired by:",
+      "options": [
+        "Nationalization",
+        "Nationalism",
+        "Naturalization",
+        "Internalization"
+      ],
+      "correct": "Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c3"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "Who among the following was granted Honorary Citizenship of Nigeria?",
+      "options": [
+        "Obafemi Awolowo",
+        "Barrack Obama",
+        "Dr. Nelson Mandela",
+        "Mrs. Clinton"
+      ],
+      "correct": "Dr. Nelson Mandela"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c4"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "The term rape is sometimes used interchangeably with the term:",
+      "options": [
+        "Love",
+        "Sexual Assault",
+        "Indiscipline",
+        "Failure"
+      ],
+      "correct": "Sexual Assault"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c5"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "Which of the following are processes of becoming a citizen of a country?",
+      "options": [
+        "By Birth, through Naturalization",
+        "Through Stealing",
+        "Through President",
+        "Through Country"
+      ],
+      "correct": "By Birth, through Naturalization"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c6"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "One of the conditions a foreigner must meet to become a Nigerian citizen is:",
+      "options": [
+        "Age and Concept",
+        "Age and Qualification",
+        "Readiness to live in Nigeria and Age",
+        "Position and Training"
+      ],
+      "correct": "Readiness to live in Nigeria and Age"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c7"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "One of the psychological effects of rape is:",
+      "options": [
+        "Prevention",
+        "Employment",
+        "Fear",
+        "Psychological"
+      ],
+      "correct": "Fear"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c8"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "What occurs when one human being unlawfully kills another human being?",
+      "options": [
+        "Rape",
+        "Murder",
+        "Malice",
+        "Killing"
+      ],
+      "correct": "Murder"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680c9"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "The number '419' refers to the article of the Nigerian Criminal Code dealing with:",
+      "options": [
+        "Fraud",
+        "Theft",
+        "Murder",
+        "Assault"
+      ],
+      "correct": "Fraud"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680ca"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "The act of stealing government money is called:",
+      "options": [
+        "Prostitution",
+        "Embezzlement",
+        "Cheating",
+        "Robbery"
+      ],
+      "correct": "Embezzlement"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680cb"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "Food that is medically and hygienically unfit for human consumption is considered:",
+      "options": [
+        "Clean food",
+        "Well prepared food",
+        "Contaminated food",
+        "Good food"
+      ],
+      "correct": "Contaminated food"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680cc"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "Which of these is NOT a cause of advanced fee fraud (419)?",
+      "options": [
+        "Poverty",
+        "Unemployment",
+        "Influence of Bad Group",
+        "School Training"
+      ],
+      "correct": "School Training"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680cd"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "What brings peace, harmony, and understanding among people in the community?",
+      "options": [
+        "Duties",
+        "Right",
+        "Human beings",
+        "Society"
+      ],
+      "correct": "Duties"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680ce"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "The giving or taking of a bribe or illegal acquisition of wealth using public office is:",
+      "options": [
+        "Murder",
+        "Corruption",
+        "Rape",
+        "Prostitution"
+      ],
+      "correct": "Corruption"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680cf"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "A major cause of bribery and corruption is:",
+      "options": [
+        "Bad Value System",
+        "Religious Crisis",
+        "Armed Robbery",
+        "Examination Malpractices"
+      ],
+      "correct": "Bad Value System"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699450c7c8a9e143de2680d0"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "One effect of bribery and corruption is:",
+      "options": [
+        "Religion",
+        "High population",
+        "Slow economic development",
+        "Good roads"
+      ],
+      "correct": "Slow economic development"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "699452e7c8a9e143de2680d1"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "To Be Physically fit , one must engage in _____",
+      "options": [
+        "Regular Sleeping",
+        "Regular Exercise",
+        "Regular Eating",
+        "None of above"
+      ],
+      "correct": "Regular Exercise"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994539ec8a9e143de2680d2"
+  },
+  "title": "S.C.S",
+  "questions": [
+    {
+      "question": "One of the ways by which cizens can help their country is by ______:",
+      "options": [
+        "slugish",
+        "Performing Our Duties as a citizen",
+        "all of the above",
+        "none of the above"
+      ],
+      "correct": ""
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680d5"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What does 'aquatics' refer to?",
+      "options": [
+        "Land sports",
+        "Water sports",
+        "Indoor games",
+        "Outdoor games"
+      ],
+      "correct": "Water sports"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680d6"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "Which of the following is an aquatic sport?",
+      "options": [
+        "Football",
+        "Basketball",
+        "Swimming",
+        "Tennis"
+      ],
+      "answer": "Correct"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680d7"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is the purpose of a chlorinating machine in a swimming pool?",
+      "options": [
+        "To heat the water",
+        "To purify the water",
+        "To change the water color",
+        "To create waves"
+      ],
+      "answer": "To purify the water"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680d8"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is buoyancy in swimming?",
+      "options": [
+        "The ability to sink in water",
+        "The ability to float in water",
+        "The ability to swim fast",
+        "The ability to dive deep"
+      ],
+      "answer": "The ability to float in water"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680d9"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What should swimmers do before entering the pool?",
+      "options": [
+        "Run around the pool",
+        "Jump into the pool",
+        "Take a shower",
+        "Eat a snack"
+      ],
+      "answer": "Take a shower"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680da"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is first aid?",
+      "options": [
+        "Medical treatment in a hospital",
+        "Immediate care given to an injured person",
+        "A type of medicine",
+        "A type of surgery"
+      ],
+      "answer": "Immediate care given to an injured person"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680db"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is in a first aid box?",
+      "options": [
+        "Only bandages",
+        "Only medicines",
+        "Various medical supplies",
+        "Only water"
+      ],
+      "answer": "Various medical supplies"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680dc"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is a quality of a good first aider?",
+      "options": [
+        "Being lazy",
+        "Being careless",
+        "Being resourceful",
+        "Being noisy"
+      ],
+      "answer": "Being resourceful"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680dd"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is health?",
+      "options": [
+        "A state of physical well-being only",
+        "A state of mental well-being only",
+        "A state of complete physical, mental, and social well-being",
+        "A state of illness"
+      ],
+      "answer": "A state of complete physical, mental, and social well-being"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680de"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What are the determinants of health?",
+      "options": [
+        "Hereditary only",
+        "Environment only",
+        "Lifestyle only",
+        "Hereditary, environment, lifestyle, and health care services"
+      ],
+      "answer": "Hereditary, environment, lifestyle, and health care services"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680df"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is sewage?",
+      "options": [
+        "Solid waste",
+        "Liquid waste",
+        "Gaseous waste",
+        "Hazardous waste"
+      ],
+      "answer": "Liquid waste"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e0"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is refuse?",
+      "options": [
+        "Liquid waste",
+        "Solid waste",
+        "Gaseous waste",
+        "Hazardous waste"
+      ],
+      "answer": "Solid waste"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e1"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is a method of sewage disposal?",
+      "options": [
+        "Open dump",
+        "Composting",
+        "Incineration",
+        "Recycling"
+      ],
+      "answer": "Open dump"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e2"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is a method of refuse disposal?",
+      "options": [
+        "Open dump",
+        "Water system",
+        "Incineration",
+        "Composting"
+      ],
+      "answer": "Open dump"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e3"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "Why is proper waste disposal important?",
+      "options": [
+        "To pollute the environment",
+        "To maintain a clean environment",
+        "To waste resources",
+        "To harm humans"
+      ],
+      "answer": "To maintain a clean environment"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e4"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is a characteristic of a healthy person?",
+      "options": [
+        "Easily fatigued",
+        "Resistant to infection",
+        "Always sick",
+        "Always tired"
+      ],
+      "answer": "Resistant to infection"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e5"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is the role of a life guard in aquatic sports?",
+      "options": [
+        "To swim with the athletes",
+        "To provide safety and assistance",
+        "To clean the pool",
+        "To sell food"
+      ],
+      "answer": "To provide safety and assistance"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e6"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is a safety measure in aquatic sports?",
+      "options": [
+        "Running around the pool",
+        "Jumping into the pool",
+        "Taking a shower before swimming",
+        "Swimming alone"
+      ],
+      "answer": "Taking a shower before swimming"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e7"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "What is a skill required for aquatic sports?",
+      "options": [
+        "Adjustment and confidence gaining",
+        "Propulsion methods",
+        "Buoyancy",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6994767ac8a9e143de2680e8"
+  },
+  "title": "P.H.E",
+  "questions": [
+    {
+      "question": "Why is warm-up important in aquatic sports?",
+      "options": [
+        "To stimulate the body for vigorous actions",
+        "To relax the body",
+        "To cool down the body",
+        "To waste time"
+      ],
+      "answer": "To stimulate the body for vigorous actions"
+    }
+  ]
+}]

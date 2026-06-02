@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "69a821901ea0cbf7bdd20709"
+  },
+  "name": "SHEHU UMAIRAH",
+  "email": "shehuumairah@gmail.com",
+  "username": "fresh",
+  "password": "mothermother",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a821aff53a3c2d301c859b"
+  },
+  "name": "SHEHU UMAIRAH",
+  "email": "shehuumairah@gmail.com",
+  "username": "fresh",
+  "password": "mothermother",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a825f892983ef2c0c97b11"
+  },
+  "name": "SHEHU UMAIRAH",
+  "email": "shehuumairah@gmail.com",
+  "username": "fresh",
+  "password": "$2b$10$FcJHjZxZxvVd/.RpsOBohOvNJ1vKT12mkmVMP742IbvCcBKYAKqta",
+  "__v": 0
+}]

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DE-LAMBO COLLEGE</title>
+<style>
+  * { padding: 0; margin: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; }
+
+  /* Header & Navigation */
+  .top {
+    padding: 60px;
+    background: #b91c1c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+  }
+
+  .top h2 { font-size: 1.2rem; letter-spacing: 1px; }
+
+  /* Hamburger Bar Styles */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Navigation Links (Mobile Hidden) */
+  .divider {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #991b1b;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .divider.active {
+    max-height: 200px; /* Slide down effect */
+    border-bottom: 3px solid #7f1d1d;
+  }
+
+  .divider a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Main & Carousel */
+  main { padding: 10px 8px; }
+
+  .carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+  }
+
+  .carousel-slide:nth-child(2) { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+  .carousel-slide:nth-child(3) { background: linear-gradient(135deg, #16a34a, #15803d); }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 10;
+  }
+  .carousel-btn.prev { left: 5px; }
+  .carousel-btn.next { right: 5px; }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; }
+  .dot.active { background: white; }
+
+  footer { background: #b91c1c; color: white; padding: 100px; text-align: center; font-size: 0.8rem; }
+
+  /* Desktop View Styles */
+  @media (min-width: 768px) {
+    .hamburger { display: none; } /* Hide hamburger */
+    
+    .divider {
+      position: static;
+      flex-direction: row;
+      max-height: none;
+      background: transparent;
+      width: auto;
+    }
+
+    .divider a {
+      padding: 5px 15px;
+      border: 1px solid rgba(255,255,255,0.4);
+      margin-left: 10px;
+      border-radius: 4px;
+    }
+
+    .top h2 { font-size: 1.7rem; }
+    .carousel-slide { height: 350px; font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="top">
+    <h2>DE-LAMBO COLLEGE</h2>
+    
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="divider" id="navMenu">
+      <a href="/login-admin">Admin</a>
+      <a href="/login-student">Students</a>	
+      <a href="/parent-login">Parents</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">Welcome to DE-LAMBO COLLEGE</div>
+        <div class="carousel-slide">Excellence in Education Since 2005</div>
+        <div class="carousel-slide">Join Us Today – Admissions Open</div>
+      </div>
+      
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+
+      <div class="carousel-dots"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div id="datetime">Loading...</div>
+    <p style="margin-top: 5px; opacity: 0.7;">&copy; 2026 De-Lambo College</p>
+  </footer>
+
+<script>
+  // Menu Toggle Logic
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.onclick = () => {
+    navMenu.classList.toggle('active');
+  };
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.divider a').forEach(link => {
+    link.onclick = () => navMenu.classList.remove('active');
+  });
+
+  // Carousel Logic
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const dotsContainer = document.querySelector('.carousel-dots');
+
+  let currentSlide = 0;
+  let slideInterval;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if(i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => { goToSlide(i); resetTimer(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.children);
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  function goToSlide(i) { currentSlide = i; updateCarousel(); }
+  function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; updateCarousel(); }
+  function resetTimer() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 5000); }
+
+  nextBtn.onclick = () => { nextSlide(); resetTimer(); };
+  prevBtn.onclick = () => { currentSlide = (currentSlide - 1 + slides.length) % slides.length; updateCarousel(); resetTimer(); };
+
+  slideInterval = setInterval(nextSlide, 5000);
+  window.addEventListener('resize', () => {
+    updateCarousel();
+    if(window.innerWidth > 768) navMenu.classList.remove('active');
+  });
+
+  // DateTime Logic
+  function updateDateTime() {
+    const now = new Date();
+    document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+    });
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>
+
+</body>
+</html>

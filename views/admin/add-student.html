@@ -1,0 +1,65 @@
+
+
+<link rel="stylesheet" href="css/style.css">
+<style>
+	*{
+	padding: 0;
+	margin: 0;
+}
+
+.container{
+	width: 600px;
+	border:1px solid whitesmoke;
+	margin: 0 auto;
+	padding: 30px;
+	margin-top: 200px;
+}
+.space{
+	padding: 6px;
+}
+.space select,input,textarea,button{
+	padding: 6px;
+	width: 100%;
+}
+
+</style>
+<div class="container">
+	<h2>Add New Student</h2>
+	<form action="/add-student" enctype="multipart/form-data" method="post">
+	<div class="space">
+		<input type="text" name="name" id="student-name" placeholder="Student Name">
+	</div>
+	<div class="space">
+		<input type="tel" name="tel" id="tel" placeholder="080-123-456">
+	</div>
+	<div class="space">
+		<input type="email" name="email" id="email" placeholder="E-mail">
+	</div>
+	<div class="space">
+		<select name="class" id="class">
+			<option value=""></option>
+			<option value="JSS1">JSS1</option>
+			<option value="JSS2">JSS2</option>
+			<option value="JSS3">JSS3</option>
+			<option value="SSS1">SSS1</option>
+			<option value="SSS2">SSS2</option>
+			<option value="SSS3">SSS3</option>
+		</select>
+	</div>
+	<div class="space">
+		<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
+	</div>
+	<div class="space">
+		<input type="text" name="username" id="username" placeholder="username">
+	</div>
+	<div class="space">
+		<input type="file" name="image" id="image">
+	</div>
+	<div class="space">
+		<input type="password" name="password" id="password" placeholder="Password">
+	</div>
+	<div class="space">
+		<button id="add" type="submit">Add Student</button>
+	</div>
+</form>
+</div>

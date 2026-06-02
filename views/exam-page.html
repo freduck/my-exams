@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DE-LAMBO EXAMS</title>
+  <style>
+    /* --- ORIGINAL STYLES RESTORED --- */
+    * { padding: 0; margin: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+    .top { background-color: crimson; padding: clamp(20px, 5vw, 50px); }
+    h1 { text-align: center; text-transform: uppercase; color: white; font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 15px; }
+    #timer { text-align: center; color: white; font-weight: bold; font-size: clamp(1rem, 3vw, 1.3rem); margin-bottom: 15px; }
+    
+    .flex { display: flex; flex-direction: row; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    
+    /* Original 10px padding */
+    select { 
+      padding: 10px; 
+      font-size: 1rem; 
+      border: 1px solid whitesmoke; 
+      border-radius: 8px; 
+      flex: 1 1 250px; 
+      max-width: 400px; 
+      background: white; 
+    }
+    
+    hr.i { border: none; height: 1px; background: rgba(255,255,255,0.3); }
+    .container { max-width: 900px; width: 95%; border: 1px solid whitesmoke; padding: clamp(20px, 4vw, 50px); margin: 30px auto; }
+    .para, .22 { padding: 20px; margin-bottom: 20px; }
+    .head { padding: 20px; border-bottom: 1px solid whitesmoke; margin-bottom: 20px; }
+    #q { padding: 10px; margin: 10px 0; font-weight: 500; }
+    li { list-style-type: none; padding: 8px 0; }
+    input[type="radio"] { margin-right: 8px; cursor: pointer; }
+    label { cursor: pointer; }
+    hr { border: 2px solid crimson; }
+    .pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 5px; margin-top: 20px; }
+    .paginate { padding: 10px 15px; min-width: 45px; border: 1px solid whitesmoke; background-color: crimson; color: white; border-radius: 10px; cursor: pointer; font-size: 1rem; }
+    .paginate:disabled { opacity: 0.6; cursor: not-allowed; }
+    #submit-btn { padding: 12px; width: 100%; max-width: 400px; display: block; margin: 20px auto; background-color: crimson; color: white; border: 1px solid whitesmoke; border-radius: 50px; font-size: 1.1rem; cursor: pointer; }
+    .hidden { display: none; }
+
+    /* --- MODAL & OVERLAY --- */
+    .modal-overlay {
+      display: none; 
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .result {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 90%;
+      animation: moveDown 0.5s ease-out;
+    }
+
+    .result-heed { padding-bottom: 15px; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 20px; font-size: 1.5rem; }
+    .percentage, .score, .student-name, .total-questions { padding: 5px; text-align: center; text-transform: uppercase; font-weight: bold; }
+
+    .email-section {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed crimson;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .email-section input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    .email-section button { padding: 10px; background: crimson; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    .close-modal { background: #555 !important; }
+
+    @keyframes moveDown {
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <h1>DE-LAMBO COLLEGE 2025/2026 academic session Midterm C.A</h1>
+    <h3 id="timer">00:00:00</h3>
+    <hr class="i"><br>
+    <div class="flex">
+      <select name="student-name" id="student-name">
+        <option value="">Select Student</option>
+        <option>Adeniji Jubril</option>
+        <option>Olalekan Al-Ammen</option>
+        <option>Olarewaju Ayomide Victor</option>
+        <option>Oyelami Joseph</option>
+        <option>Shehu Zainab</option>
+        <option>Shehu Umairah</option>
+      </select>
+      <select name="subject" id="subject">
+        <option value="">Select Subject</option>
+        <option>Maths</option>
+        <option>English Language</option>
+        <option>Business Studies</option>
+        <option>Home Economics</option>
+        <option>Yoruba</option>
+        <option>P.H.E</option>
+        <option>Intermediate Science</option>
+        <option>Digital Technology</option>
+        <option>S.C.S</option>
+        <option>Literature</option>
+        <option>C.C.A</option>
+        <option>History</option>
+        <option>C.R.S</option>
+      </select>
+    </div><br>
+    <hr class="i"><br>
+  </div>
+
+  <div class="container">
+    <div class="para hidden">
+        <div class="head"><h2>Read The Passage Below</h2></div>
+        AIDS is an (a) __16 of the human system...
+    </div>
+    <div class="22 hidden">Choose the word with the same vowel sound...</div>
+    
+    <br><hr><br>
+    <form id="exam-form">
+      <div id="question-banks"></div>
+    </form>
+    <div class="pagination" id="pagination"></div>
+    <button id="submit-btn" style="display: none;">Submit Exam</button>
+  </div>
+
+  <div id="resultModal" class="modal-overlay">
+    <div class="result">
+      <h2 class="result-heed">Result Slip</h2>
+      <p class="student-name" id="res-student"></p>
+      <p class="score" id="res-score"></p>
+      <p class="total-questions" id="res-total"></p>
+      <p class="percentage" id="res-percent"></p>
+      
+      <div class="email-section">
+        <input type="email" id="parent-email" placeholder="Enter parent email">
+        <button onclick="sendEmail()">Send Result to Email</button>
+        <button class="close-modal" onclick="location.reload()">Finish & Exit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    let userAnswers = {};
+    let finalResultData = null; 
+
+    // Fetch only when subject changes
+    async function fetchQuestionBanks(page) {
+      const title = document.getElementById('subject').value;
+      if (!title) return; // Silent if no subject selected
+
+      try {
+        const response = await fetch(`/exam?page=${page}&limit=1&title=${title}`);
+        const data = await response.json();
+        renderQuestionBanks(data.questionBanks);
+        renderPagination(data.pages, page);
+        document.getElementById('submit-btn').style.display = (page == data.total) ? 'block' : 'none';
+      } catch (error) { console.error(error); }
+    }
+
+    function renderQuestionBanks(questionBanks) {
+      const letters = ['A','B','C','D'];
+      const qbDiv = document.getElementById('question-banks');
+      qbDiv.innerHTML = '';
+      questionBanks.forEach((qb) => {
+        qbDiv.innerHTML += `
+          <h2>${qb.title}</h2>
+          <ul><br><hr/><br/>
+            ${qb.questions.map((q, index) => `
+              <li><p id='q'>${q.question}</p><hr/><br/>
+                <ul>
+                  ${q.options.map((opt, i) => `
+                    <li>
+                      <b>${letters[i]}</b>
+                      <input type="radio" name="${qb._id}-${index}" value="${opt}" 
+                        ${userAnswers[`${qb._id}-${index}`] === opt ? 'checked' : ''} 
+                        onchange="userAnswers['${qb._id}-${index}'] = this.value">
+                      <label>${opt}</label>
+                    </li>
+                  `).join('')}
+                </ul>
+              </li>
+            `).join('')}
+          </ul>`;
+      });
+    }
+
+    function renderPagination(pages, curr) {
+      const pagDiv = document.getElementById('pagination');
+      pagDiv.innerHTML = '';
+      for (let i = 1; i <= pages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = 'paginate';
+        btn.onclick = () => fetchQuestionBanks(i);
+        if (i === curr) btn.disabled = true;
+        pagDiv.appendChild(btn);
+      }
+    }
+
+    // Logic for Subject Selection
+    document.getElementById('subject').addEventListener('change', () => {
+      fetchQuestionBanks(1);
+    });
+
+    // Submission Logic -> Triggers Modal
+    document.getElementById('submit-btn').onclick = async () => {
+      const studentName = document.getElementById('student-name').value;
+      const subject = document.getElementById('subject').value;
+
+      if (!studentName) {
+        alert('Please Select Student Name before submitting.');
+        document.getElementById('student-name').focus();
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/submit-exam', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userAnswers, subject, student_name: studentName }),
+        });
+        const result = await response.json();
+        finalResultData = result;
+
+        // Populate Modal
+        document.getElementById('res-student').textContent = `Name: ${result.student_name}`;
+        document.getElementById('res-score').textContent = `Score: ${result.score}`;
+        document.getElementById('res-total').textContent = `Out Of: ${result.totalQuestions}`;
+        document.getElementById('res-percent').textContent = `Percentage: ${result.percentage}%`;
+        
+        // Show Modal
+        document.getElementById('resultModal').style.display = 'flex';
+      } catch (error) { console.error(error); }
+    };
+
+    // Nodemailer call
+    async function sendEmail() {
+      const email = document.getElementById('parent-email').value;
+      if (!email) return alert("Please enter a valid email.");
+
+      const btn = event.target;
+      btn.textContent = "Sending...";
+      
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, result: finalResultData })
+        });
+        if (response.ok) alert("Result sent successfully!");
+        else alert("Error sending email.");
+      } catch (err) { console.error(err); }
+      finally { btn.textContent = "Send Result to Email"; }
+    }
+
+    // Timer Logic
+    let startTime = Date.now();
+    setInterval(() => {
+        let elapsed = Math.floor((Date.now() - startTime) / 1000);
+        let m = Math.floor(elapsed / 60);
+        let s = elapsed % 60;
+        document.getElementById('timer').textContent = 
+            `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    }, 1000);
+  </script>
+</body>
+</html>

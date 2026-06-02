@@ -1,0 +1,17 @@
+# Initialize Git in your project folder
+git init
+
+# Add all files to staging
+git add .
+
+# Commit your initial code
+git commit -m "Initial commit"
+
+# Rename default branch to main
+git branch -M main
+
+# Add your GitHub remote (replace with your repo URL)
+git remote add origin https://github.com/freduck/my-exams.git
+
+# Push your code to GitHub main branch
+git push -u origin second-main
