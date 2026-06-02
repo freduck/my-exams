@@ -28,7 +28,7 @@ class AdminClass {
 		this.app.post('/login-admin', async (req, resp) => {
 			console.log(req.body);
 			const { username, password } = req.body;
-			let adminlogin = await Admin.findOne({ username: username });
+			let adminlogin = await Admin.findOne({username});
 			console.log(adminlogin);
 
 			if (!adminlogin) {
