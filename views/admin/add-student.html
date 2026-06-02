@@ -1,65 +1,102 @@
-
-
 <link rel="stylesheet" href="css/style.css">
 <style>
-	*{
-	padding: 0;
-	margin: 0;
-}
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box; /* Ensures padding doesn't break the width */
+	}
 
-.container{
-	width: 600px;
-	border:1px solid whitesmoke;
-	margin: 0 auto;
-	padding: 30px;
-	margin-top: 200px;
-}
-.space{
-	padding: 6px;
-}
-.space select,input,textarea,button{
-	padding: 6px;
-	width: 100%;
-}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-color: #fafafa;
+		padding: 20px;
+	}
 
+	.container {
+		width: 100%;
+		max-width: 600px; /* Becomes fluid on smaller screens */
+		border: 1px solid whitesmoke;
+		background: #fff;
+		padding: 30px;
+		border-radius: 8px; /* Optional: smooths out the corners */
+		box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Optional: gives it a subtle lift */
+	}
+
+	h2 {
+		margin-bottom: 20px;
+		color: #333;
+	}
+
+	.space {
+		padding: 6px 0;
+	}
+
+	.space select, 
+	.space input, 
+	.space textarea, 
+	.space button {
+		padding: 10px; /* Slightly padded for better mobile tap targets */
+		width: 100%;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px; /* Prevents iOS zooming in on focus */
+	}
+
+	/* Crimson Button Styling */
+	.space button {
+		background-color: crimson;
+		color: white;
+		border: none;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background 0.2s ease;
+	}
+
+	.space button:hover {
+		background-color: #b31034; /* Slightly darker crimson for hover depth */
+	}
 </style>
+
 <div class="container">
 	<h2>Add New Student</h2>
 	<form action="/add-student" enctype="multipart/form-data" method="post">
-	<div class="space">
-		<input type="text" name="name" id="student-name" placeholder="Student Name">
-	</div>
-	<div class="space">
-		<input type="tel" name="tel" id="tel" placeholder="080-123-456">
-	</div>
-	<div class="space">
-		<input type="email" name="email" id="email" placeholder="E-mail">
-	</div>
-	<div class="space">
-		<select name="class" id="class">
-			<option value=""></option>
-			<option value="JSS1">JSS1</option>
-			<option value="JSS2">JSS2</option>
-			<option value="JSS3">JSS3</option>
-			<option value="SSS1">SSS1</option>
-			<option value="SSS2">SSS2</option>
-			<option value="SSS3">SSS3</option>
-		</select>
-	</div>
-	<div class="space">
-		<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
-	</div>
-	<div class="space">
-		<input type="text" name="username" id="username" placeholder="username">
-	</div>
-	<div class="space">
-		<input type="file" name="image" id="image">
-	</div>
-	<div class="space">
-		<input type="password" name="password" id="password" placeholder="Password">
-	</div>
-	<div class="space">
-		<button id="add" type="submit">Add Student</button>
-	</div>
-</form>
+		<div class="space">
+			<input type="text" name="name" id="student-name" placeholder="Student Name">
+		</div>
+		<div class="space">
+			<input type="tel" name="tel" id="tel" placeholder="080-123-456">
+		</div>
+		<div class="space">
+			<input type="email" name="email" id="email" placeholder="E-mail">
+		</div>
+		<div class="space">
+			<select name="class" id="class">
+				<option value="" disabled selected>Select Class</option>
+				<option value="JSS1">JSS1</option>
+				<option value="JSS2">JSS2</option>
+				<option value="JSS3">JSS3</option>
+				<option value="SSS1">SSS1</option>
+				<option value="SSS2">SSS2</option>
+				<option value="SSS3">SSS3</option>
+			</select>
+		</div>
+		<div class="space">
+			<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
+		</div>
+		<div class="space">
+			<input type="text" name="username" id="username" placeholder="username">
+		</div>
+		<div class="space">
+			<input type="file" name="image" id="image">
+		</div>
+		<div class="space">
+			<input type="password" name="password" id="password" placeholder="Password">
+		</div>
+		<div class="space">
+			<button id="add" type="submit">Add Student</button>
+		</div>
+	</form>
 </div>
