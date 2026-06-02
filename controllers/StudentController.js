@@ -12,7 +12,7 @@ class StudentController {
 
     // Serve uploaded files statically
     const uploadPath = path.join(process.cwd(), 'uploads');
-    this.app.use('/uploads', express.static(uploadPath));
+    this.app.use('.././uploads', express.static(uploadPath));
 
     // Multer storage config
     const storage = multer.diskStorage({
