@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DE-LAMBO EXAMS</title>
   <style>
-    /* --- ORIGINAL STYLES RESTORED --- */
+    /* --- ORIGINAL STYLES --- */
     * { padding: 0; margin: 0; box-sizing: border-box; }
     body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
     .top { background-color: crimson; padding: clamp(20px, 5vw, 50px); }
@@ -132,7 +132,7 @@
       <div id="question-banks"></div>
     </form>
     <div class="pagination" id="pagination"></div>
-    <button id="submit-btn" style="display: none;">Submit Exam</button>
+    <button type="button" id="submit-btn" style="display: none;">Submit Exam</button>
   </div>
 
   <div id="resultModal" class="modal-overlay">
@@ -155,12 +155,14 @@
     let currentPage = 1;
     let userAnswers = {};
     let finalResultData = null; 
-    const storageKey = 'exam_start_time';
+    
+    // Core key configuration for persistent elapsed tracker
+    const storageKey = 'exam_elapsed_seconds';
 
     // Fetch only when subject changes
     async function fetchQuestionBanks(page) {
       const title = document.getElementById('subject').value;
-      if (!title) return; // Silent if no subject selected
+      if (!title) return; 
 
       try {
         const response = await fetch(`/exam?page=${page}&limit=1&title=${title}`);
@@ -236,7 +238,7 @@
         const result = await response.json();
         finalResultData = result;
 
-        // Clear the timer from storage upon successful exam submission
+        // Clear the persistence timer progress on successful score generation
         localStorage.removeItem(storageKey);
 
         // Populate Modal
@@ -270,31 +272,33 @@
       finally { btn.textContent = "Send Result to Email"; }
     }
 
-    // Handle Finish & Exit cleanup cleanly
+    // Explicit exit handler to ensure storage drops before page reload
     function finishAndExit() {
       localStorage.removeItem(storageKey);
       location.reload();
     }
 
-    // --- PERSISTENT TIMER LOGIC ---
-    let startTime = localStorage.getItem(storageKey);
+    // --- BULLETPROOF PROGRESSIVE TIMER LOGIC ---
+    let elapsedSeconds = localStorage.getItem(storageKey);
+    elapsedSeconds = elapsedSeconds ? parseInt(elapsedSeconds, 10) : 0;
 
-    if (!startTime) {
-        startTime = Date.now().toString();
-        localStorage.setItem(storageKey, startTime);
-    }
+    // Immediately render current value on page wake to avoid flickering zeros
+    updateTimerUI(elapsedSeconds);
 
-    startTime = parseInt(startTime, 10);
+    const timerInterval = setInterval(() => {
+        elapsedSeconds++; 
+        localStorage.setItem(storageKey, elapsedSeconds);
+        updateTimerUI(elapsedSeconds);
+    }, 1000);
 
-    setInterval(() => {
-        let elapsed = Math.floor((Date.now() - startTime) / 1000);
-        let h = Math.floor(elapsed / 3600);
-        let m = Math.floor((elapsed % 3600) / 60);
-        let s = elapsed % 60;
+    function updateTimerUI(totalSeconds) {
+        let h = Math.floor(totalSeconds / 3600);
+        let m = Math.floor((totalSeconds % 3600) / 60);
+        let s = totalSeconds % 60;
         
         document.getElementById('timer').textContent = 
             `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    }, 1000);
+    }
   </script>
 </body>
 </html>
