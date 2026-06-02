@@ -3,7 +3,7 @@
 	* {
 		padding: 0;
 		margin: 0;
-		box-sizing: border-box; /* Ensures padding doesn't break the width */
+		box-sizing: border-box; /* Prevents elements from breaking layout boundaries */
 	}
 
 	body {
@@ -11,52 +11,102 @@
 		justify-content: center;
 		align-items: center;
 		min-height: 100vh;
-		background-color: #fafafa;
+		background-color: #f0f2f5; /* Light grey background makes the white form pop */
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		padding: 20px;
 	}
 
 	.container {
 		width: 100%;
-		max-width: 600px; /* Becomes fluid on smaller screens */
-		border: 1px solid whitesmoke;
-		background: #fff;
-		padding: 30px;
-		border-radius: 8px; /* Optional: smooths out the corners */
-		box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Optional: gives it a subtle lift */
+		max-width: 550px; 
+		background: #ffffff;
+		border: 2px solid #222222; /* Highly visible, sharp container border */
+		padding: 40px 30px;
+		border-radius: 12px; 
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Heavy shadow for strong depth */
 	}
 
 	h2 {
-		margin-bottom: 20px;
-		color: #333;
+		margin-bottom: 24px;
+		color: #111111; /* Near black for maximum readability */
+		font-size: 28px;
+		font-weight: 700;
+		text-align: center;
 	}
 
 	.space {
-		padding: 6px 0;
+		padding: 8px 0;
 	}
 
+	/* High-Visibility Form Fields */
 	.space select, 
-	.space input, 
-	.space textarea, 
-	.space button {
-		padding: 10px; /* Slightly padded for better mobile tap targets */
+	.space input[type="text"], 
+	.space input[type="tel"], 
+	.space input[type="email"], 
+	.space input[type="password"], 
+	.space textarea {
+		padding: 14px; /* Larger tap/click targets */
 		width: 100%;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		font-size: 16px; /* Prevents iOS zooming in on focus */
+		border: 2px solid #4a5568; /* Thick, dark border for clear definition */
+		background-color: #f8fafc; /* Subtle tint so inputs stand out against white background */
+		border-radius: 6px;
+		font-size: 16px; 
+		color: #1a202c;
+		font-weight: 500;
+		outline: none;
+		transition: all 0.2s ease;
 	}
 
-	/* Crimson Button Styling */
-	.space button {
-		background-color: crimson;
-		color: white;
-		border: none;
-		font-weight: bold;
+	/* File Input Specific Styling */
+	.space input[type="file"] {
+		width: 100%;
+		padding: 10px;
+		border: 2px dashed #4a5568; /* Dashed border specifically for the file uploader */
+		border-radius: 6px;
+		background: #f8fafc;
 		cursor: pointer;
-		transition: background 0.2s ease;
+	}
+
+	/* Focus state: Field lights up boldly when clicked */
+	.space select:focus, 
+	.space input:focus, 
+	.space textarea:focus {
+		border-color: #dc143c; /* Lights up crimson on focus */
+		background-color: #ffffff;
+		box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.2); 
+	}
+
+	/* Placeholder visibility boost */
+	::placeholder {
+		color: #718096;
+		opacity: 1; 
+		font-weight: 400;
+	}
+
+	/* High-Contrast Crimson Button */
+	.space button {
+		width: 100%;
+		padding: 16px;
+		background-color: #dc143c; /* True Crimson */
+		color: #ffffff;
+		border: 2px solid #b31034;
+		border-radius: 6px;
+		font-size: 18px;
+		font-weight: 700; /* Extra bold text */
+		letter-spacing: 0.5px;
+		cursor: pointer;
+		transition: background-color 0.2s ease, transform 0.1s ease;
+		margin-top: 10px;
+		box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3); /* Crimson shadow makes it pop */
 	}
 
 	.space button:hover {
-		background-color: #b31034; /* Slightly darker crimson for hover depth */
+		background-color: #b31034; /* Darker crimson on hover */
+		border-color: #8a0c28;
+	}
+
+	.space button:active {
+		transform: scale(0.98); /* Tactile press effect */
 	}
 </style>
 
@@ -67,14 +117,14 @@
 			<input type="text" name="name" id="student-name" placeholder="Student Name">
 		</div>
 		<div class="space">
-			<input type="tel" name="tel" id="tel" placeholder="080-123-456">
+			<input type="tel" name="tel" id="tel" placeholder="Phone Number (e.g., 080-123-456)">
 		</div>
 		<div class="space">
-			<input type="email" name="email" id="email" placeholder="E-mail">
+			<input type="email" name="email" id="email" placeholder="E-mail Address">
 		</div>
 		<div class="space">
 			<select name="class" id="class">
-				<option value="" disabled selected>Select Class</option>
+				<option value="" disabled selected>-- Select Student Class --</option>
 				<option value="JSS1">JSS1</option>
 				<option value="JSS2">JSS2</option>
 				<option value="JSS3">JSS3</option>
@@ -87,7 +137,7 @@
 			<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
 		</div>
 		<div class="space">
-			<input type="text" name="username" id="username" placeholder="username">
+			<input type="text" name="username" id="username" placeholder="Username">
 		</div>
 		<div class="space">
 			<input type="file" name="image" id="image">
