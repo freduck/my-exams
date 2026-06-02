@@ -115,6 +115,42 @@ class AdminClass {
 			resp.json(questions);
 	});
 	}
+async delete(req, res) {
+        try {
+            const studentId = req.params.id;
+
+            // Delete operation using Mongoose
+            const deletedStudent = await Student.findByIdAndDelete(studentId);
+
+            // If no student matches that ID
+            if (!deletedStudent) {
+                return res.status(404).json({
+                    success: false,
+                    message: "Student not found."
+                });
+            }
+
+            // Success response
+            return res.status(200).json({
+                success: true,
+                message: "Student deleted successfully.",
+                data: deletedStudent
+            });
+
+        } catch (error) {
+            // Catches server errors or invalid ObjectId formatting
+            return res.status(500).json({
+                success: false,
+                message: "An error occurred while deleting the student.",
+                error: error.message
+            });
+        }
+    }
+deleteStudent(){
+this.app.delete('/api/students/:id', (req, res) => this.deleteStudent(req, res));
+
+}
+
 }
 
 module.exports = AdminClass;
