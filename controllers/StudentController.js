@@ -1,4 +1,4 @@
-const Student = require('../models/Student');
+const Student = require('.././models/Student');
 const multer = require('multer');
 const path = require('path');
 const express = require('express');
