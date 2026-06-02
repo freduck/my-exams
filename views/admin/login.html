@@ -99,6 +99,11 @@
             transform: scale(0.98);
         }
 
+        input[type="button"]:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
         /* Footer Section */
         footer {
             background: crimson;
@@ -167,6 +172,47 @@
             };
             document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
         }
+
+        // Login handler
+        document.getElementById('login').addEventListener('click', async () => {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('login');
+
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+
+            loginBtn.disabled = true;
+            loginBtn.value = 'LOGGING IN...';
+
+            try {
+                const res = await fetch('/login-admin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    alert(data.message || 'Login successful');
+                    // redirect or store token here
+                    // window.location.href = '/dashboard';
+                } else {
+                    alert(data.message || 'Login failed');
+                }
+            } catch (err) {
+                alert('Network error. Please try again.');
+                console.error(err);
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.value = 'LOGIN';
+            }
+        });
 
         // Initialize clock
         updateDateTime();
