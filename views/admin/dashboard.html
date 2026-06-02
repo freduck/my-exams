@@ -39,18 +39,19 @@
 		gap: 20px;
 	}
 	
-	/* Sidebar Styles */
+	/* Sidebar Styles - Streamlined Width */
 	.left {
 		background: #fff;
-		padding: 20px;
+		padding: 15px;
 		border: 1px solid #e0e0e0;
 		border-radius: 4px;
+		height: fit-content;
 	}
 	.left ul {
 		list-style-type: none;
 	}
 	.left ul li {
-		padding: 8px 0;
+		padding: 4px 0;
 	}
 	.left ul li a {
 		text-decoration: none;
@@ -64,7 +65,7 @@
 		background: #f5f5f5;
 	}
 
-	/* Dropdown UI Components */
+	/* Universal Dropdown Layout Components */
 	.dropdown-btn {
 		width: 100%;
 		text-align: left;
@@ -90,7 +91,7 @@
 		border-left: 2px solid crimson;
 	}
 
-	/* Main Workspace Area */
+	/* Main Workspace Panel */
 	.right {
 		background: #fff;
 		border: 1px solid #e0e0e0;
@@ -116,9 +117,11 @@
 	tr td {
 		border: 1px solid #e0e0e0;
 		padding: 12px;
+		word-break: break-all;
+		max-width: 200px; /* Keeps extremely long IDs or values contained */
 	}
 
-	/* Action Buttons */
+	/* Action Buttons styling */
 	#edit-student, #delete-student {
 		padding: 8px 14px;
 		color: white;
@@ -195,18 +198,18 @@
 		font-weight: bold;
 	}
 
-	/* Tablet & Desktop Scaling layout Adjustments */
+	/* Narrowed Desktop scaling setup */
 	@media (min-width: 768px) {
 		.content {
 			flex-direction: row;
 		}
 		.left {
-			flex: 1;
-			min-width: 240px;
-			max-width: 280px;
+			flex: 0 0 220px; /* Forces left panel to remain fixed and elegant at 220px */
+			width: 220px;
 		}
 		.right {
-			flex: 3;
+			flex: 1;
+			width: calc(100% - 240px);
 		}
 		.top {
 			padding: 40px 60px;
@@ -274,14 +277,23 @@
 			<ul>
 				<li><a href="/add-score">Add Score</a></li>
 				<li><a href="/add-question">Add Question</a></li>
+				
 				<li>
 					<button class="dropdown-btn">Students <span>▼</span></button>
 					<div class="dropdown-container">
 						<a href="/add-student">Add Student</a>
-						<a href="#" class="view-students-btn">View Students</a>
+						<a href="/" class="view-students-btn">View Students</a>
 					</div>
 				</li>
-				<li><a href="#" class="question">Questions</a></li>
+
+				<li>
+					<button class="dropdown-btn">Questions <span>▼</span></button>
+					<div class="dropdown-container">
+						<a href="/add-question">Create New</a>
+						<a href="#" class="question-view-trigger">View All</a>
+					</div>
+				</li>
+
 				<li><a href="/logout">Log Out</a></li>
 			</ul>
 		</div>
@@ -318,12 +330,13 @@
 		document.querySelector('.head-right').textContent = adminName;
 	}
 
-	// Sidebar Dropdown Controller Toggle Logic
-	const dropdown = document.querySelector(".dropdown-btn");
-	dropdown.addEventListener("click", function() {
-		this.classList.toggle("active");
-		const dropdownContent = this.nextElementSibling;
-		dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+	// Sidebar Dropdowns Toggle Controller Logic
+	document.querySelectorAll(".dropdown-btn").forEach(button => {
+		button.addEventListener("click", function() {
+			this.classList.toggle("active");
+			const dropdownContent = this.nextElementSibling;
+			dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+		});
 	});
 
 	// Main Initialization Window Data Call 
@@ -424,8 +437,8 @@
 		if (e.target === overlay) overlay.classList.remove('active');
 	});
 
-	// Questions view mapping render
-	document.querySelector('.question').addEventListener('click', async function(e){
+	// Questions view mapping render execution
+	document.querySelector('.question-view-trigger').addEventListener('click', async function(e){
 		e.preventDefault();
 		let qu = await fetch('/questions', {
 			method: 'GET',
