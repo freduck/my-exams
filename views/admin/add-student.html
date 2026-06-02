@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Student</title>
     <style>
-        /* Reset & Base Styles */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
@@ -22,7 +21,6 @@
             padding: 20px;
         }
 
-        /* Card Container */
         .form-container {
             background-color: #ffffff;
             width: 100%;
@@ -41,7 +39,6 @@
             margin-bottom: 25px;
         }
 
-        /* Form Groups & Inputs */
         .form-group {
             margin-bottom: 15px;
         }
@@ -54,32 +51,14 @@
         textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #758694; /* Grey border matching the layout */
+            border: 1px solid #758694;
             border-radius: 4px;
             font-size: 0.9rem;
             color: #333;
             background-color: #fafafa;
             outline: none;
-            transition: border-color 0.2s;
         }
 
-        input::placeholder,
-        textarea::placeholder {
-            color: #8e9bb0;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #4a90e2;
-        }
-
-        /* Textarea specific */
-        textarea {
-            resize: vertical;
-        }
-
-        /* File Input container matching the dashed aesthetic */
         .file-input-wrapper {
             border: 1px dashed #758694;
             border-radius: 4px;
@@ -93,18 +72,16 @@
             color: #555;
         }
 
-        /* Submit Button */
         .submit-btn {
             width: 100%;
             padding: 14px;
-            background-color: #dc143c; /* Crimson Red */
+            background-color: #dc143c;
             color: white;
             border: none;
             border-radius: 4px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.2s;
             margin-top: 10px;
         }
 
@@ -117,42 +94,43 @@
 
     <div class="form-container">
         <h2>Add New Student</h2>
-        <form>
+        <form action="/add-student" method="POST" enctype="multipart/form-data">
+            
             <div class="form-group">
-                <input type="text" placeholder="Student Name" required>
+                <input type="text" name="name" placeholder="Student Name" required>
             </div>
             
             <div class="form-group">
-                <input type="tel" placeholder="Phone Number (e.g., 080-123-456)" required>
+                <input type="tel" name="tel" placeholder="Phone Number (e.g., 080-123-456)" required>
             </div>
             
             <div class="form-group">
-                <input type="email" placeholder="E-mail Address" required>
+                <input type="email" name="email" placeholder="E-mail Address" required>
             </div>
             
             <div class="form-group">
-                <select required>
+                <select name="class" required>
                     <option value="" disabled selected>-- Select Student Class --</option>
-                    <option value="class-a">Class A</option>
-                    <option value="class-b">Class B</option>
-                    <option value="class-c">Class C</option>
+                    <option value="Class A">Class A</option>
+                    <option value="Class B">Class B</option>
+                    <option value="Class C">Class C</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <textarea placeholder="Student Address" rows="3" required></textarea>
+                <textarea name="address" placeholder="Student Address" rows="3" required></textarea>
             </div>
             
             <div class="form-group">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="username" placeholder="Username" required>
             </div>
             
             <div class="form-group file-input-wrapper">
-                <input type="file" id="student-photo">
+                <input type="file" name="image" id="student-photo">
             </div>
             
             <div class="form-group">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required>
             </div>
             
             <button type="submit" class="submit-btn">Add Student</button>
