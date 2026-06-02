@@ -5,17 +5,12 @@ const mongoose = require ('mongoose');
 // const mongoose = require('mongoose');
 // const mongoose = require('mongoose');
 
-const uri = process.env.MONGO_URI || process.env.MONGO_URI_LOCAL;
-if (!uri) {
-  throw new Error("MongoDB URI is not defined in environment variables");
-}
-
-mongoose.connect(uri)
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch(err => console.error("❌ MongoDB connection error:", err));
 
 
-
+ const conn = mongoose.createConnection('mongodb+srv://school:school@cluster0.fl8is4a.mongodb.net/delambo', {
+   // useNewUrlParser: true,
+   // useUnifiedTopology: true,
+ });
 
 
 
