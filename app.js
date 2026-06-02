@@ -29,6 +29,7 @@ Student.loginStudent();
 Student.addStudent();
 Student.studentLogin();
 Student.studentProfile();
+Admin.deleteStudent();
 Admin.loginAdmin();
 Admin.AdminLogin();
 Admin.addAdmin();
