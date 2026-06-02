@@ -1,416 +1,469 @@
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De-Lambo College Admin</title>
 <style>
-	*{
-		padding:0;
+	* {
+		padding: 0;
 		margin: 0;
+		box-sizing: border-box;
 	}
-	.top{
-		padding: 60px;
-		border-bottom: 1px solid whitesmoke;
-		display:  flex;
-		flex-direction: row;
-	}.top .head-right{
-		float: right;
-		margin-left: 700px;
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f9f9f9;
 	}
-	.container{
- border: 1px solid #f5f5f5;
- 
-}
-.right{
-	border: 1px solid whitesmoke;
-	margin: 10px;
-	width: 80%;
-	position: relative;
-}
-.content{
-		margin-top: 30px;
-		display: flex;
-		border: 1px solid whitesmoke;
-	}.left{
+	.container {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 15px;
+	}
+	.top {
 		padding: 30px;
-	}.left ul li {
-		padding: 10px;
-		/*border: 1px solid whitesmoke;*/
+		background-color: crimson;
+		color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 4px;
+		margin-bottom: 20px;
+	}
+	.top h1 {
+		font-size: 1.8rem;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	/* Sidebar Styles */
+	.left {
+		background: #fff;
+		padding: 20px;
+		border: 1px solid #e0e0e0;
+		border-radius: 4px;
+	}
+	.left ul {
 		list-style-type: none;
 	}
-	table{
-		width: 1000px;
-		margin: 0 auto;
+	.left ul li {
+		padding: 8px 0;
+	}
+	.left ul li a {
+		text-decoration: none;
+		color: #333;
+		display: block;
+		padding: 8px 12px;
+		border-radius: 4px;
+		transition: background 0.2s;
+	}
+	.left ul li a:hover {
+		background: #f5f5f5;
+	}
+
+	/* Dropdown UI Components */
+	.dropdown-btn {
+		width: 100%;
+		text-align: left;
+		background: none;
+		border: none;
+		padding: 8px 12px;
+		font-size: 16px;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #333;
+	}
+	.dropdown-btn:hover {
+		background: #f5f5f5;
+		border-radius: 4px;
+	}
+	.dropdown-container {
+		display: none;
+		background-color: #fafafa;
+		padding-left: 15px;
+		margin-top: 5px;
+		border-left: 2px solid crimson;
+	}
+
+	/* Main Workspace Area */
+	.right {
+		background: #fff;
+		border: 1px solid #e0e0e0;
+		padding: 15px;
+		border-radius: 4px;
+		position: relative;
+	}
+	.table-responsive {
+		width: 100%;
+		overflow-x: auto;
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		min-width: 800px;
+	}
+	tr th {
+		background-color: crimson;
+		color: white;
+		padding: 15px;
+		text-align: left;
+	}
+	tr td {
+		border: 1px solid #e0e0e0;
+		padding: 12px;
+	}
+
+	/* Action Buttons */
+	#edit-student, #delete-student {
+		padding: 8px 14px;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		margin: 2px;
+	}
+	#edit-student { background-color: #2ecc71; }
+	#delete-student { background-color: #e74c3c; }
+
+	/* Global Modals & Overlays */
+	.modal-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1000;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+		overflow-y: auto;
 		padding: 20px;
 	}
-	tr{
-		border: 1px solid whitesmoke;
+	.modal-content {
+		background-color: #fff;
+		padding: 2rem;
+		border-radius: 8px;
+		width: 100%;
+		max-width: 600px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		position: relative;
+		transform: translateY(-20px);
+		transition: transform 0.3s ease;
 	}
-	#edit-student{
-		padding: 10px;
-		width: 60px;
-		background-color: lightgreen;
-		border: 1px solid whitesmoke;
+	.modal-overlay.active {
+		visibility: visible;
+		opacity: 1;
+	}
+	.modal-overlay.active .modal-content {
+		transform: translateY(0);
+	}
+	.close-btn {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		padding: 5px 10px;
+		cursor: pointer;
+		border: none;
+		background: #e74c3c;
 		color: white;
-		border-radius: 6px;
+		border-radius: 4px;
+	}
+	.space {
+		padding: 8px 0;
+	}
+	.space select, .space input, .space textarea, .space button {
+		padding: 10px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 14px;
+	}
+	#add {
+		background-color: crimson;
+		color: white;
+		border: none;
+		cursor: pointer;
+		font-weight: bold;
 	}
 
-tr>th{
-	background-color: crimson;
-	color: white;
-	padding: 30px;
-}
-tr td{
-	border: 1px solid whitesmoke;
-}
-.hidden{
-	display:none;
-}
-.container{
-	width: 1300px;
-	border:1px solid whitesmoke;
-	margin: 0 auto;
-	padding: 30px;
-	/* margin-top: 200px; */
-}
-.space{
-	padding: 6px;
-}
-.space select,input,textarea,button{
-	padding: 6px;
-	width: 100%;
-}
-.edit-student-modal{
-	/* top:60px; */
-	width: 1000px;
-	margin: 0 auto;
-	animation: move 1s;
-	margin-top: 0;
-	position: absolute;
-	padding: 50px;
-	border: 1px solid whitesmoke;
-	box-shadow: rgba(99,99, 99, .017) 2px 2px 2px 2px;
-}
-@keyframes move {
-	0%{
-		transform: translateY(-300px);
+	/* Tablet & Desktop Scaling layout Adjustments */
+	@media (min-width: 768px) {
+		.content {
+			flex-direction: row;
+		}
+		.left {
+			flex: 1;
+			min-width: 240px;
+			max-width: 280px;
+		}
+		.right {
+			flex: 3;
+		}
+		.top {
+			padding: 40px 60px;
+		}
 	}
-	100%{
-		transform: translate(0);
-	}
-}
-
-
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensures it sits on top of everything */
-  
-  /* Hidden by default */
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* The Modal Box */
-.modal-content {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  transform: translateY(-20px);
-  transition: transform 0.3s ease;
-}
-
-/* Class to show the modal (toggled via JS) */
-.modal-overlay.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal-overlay.active .modal-content {
-  transform: translateY(0);
-}
-
-.close-btn {
-  /* margin-top: 1rem;
-  top */ top:3;
-  float: right;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  background:red;
-  color: white;
-  border-radius: 4px;
-  position: absolute;
-  width: 30px;
-  margin-left: 240px;
-  margin-top: 20px;
-}
-#delete-student{
-	background-color: red;
-	color: white;
-	border: 1px solid whitesmoke;
-	border-radius: 6px;
-}
-
-
-.top{
-background-color: crimson;
-color: white;
-}
-.q-title{
-	display: flex;
-	flex-direction: row;
-}
 </style>
+</head>
+<body>
+
 <div class="container">
 	<div class="top">
 		<h1>DE-LAMBO COLLEGE</h1>
-		<div class="head-right">
-			
+		<div class="head-right"></div>
+	</div>
+
+	<div class="modal-overlay" id="modalOverlay">
+		<div class="modal-content">
+			<button type="button" class="close-btn" id="closeBtn">X</button>
+			<form action="/update-student" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="student-id" class="student-id">
+				<div class="modal-header">
+					<h3>Edit Student Information</h3>
+				</div>
+				<div class="modal-body">
+					<div id="image-preview" style="display: flex; justify-content: center;"></div>
+					<div class="space">
+						<input type="text" name="name" id="student-name" placeholder="Student Name">
+					</div>
+					<div class="space">
+						<input type="tel" name="tel" id="student-tel" placeholder="080-123-456">
+					</div>
+					<div class="space">
+						<input type="email" name="email" id="email" placeholder="E-mail">
+					</div>
+					<div class="space">
+						<select name="class" id="class">
+							<option value=""></option>
+							<option value="JSS1">JSS1</option>
+							<option value="JSS2">JSS2</option>
+							<option value="JSS3">JSS3</option>
+							<option value="SSS1">SSS1</option>
+							<option value="SSS2">SSS2</option>
+							<option value="SSS3">SSS3</option>
+						</select>
+					</div>
+					<div class="space">
+						<textarea name="address" id="address" rows="3" placeholder="Student Address"></textarea>
+					</div>
+					<div class="space">
+						<input type="text" name="username" id="username" placeholder="username">
+					</div>
+					<div class="space">
+						<input type="file" name="image" id="student-file">
+					</div>
+					<div class="space">
+						<button id="add" type="submit">Update Student</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
-	<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-content">
 
-    <button class="close-btn" id="closeBtn">
-		X
-	</button>
-
-	
-		<form action="/update-student"  method="post" enctype="multipart/form-data">
-<input type="hidden" name="student-id" class="student-id">
-			<div class="modal-header">
-				<h3>Edit Student Information</h3>
-			</div>
-			<div class="modal-body">
-
-				<div id="image">
-
-				</div>
-				<div class="space">
-		<input type="text" name="name" id="student-name" placeholder="Student Name">
-	</div>
-	<div class="space">
-		<input type="tel" name="tel" id="student-tel" placeholder="080-123-456">
-	</div>
-	<div class="space">
-		<input type="email" name="email" id="email" placeholder="E-mail">
-	</div>
-	<div class="space">
-		<select name="class" id="class">
-			<option value=""></option>
-			<option value="JSS1">JSS1</option>
-			<option value="JSS2">JSS2</option>
-			<option value="JSS3">JSS3</option>
-			<option value="SSS1">SSS1</option>
-			<option value="SSS2">SSS2</option>
-			<option value="SSS3">SSS3</option>
-		</select>
-	</div>
-	<div class="space">
-		<textarea name="address" id="address" cols="50" rows="3" placeholder="Student Address"></textarea>
-	</div>
-	<div class="space">
-		<input type="text" name="username" id="username" placeholder="username">
-	</div>
-	<div class="space">
-		<input type="file" name="image" id="image">
-	</div>
-	<div class="space">
-		<button id="add" type="submit">Update Student</button>
-	</div>
-			</div>
-			<div class="modal-footer">
-				
-			</div>
-		</form>
-	
-  </div>
-</div>
 	<div class="content">
 		<div class="left">
 			<ul>
 				<li><a href="/add-score">Add Score</a></li>
 				<li><a href="/add-question">Add Question</a></li>
 				<li>
-					<a href="/add-student">Add Student</a>
+					<button class="dropdown-btn">Students <span>▼</span></button>
+					<div class="dropdown-container">
+						<a href="/add-student">Add Student</a>
+						<a href="#" class="view-students-btn">View Students</a>
+					</div>
 				</li>
 				<li><a href="#" class="question">Questions</a></li>
 				<li><a href="/logout">Log Out</a></li>
 			</ul>
 		</div>
-		<div class="right">
-			<div class="q"></div>
-			<table id="students-table">
 
-				<tr><th>S/N</th><th>Name</th><th>Username</th><th>Email</th><th>Tel</th><th>Image</th><th rowspan="2">Action</th></tr>
-			</table>
+		<div class="right">
+			<div class="table-responsive">
+				<table id="students-table">
+					<thead>
+						<tr>
+							<th>S/N</th>
+							<th>Name</th>
+							<th>Username</th>
+							<th>Email</th>
+							<th>Tel</th>
+							<th>Image</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+						</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
-
 </div>
 
-
 <script>
+	const overlay = document.getElementById('modalOverlay');
+	const closeBtn = document.getElementById('closeBtn');
+	const tableBody = document.getElementById('table-body');
+	const adminName = localStorage.getItem('admin-name');
+	
+	if(adminName) {
+		document.querySelector('.head-right').textContent = adminName;
+	}
 
+	// Sidebar Dropdown Controller Toggle Logic
+	const dropdown = document.querySelector(".dropdown-btn");
+	dropdown.addEventListener("click", function() {
+		this.classList.toggle("active");
+		const dropdownContent = this.nextElementSibling;
+		dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+	});
 
-
-	 const overlay = document.getElementById('modalOverlay');
-const closeBtn = document.getElementById('closeBtn');
-	const name = localStorage.getItem('admin-name');
-	document.querySelector('.head-right').textContent= name;
-	console.log(name)
-if(!name){
-//	location.href='/admin/';
-}
-
-
+	// Main Initialization Window Data Call 
 	window.onload = async function(){
-		 fetch('/getstudents')
-      .then(res => res.json())
-      .then(students => {
-        const table = document.getElementById('students-table');
-        students.forEach(student => {
-			console.log(student.image)
-          table.innerHTML += `
-            
-				<tr>
-					<td>
-						${student._id}
+		try {
+			const res = await fetch('/getstudents');
+			const students = await res.json();
+			
+			tableBody.innerHTML = '';
+			students.forEach(student => {
+				tableBody.innerHTML += `
+					<tr>
+						<td>${student._id}</td>
+						<td>${student.name}</td>
+						<td>${student.username}</td>
+						<td>${student.email}</td>
+						<td>${student.tel}</td>
+						<td>
+							<img src="${student.image || '#'}" alt="${student.name}" style="width:60px; height:60px; object-fit:cover; display:block; border-radius:4px;">
 						</td>
 						<td>
-							${student.name}
-							</td>
-							<td>${student.username}</td>
-							<td>
-								${student.email}
-								</td>
-								<td>
-									${student.tel}
-								</td>
-								<td>
-								
-									<img src="${student.image}" alt="${student.name}" style="width:100px; display:block; margin:10px 0;">
-								
-									</td>
-								<td><button type='button' data-id=${student._id} id='edit-student'>Edit</button><td>
-									<button type='button' data-id=${student._id} id='delete-student'>Delete</button>
-									</td></td>
+							<button type='button' data-id="${student._id}" class='edit-student-trigger' id='edit-student'>Edit</button>
+							<button type='button' data-id="${student._id}" class='delete-student-trigger' id='delete-student'>Delete</button>
+						</td>
 					</tr>
-              
-          `;
+				`;
+			});
 
-		  let editButton=document.querySelectorAll('#edit-student');
-		  let deleteId = document.querySelectorAll('#delete-student');
-		  for(let i = 0; i < editButton.length;i++){
-deleteId[i].addEventListener('click', async function(){
-					alert(this.getAttribute('data-id'))
-					let deleteData = {id:this.getAttribute('data-id')}
-					let deleteStudent = await fetch('/delete-student',{
-mathod:'POST',
-headers:{
-						'Content-Type':'application/json'
-					},
+			attachEventListeners();
+		} catch (err) {
+			console.error("Initialization Failed: ", err);
+		}
+	};
 
+	// Isolated Event Bindings mapping 
+	function attachEventListeners() {
+		// Event Bindings for deletes
+		document.querySelectorAll('.delete-student-trigger').forEach(btn => {
+			btn.addEventListener('click', async function() {
+				const id = this.getAttribute('data-id');
+				if(confirm("Are you sure you want to delete this record?")) {
+					try {
+						let deleteStudent = await fetch('/delete-student', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({ id })
+						});
+						let result = await deleteStudent.json();
+						alert(JSON.stringify(result));
+						location.reload();
+					} catch(err) {
+						console.error(err);
+					}
+				}
+			});
+		});
 
-body:JSON.stringify({
-	id:this.getAttribute('data-id')
-})
-					});
-					let result = await deleteStudent.json();
-					alert(result)
-				});
-			  editButton[i].addEventListener('click', async function(){
-				this.id = this.getAttribute('data-id');
-				// alert(this.id)
-
-				
+		// Event Bindings for updates
+		document.querySelectorAll('.edit-student-trigger').forEach(btn => {
+			btn.addEventListener('click', async function() {
+				const id = this.getAttribute('data-id');
 				overlay.classList.add('active');
-				// document.querySelector('.edit-student-modal').classList.remove('hidden');
-				let edit = await fetch('/edit',{
-					method:'POST',
-					headers:{
-						'Content-Type':'application/json'
-					},
-					body:JSON.stringify({
-						id:this.id
-					})
-				})
-				let single = await edit.json()
-				console.log(single.image);
-				document.querySelector('.student-id').value = `${single.Student._id}`;
-				document.getElementById('student-name').value = `${single.Student.name}`;
-				document.getElementById('student-tel').value = `${single.Student.tel}`;
-				document.getElementById('email').value = `${single.Student.email}`;
-				document.getElementById('username').value = `${single.Student.username}`;
-				document.getElementById('address').value = `${single.Student.address}`;
-				let image = `<img src="${single.Student.image}" alt="${single.Student.name}" style="width:100px; display:block; margin:10px 0;">`
-				document.getElementById('image').innerHTML = `<img src="${single.Student.image}" alt="${student.name}" style="width:100px; display:block; margin:10px 0;">`;
-				document.getElementById('class').innerHTML = '';
-				document.getElementById('class').innerHTML +=`<option>${single.Student.class}</option>`;
-								
-
-			  })
-		  }
-        });
-      });
-
-	 
-
-// To show the modal:
-// overlay.classList.add('active');
-
-// To hide the modal:
-closeBtn.addEventListener('click', () => {
-  overlay.classList.remove('active');
-  location.reload();
-});
-
-// Close when clicking the overlay background
-overlay.addEventListener('click', (e) => {
-  if (e.target === overlay) {
-    overlay.classList.remove('active');
-  }
-});
-
-
+				
+				try {
+					let edit = await fetch('/edit', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({ id })
+					});
+					let single = await edit.json();
+					
+					document.querySelector('.student-id').value = single.Student._id;
+					document.getElementById('student-name').value = single.Student.name;
+					document.getElementById('student-tel').value = single.Student.tel;
+					document.getElementById('email').value = single.Student.email;
+					document.getElementById('username').value = single.Student.username;
+					document.getElementById('address').value = single.Student.address;
+					
+					document.getElementById('image-preview').innerHTML = `
+						<img src="${single.Student.image}" alt="Preview" style="width:100px; height:100px; object-fit:cover; margin-bottom:10px; border-radius:4px;">
+					`;
+					
+					const classSelect = document.getElementById('class');
+					classSelect.value = single.Student.class;
+				} catch(err) {
+					console.error(err);
+				}
+			});
+		});
 	}
-	const questionButton = document.querySelector('.question').addEventListener('click',async function(){
-let qu = await fetch('/questions',{
-	method:'GET',
-	headers:{
-		'Content-Type':'application/json'
-	}
-});
-let result = await qu.json()
-console.log(result);
 
-const table = document.getElementById('students-table');
-table.innerHTML='';
+	// Close Modals
+	closeBtn.addEventListener('click', () => {
+		overlay.classList.remove('active');
+	});
 
-const p = document.createElement('p');
-// table.innerHTML += `<tr>${}`
-table.innerHTML +=`<th>question</th><th>Option1</th><th>Option2</th><th>Option3</th><th>Option4</th><th>Answer</th></tr>`;
-result.forEach(e=>{
-e.questions.forEach(el=>{
-table.innerHTML += `<tr><td>${el.question}</td><td>${el.options[0]}</td>
-<td>${el.options[1]}</td>
-<td>${el.options[2]}</td>
-<td>${el.options[3]}</td>
-<td>${el.correct}</td>
-</tr>`;
-})
-})
-	})
+	overlay.addEventListener('click', (e) => {
+		if (e.target === overlay) overlay.classList.remove('active');
+	});
+
+	// Questions view mapping render
+	document.querySelector('.question').addEventListener('click', async function(e){
+		e.preventDefault();
+		let qu = await fetch('/questions', {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' }
+		});
+		let result = await qu.json();
+
+		const table = document.getElementById('students-table');
+		table.innerHTML = `
+			<thead>
+				<tr>
+					<th>Question</th>
+					<th>Option 1</th>
+					<th>Option 2</th>
+					<th>Option 3</th>
+					<th>Option 4</th>
+					<th>Answer</th>
+				</tr>
+			</thead>
+			<tbody id="table-body"></tbody>
+		`;
+		
+		const targetBody = document.getElementById('table-body');
+		result.forEach(e => {
+			e.questions.forEach(el => {
+				targetBody.innerHTML += `
+					<tr>
+						<td>${el.question}</td>
+						<td>${el.options[0]}</td>
+						<td>${el.options[1]}</td>
+						<td>${el.options[2]}</td>
+						<td>${el.options[3]}</td>
+						<td>${el.correct}</td>
+					</tr>
+				`;
+			});
+		});
+	});
 </script>
+</body>
+</html>
