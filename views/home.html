@@ -84,52 +84,77 @@
 
   .carousel-slide {
     flex: 0 0 100%;
-    height: 180px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     text-align: center;
-    font-size: 1.1rem;
     color: white;
-    font-weight: 600;
-    background: linear-gradient(135deg, #dc2626, #991b1b);
+    
+    /* Image Background Settings */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
   }
 
-  .carousel-slide:nth-child(2) { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
-  .carousel-slide:nth-child(3) { background: linear-gradient(135deg, #16a34a, #15803d); }
+  /* The "Floating" Text Container styling */
+  .carousel-slide span {
+    background: rgba(0, 0, 0, 0.65); /* Dark semi-transparent background */
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px); /* Elegant blurred effect on background images */
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Gives it a "raised" floating depth */
+    max-width: 85%;
+    line-height: 1.4;
+  }
+
+  /* Target each slide with its respective background image (relative to your views folder) */
+  .carousel-slide:nth-child(1) { background-image: url('../images/img.jpg'); }
+  .carousel-slide:nth-child(2) { background-image: url('../images/img-1.jpg'); }
+  .carousel-slide:nth-child(3) { background-image: url('../images/img-2.jpg'); }
+  .carousel-slide:nth-child(4) { background-image: url('../images/img-5.jpg'); }
+  .carousel-slide:nth-child(5) { background-image: url('../images/img-6.jpg'); }
 
   .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 4px;
     z-index: 10;
+    font-size: 1.2rem;
+    transition: background 0.2s;
   }
-  .carousel-btn.prev { left: 5px; }
-  .carousel-btn.next { right: 5px; }
+  .carousel-btn:hover { background: rgba(0,0,0,0.8); }
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
 
   .carousel-dots {
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
   }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; }
-  .dot.active { background: white; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s; }
+  .dot.active { background: white; transform: scale(1.2); }
 
   footer { background: #b91c1c; color: white; padding: 100px; text-align: center; font-size: 0.8rem; }
 
   /* Desktop View Styles */
   @media (min-width: 768px) {
-    .hamburger { display: none; } /* Hide hamburger */
+    .hamburger { display: none; } 
     
     .divider {
       position: static;
@@ -147,7 +172,8 @@
     }
 
     .top h2 { font-size: 1.7rem; }
-    .carousel-slide { height: 350px; font-size: 2rem; }
+    .carousel-slide { height: 420px; } /* Taller for desktop screens */
+    .carousel-slide span { font-size: 2rem; padding: 20px 45px; }
   }
 </style>
 </head>
@@ -172,9 +198,11 @@
   <main>
     <div class="carousel">
       <div class="carousel-track">
-        <div class="carousel-slide">Welcome to DE-LAMBO COLLEGE</div>
-        <div class="carousel-slide">Excellence in Education Since 2010</div>
-        <div class="carousel-slide">Join Us Today – Admissions Open</div>
+        <div class="carousel-slide"><span>Welcome to DE-LAMBO COLLEGE</span></div>
+        <div class="carousel-slide"><span>Excellence in Education Since 2010</span></div>
+        <div class="carousel-slide"><span>Join Us Today – Admissions Open</span></div>
+        <div class="carousel-slide"><span>State-of-the-Art Facilities</span></div>
+        <div class="carousel-slide"><span>Building Tomorrow's Leaders</span></div>
       </div>
       
       <button class="carousel-btn prev">&#10094;</button>
@@ -213,6 +241,7 @@
   let currentSlide = 0;
   let slideInterval;
 
+  // Generates 5 navigation dots dynamically for the 5 images
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
