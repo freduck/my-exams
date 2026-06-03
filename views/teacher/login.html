@@ -14,7 +14,6 @@
         }
 
         body {
-            /* Crimson gradient background */
             background: linear-gradient(135deg, #dc143c 0%, #7a0b21 100%);
             min-height: 100vh;
             display: flex;
@@ -23,7 +22,6 @@
             padding: 20px;
         }
 
-        /* Login Card Container - Also Crimson */
         .login-container {
             background-color: #dc143c; 
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -34,9 +32,7 @@
             overflow: hidden;
         }
 
-        /* Header Accent - Darker Crimson */
         .login-header {
-            background-color: #990e2a;
             background: linear-gradient(to right, #b00f30, #7a0b21);
             color: white;
             padding: 40px 30px;
@@ -56,7 +52,6 @@
             color: #ffccd5;
         }
 
-        /* Form Styling */
         .login-form {
             padding: 40px 30px;
         }
@@ -66,7 +61,6 @@
             position: relative;
         }
 
-        /* White labels for crisp contrast against crimson */
         .input-group label {
             display: block;
             font-size: 14px;
@@ -93,7 +87,6 @@
             box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
         }
 
-        /* Utilities (Remember Me & Forgot Pass) */
         .form-actions {
             display: flex;
             justify-content: space-between;
@@ -125,12 +118,11 @@
             text-decoration: underline;
         }
 
-        /* Submit Button - Crisp White Button on Crimson background */
         .btn-submit {
             width: 100%;
             padding: 14px;
             background-color: #ffffff;
-            color: #dc143c; /* Crimson text */
+            color: #dc143c;
             border: none;
             border-radius: 6px;
             font-size: 16px;
@@ -148,7 +140,11 @@
             transform: scale(0.99);
         }
 
-        /* Footer Help Link */
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
         .login-footer {
             text-align: center;
             padding: 0 30px 40px 30px;
@@ -166,11 +162,20 @@
             text-decoration: underline;
         }
 
-        /* Responsive Design Adjustments */
+        .error-message {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 0;
-                background: #dc143c; /* Flat crimson on mobile */
+                background: #dc143c;
             }
 
             .login-container {
@@ -193,7 +198,7 @@
 
             .login-footer {
                 padding: 0 24px 40px 24px;
-                margin-top: auto; /* Pushes footer to bottom if card stretches */
+                margin-top: auto;
             }
         }
     </style>
@@ -201,47 +206,87 @@
 <body>
 
     <div class="login-container">
-        <!-- Header Section -->
         <div class="login-header">
             <h1>Teacher Portal</h1>
             <p>Welcome back! Please secure your credentials.</p>
         </div>
 
-        <!-- Form Section -->
-        <form class="login-form" action="#" method="POST">
-            <!-- Email Input -->
+        <form class="login-form" id="loginForm">
+            <div class="error-message" id="errorMessage"></div>
+            
             <div class="input-group">
                 <label for="email">School Email Address</label>
                 <input type="email" id="email" name="email" placeholder="name@school.edu" required autocomplete="email">
             </div>
 
-            <!-- Password Input -->
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                <input type="password" id="password" name="password" placeholder="••••" required autocomplete="current-password">
             </div>
 
-            <!-- Remember Me & Forgot Password -->
             <div class="form-actions">
                 <label class="remember-me">
-                    <input type="checkbox" name="remember"> Remember me
+                    <input type="checkbox" name="remember" id="remember"> Remember me
                 </label>
                 <a href="#" class="forgot-password">Forgot Password?</a>
             </div>
 
-            <!-- Submit Button -->
-            <button type="submit" class="btn-submit">Sign In</button>
+            <button type="submit" class="btn-submit" id="submitBtn">Sign In</button>
         </form>
 
-        <!-- Footer Help Link -->
         <div class="login-footer">
             Need an account? <a href="#">Contact Administration</a>
         </div>
     </div>
-<script>
 
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const errorMessage = document.getElementById('errorMessage');
 
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // stop normal form submission
 
-</script>
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+
+            // hide previous error
+            errorMessage.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Signing in...';
+
+            try {
+                const response = await fetch('/api/teachers/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password, remember })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Login failed');
+                }
+
+                // Success - store token if you use JWT
+                if (data.token) {
+                    localStorage.setItem('teacherToken', data.token);
+                }
+
+                // Redirect to dashboard
+                window.location.href = '/teacher/dashboard';
+
+            } catch (err) {
+                errorMessage.textContent = err.message;
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign In';
+            }
+        });
+    </script>
+
 </body>
 </html>
