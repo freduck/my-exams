@@ -63,10 +63,10 @@ const router = express.Router();
 const teacherController = require('./controllers/TeacherController');
 
 router.post('/', teacherController.create);
-router.get('/', teacherController.getAll);
-router.get('/:id', teacherController.getById);
-router.put('/:id', teacherController.update);
-router.delete('/:id', teacherController.delete);
+router.get('/teacher-list', teacherController.getAll);
+router.get('/view-teachers:id', teacherController.getById);
+router.put('/update-teacher:id', teacherController.update);
+router.delete('/delete-teacher:id', teacherController.delete);
 
 module.exports = router;
 
