@@ -53,6 +53,12 @@ app.get('/admin/',(req,resp)=>{
 })
 
 
+app.get('/teacher/',(req,resp)=>{
+    resp.sendFile(path.join(__dirname,'./views/teacher/login.html'))
+})
+
+
+
 const router = express.Router();
 const teacherController = require('./controllers/TeacherController');
 
