@@ -51,6 +51,23 @@ Home.goHome();
 app.get('/admin/',(req,resp)=>{
     resp.sendFile(path.join(__dirname,'./views/admin/login.html'))
 })
+
+
+const router = express.Router();
+const teacherController = require('./controllers/TeacherController');
+
+router.post('/', teacherController.create);
+router.get('/', teacherController.getAll);
+router.get('/:id', teacherController.getById);
+router.put('/:id', teacherController.update);
+router.delete('/:id', teacherController.delete);
+
+module.exports = router;
+
+
+
+
+
 // app.listen(port,function(){
 // console.log('application is running on port',port);
 // });
