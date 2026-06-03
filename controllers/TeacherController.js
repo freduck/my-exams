@@ -1,5 +1,5 @@
 // controllers/TeacherController.js
-const Teacher = require('../models/Teacher');
+const Teacher = require('.././models/Teacher');
 
 class TeacherController {
   // CREATE - Add new teacher
