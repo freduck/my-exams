@@ -1,1 +1,225 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Login</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Login Card Container */
+        .login-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Header Accent */
+        .login-header {
+            background-color: #334155;
+            background: linear-gradient(to right, #475569, #1e293b);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .login-header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        /* Form Styling */
+        .login-form {
+            padding: 40px 30px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #334155;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #dc143c; /* Crimson focus border */
+            box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.15);
+        }
+
+        /* Utilities (Remember Me & Forgot Pass) */
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: #dc143c; /* Crimson checkbox */
+        }
+
+        .forgot-password {
+            color: #dc143c; /* Crimson link */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button - Updated to Crimson and White */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #dc143c; /* Crimson background */
+            color: #ffffff;            /* White text */
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #b00f30; /* Deeper crimson for hover */
+        }
+
+        /* Footer Help Link */
+        .login-footer {
+            text-align: center;
+            padding: 0 30px 40px 30px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .login-footer a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                background: #ffffff;
+            }
+
+            .login-container {
+                box-shadow: none;
+            }
+
+            .login-header {
+                padding: 30px 20px;
+            }
+
+            .login-form {
+                padding: 30px 20px;
+            }
+
+            .login-footer {
+                padding: 0 20px 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Header Section -->
+        <div class="login-header">
+            <h1>Teacher Portal</h1>
+            <p>Welcome back! Please secure your credentials.</p>
+        </div>
+
+        <!-- Form Section -->
+        <form class="login-form" action="#" method="POST">
+            <!-- Email Input -->
+            <div class="input-group">
+                <label for="email">School Email Address</label>
+                <input type="email" id="email" name="email" placeholder="name@school.edu" required autocomplete="email">
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="form-actions">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Sign In</button>
+        </form>
+
+        <!-- Footer Help Link -->
+        <div class="login-footer">
+            Need an account? <a href="#">Contact Administration</a>
+        </div>
+    </div>
+
+</body>
+</html>
