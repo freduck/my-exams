@@ -40,6 +40,7 @@ const page = parseInt(req.query.page) || 1;
     SubmitExam(){
         this.app.post('/api/submit-exam', async (req, res) => {
          const   title = req.body.subject;
+const type =req.body.type;
          console.log(req.body)
             const filter = title ? { title: title } : {};
   try {
@@ -66,7 +67,7 @@ const page = parseInt(req.query.page) || 1;
       totalQuestions,
       percentage: (score / totalQuestions) * 100,
     };
-  let s = await SScore.create({student_name:result.student_name,subject:req.body.subject,score:result.score,totalQuestions:totalQuestions,percentage:result.percentage});
+  let s = await SScore.create({student_name:result.student_name,subject:req.body.subject,score:result.score,totalQuestions:totalQuestions,percentage:result.percentage,type:type});
     res.json(result);
 
   } catch (error) {
