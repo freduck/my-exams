@@ -143,6 +143,55 @@ class StudentController {
       response.sendFile(path.join(this.basePath, '.././views/students/profile.html'));
     });
   }
+getScore(){
+
+this.app.get('/scores', async (req, res) => {
+
+ 
+  const name = req.query.name;
+
+  const result = await Score.aggregate([
+    { 
+      // 1. Filter for the specific student and relevant types
+      $match: { 
+        student_name: name,
+        type: { $in: ['test', 'exam'] } 
+      } 
+    },
+    { 
+      // 2. Group by student_name to calculate the average
+      $group: {
+        _id: "$student_name",
+        averageScore: { $avg: "$score" }
+      }
+    },
+    {
+      // 3. Use $project to add the letter grade logic
+      $project: {
+        averageScore: 1,
+        grade: {
+          $switch: {
+            branches: [
+              { case: { $gte: ["$averageScore", 90] }, then: "A" },
+              { case: { $gte: ["$averageScore", 80] }, then: "B" },
+              { case: { $gte: ["$averageScore", 70] }, then: "C" },
+              { case: { $gte: ["$averageScore", 60] }, then: "D" }
+            ],
+            default: "F"
+          }
+        }
+      }
+    }
+  ]);
+
+  res.json(result);
+
+
+
+});
+
+
+}
 }
 
 module.exports = StudentController;
