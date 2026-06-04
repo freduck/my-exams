@@ -1,0 +1,19 @@
+<div id="cumulativeSection">
+    <h3>Cumulative Performance</h3>
+    <p>Overall Average: <span id="avgDisplay"></span></p>
+    <p>Final Grade: <span id="gradeDisplay"></span></p>
+
+</div>
+
+<script>
+async function fetchCumulative() {
+    const name = document.getElementById('studentName').value;
+    const response = await fetch(`/api/scores/cumulative?name=${encodeURIComponent(name)}`);
+    const data = await response.json();
+
+    if (data.length > 0) {
+        document.getElementById('avgDisplay').innerText = data[0].overallAverage.toFixed(2);
+        document.getElementById('gradeDisplay').innerText = data[0].finalGrade;
+    }
+}
+</script>
