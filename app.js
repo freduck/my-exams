@@ -30,6 +30,7 @@ Student.addStudent();
 Student.studentLogin();
 Student.getScore();
 Student.studentProfile();
+Student.studentScore();
 Admin.deleteStudent();
 Admin.loginAdmin();
 Admin.AdminLogin();
