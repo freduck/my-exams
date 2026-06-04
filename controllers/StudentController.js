@@ -146,33 +146,32 @@ class StudentController {
 getScore(){
 
 this.app.get('/scores', async (req, res) => {
-
- 
+app.get('/api/scores/cumulative', async (req, res) => {
   const name = req.query.name;
 
   const result = await Score.aggregate([
     { 
-      // 1. Filter for the specific student and relevant types
+      // 1. Get all test/exam scores for the specific student
       $match: { 
         student_name: name,
         type: { $in: ['test', 'exam'] } 
       } 
     },
     { 
-      // 2. Group by student_name to calculate the average
+      // 2. Group all documents to find one total average
       $group: {
         _id: "$student_name",
-        averageScore: { $avg: "$score" }
+        overallAverage: { $avg: "$score" }
       }
     },
     {
-      // 3. Use $project to add the letter grade logic
+      // 3. Apply grading logic to the final average
       $project: {
-        averageScore: 1,
-        grade: {
+        overallAverage: 1,
+        finalGrade: {
           $switch: {
             branches: [
-              { case: { $gte: ["$averageScore", 90] }, then: "A" },
+              { case: { $gte: ["$overallAverage", 90] }, then: "A" },
               { case: { $gte: ["$averageScore", 80] }, then: "B" },
               { case: { $gte: ["$averageScore", 70] }, then: "C" },
               { case: { $gte: ["$averageScore", 60] }, then: "D" }
@@ -185,10 +184,10 @@ this.app.get('/scores', async (req, res) => {
   ]);
 
   res.json(result);
-
-
-
 });
+
+ 
+  });
 
 
 }
