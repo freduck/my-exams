@@ -28,6 +28,7 @@ Student.editStudent();
 Student.loginStudent();
 Student.addStudent();
 Student.studentLogin();
+Student.getScore();
 Student.studentProfile();
 Admin.deleteStudent();
 Admin.loginAdmin();
