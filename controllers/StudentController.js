@@ -187,7 +187,7 @@ app.get('/api/scores/cumulative', async (req, res) => {
 });
 
  
-  });
+ 
 
 
 }
