@@ -7,7 +7,7 @@
 
 <script>
 async function fetchCumulative() {
-    const name = document.getElementById('studentName').value;
+    const name =localStorage.getItem('name');
     const response = await fetch(`/score?name=${encodeURIComponent(name)}`);
     const data = await response.json();
 
