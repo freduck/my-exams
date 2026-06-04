@@ -145,7 +145,7 @@ class StudentController {
   }
 getScore(){
 
-this.app.get('/scores', async (req, res) => {
+this.app.get('/score', async (req, res) => {
 
   const name = req.query.name;
 
