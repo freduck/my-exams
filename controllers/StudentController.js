@@ -149,54 +149,6 @@ class StudentController {
 resp.sendFile(__dirname,'.././views/students/result.html')
     });
   }
-getScore(){
-
-this.app.post('/score', async (req, res) => {
-
-  const name = req.body.name;
-
-  const result = await Score.aggregate([
-    { 
-      // 1. Get all test/exam scores for the specific student
-      $match: { 
-        student_name: name,
-        type: { $in: ['test', 'exam'] } 
-      } 
-    },
-    { 
-      // 2. Group all documents to find one total average
-      $group: {
-        _id: "$student_name",
-        overallAverage: { $avg: "$score" }
-      }
-    },
-    {
-      // 3. Apply grading logic to the final average
-      $project: {
-        overallAverage: 1,
-        finalGrade: {
-          $switch: {
-            branches: [
-              { case: { $gte: ["$overallAverage", 90] }, then: "A" },
-              { case: { $gte: ["$averageScore", 80] }, then: "B" },
-              { case: { $gte: ["$averageScore", 70] }, then: "C" },
-              { case: { $gte: ["$averageScore", 60] }, then: "D" }
-            ],
-            default: "F"
-          }
-        }
-      }
-    }
-  ]);
-
-  res.json(result);
-});
-
- 
- 
-
-
-}
 }
 
 module.exports = StudentController;
