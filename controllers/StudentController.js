@@ -145,7 +145,7 @@ class StudentController {
   }
 
   studentScore(){
-    this.app.get('/score', async(req,resp)=>{
+    this.app.get('/student-score', async(req,resp)=>{
 resp.sendFile(__dirname,'.././views/students/result.html')
     });
   }
