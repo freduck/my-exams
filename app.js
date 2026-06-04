@@ -19,7 +19,7 @@ const Admin = new AdminCon(app,path);
 const Home =  new homeControll(app,path,3000);
 const Exams =  new ExamController(app,path);
 const Student = new StudentController(app,path);
-// Student.getStudents();
+ Student.getStudents();
 Admin.getQuestions();
 Student.updateStudent();
 Student.deleteStudent();
