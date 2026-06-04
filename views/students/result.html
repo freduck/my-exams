@@ -8,7 +8,7 @@
 <script>
 async function fetchCumulative() {
     const name = document.getElementById('studentName').value;
-    const response = await fetch(`/api/scores/cumulative?name=${encodeURIComponent(name)}`);
+    const response = await fetch(`/score?name=${encodeURIComponent(name)}`);
     const data = await response.json();
 
     if (data.length > 0) {
