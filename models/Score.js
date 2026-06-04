@@ -9,7 +9,7 @@ const scoreSchema = new mongoose.Schema({
 	student_name:String,
 	subject:String,
 	score:Number,
-	type:[],
+	type:String,
 	totalQuestions:Number,
 	percentage: String
 });
