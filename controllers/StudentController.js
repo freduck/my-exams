@@ -143,11 +143,17 @@ class StudentController {
       response.sendFile(path.join(this.basePath, '.././views/students/profile.html'));
     });
   }
+
+  studentScore(){
+    this.app.get('/score', async(req,resp)=>{
+resp.sendFile(__dirname,'.././views/students/result.html')
+    });
+  }
 getScore(){
 
-this.app.get('/score', async (req, res) => {
+this.app.post('/score', async (req, res) => {
 
-  const name = req.query.name;
+  const name = req.body.name;
 
   const result = await Score.aggregate([
     { 
