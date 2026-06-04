@@ -146,7 +146,7 @@ class StudentController {
 getScore(){
 
 this.app.get('/scores', async (req, res) => {
-app.get('/api/scores/cumulative', async (req, res) => {
+
   const name = req.query.name;
 
   const result = await Score.aggregate([
