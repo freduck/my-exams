@@ -14,9 +14,9 @@ const uri = process.env.NODE_ENV === 'production'
 if (!uri) throw new Error("MongoDB URI is not defined");
 
 // Create a unique connection for this model
-const studentConn = mongoose.createConnection(uri);
+const adminConn = mongoose.createConnection(uri);
 
-studentConn.on('connected', () => console.log("✅ Student Model: Connected to MongoDB"));
+studentConn.on('connected', () => console.log("✅ Admin Model: Connected to MongoDB"));
 studentConn.on('error', err => console.error("❌ Student Model: Connection error:", err));
 
 // Define Schema
