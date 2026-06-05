@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const Connection = require('./Connection');
+require('dotenv').config();
 
-const conn = new Connection().getConnection();
+// Create an isolated connection for this specific model
+// Ensure MONGO_URI_QUESTION is defined in your .env
+const questionConn = mongoose.createConnection(process.env.MONGO_URI);
 
 const questionBankSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -13,5 +15,7 @@ const questionBankSchema = new mongoose.Schema({
   }]
 });
 
-const QuestionBank = conn.model('QuestionBank', questionBankSchema);
+// Register the model to the isolated connection
+const QuestionBank = questionConn.model('QuestionBank', questionBankSchema);
+
 module.exports = QuestionBank;
