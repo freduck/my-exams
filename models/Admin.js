@@ -1,6 +1,11 @@
-// Admin.js
-const mongoose = require('./Connection'); // This points to the singleton
+// Example: Admin.js
+const mongoose = require('mongoose');
+require('dotenv').config();
 
+// Create a dedicated connection for this model
+const adminConn = mongoose.createConnection(process.env.MONGO_URI);
+
+// Define Schema
 const AdminSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -8,5 +13,5 @@ const AdminSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
-// Mongoose automatically uses the connection from the imported instance
-module.exports = mongoose.model('Admin', AdminSchema);
+// Register model to the specific connection
+module.exports = adminConn.model('Admin', AdminSchema);
