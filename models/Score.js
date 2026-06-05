@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Connection = require('./Connection');
-const Connection = require('./path/to/connection'); 
+//const Connection = require('./Connection');
+const Connection = require('./Connection'); 
 const db = new Connection(); // This works if exported as class
 
 //const conn = new //Connection().getConnection();
