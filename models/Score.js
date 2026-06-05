@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Connection = require('./Connection');
+const Connection = require('./path/to/connection'); 
+const db = new Connection(); // This works if exported as class
 
-const conn = new Connection().getConnection();
+//const conn = new //Connection().getConnection();
 
 
 
@@ -14,6 +16,6 @@ const scoreSchema = new mongoose.Schema({
 	percentage: String
 });
 
-const Score = conn.model('Score',scoreSchema);
+const Score = db.model('Score',scoreSchema);
 
 module.exports = Score;
