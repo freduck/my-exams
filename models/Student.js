@@ -1,21 +1,30 @@
+// db.js
 const mongoose = require('mongoose');
 
 // Load .env only in development
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.MODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
 // Choose the right URI
-const uri = process.env.NODE_ENV === 'production'
+const uri = process.env.MODE_ENV === 'production'
   ? process.env.MONGO_URI
   : process.env.MONGO_URI_LOCAL;
 
 if (!uri) throw new Error("MongoDB URI is not defined");
 
 // Connect once globally
-mongoose.connect(uri)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+mongoose.connection.on('connected', () => {
+  console.log("✅ Connected to MongoDB");
+});
+mongoose.connection.on('error', err => {
+  console.error("❌ MongoDB connection error:", err);
+});
 
 // Define schema + model
 const studentSchema = new mongoose.Schema({
@@ -27,7 +36,7 @@ const studentSchema = new mongoose.Schema({
   tel: String,
   password: String,
   image: String
-}, { timestamps: true }); // optional: adds createdAt, updatedAt
+});
 
 const Student = mongoose.model('Student', studentSchema);
 

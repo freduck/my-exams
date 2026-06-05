@@ -1,16 +1,19 @@
-// Score.js
 const mongoose = require('mongoose');
-const db = require('./Connection'); // This is already the instance!
+const Connection = require('./Connection');
+
+const conn = new Connection().getConnection();
+
+
 
 const scoreSchema = new mongoose.Schema({
-	student_name: String,
-	subject: String,
-	score: Number,
-	type: String,
-	totalQuestions: Number,
+	student_name:String,
+	subject:String,
+	score:Number,
+	type:[],
+	totalQuestions:Number,
 	percentage: String
 });
 
-const Score = db.model('Score', scoreSchema);
+const Score = conn.model('Score',scoreSchema);
 
 module.exports = Score;
