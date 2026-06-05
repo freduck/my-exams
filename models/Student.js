@@ -1,32 +1,25 @@
-// db.js
+// Student.js
 const mongoose = require('mongoose');
 
 // Load .env only in development
-if (process.env.MODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-// Choose the right URI
-const uri = process.env.MODE_ENV === 'production'
+// Ensure you have a unique URI for this model, or use the global one
+const uri = process.env.NODE_ENV === 'production'
   ? process.env.MONGO_URI
   : process.env.MONGO_URI_LOCAL;
 
 if (!uri) throw new Error("MongoDB URI is not defined");
 
-// Connect once globally
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// Create a unique connection for this model
+const studentConn = mongoose.createConnection(uri);
 
-mongoose.connection.on('connected', () => {
-  console.log("✅ Connected to MongoDB");
-});
-mongoose.connection.on('error', err => {
-  console.error("❌ MongoDB connection error:", err);
-});
+studentConn.on('connected', () => console.log("✅ Student Model: Connected to MongoDB"));
+studentConn.on('error', err => console.error("❌ Student Model: Connection error:", err));
 
-// Define schema + model
+// Define Schema
 const studentSchema = new mongoose.Schema({
   name: String,
   address: String,
@@ -38,7 +31,7 @@ const studentSchema = new mongoose.Schema({
   image: String
 });
 
-const Student = mongoose.model('Student', studentSchema);
+// Compile the model onto the specific connection
+const Student = studentConn.model('Student', studentSchema);
 
-// Export the model
 module.exports = Student;
