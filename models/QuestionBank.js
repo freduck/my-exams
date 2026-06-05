@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const Connection = require('./Connection');
-
-const conn = new Connection().getConnection();
+// Import the already-instantiated object
+const db = require('./Connection'); 
 
 const questionBankSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -13,5 +12,6 @@ const questionBankSchema = new mongoose.Schema({
   }]
 });
 
-const QuestionBank = conn.model('QuestionBank', questionBankSchema);
+// Use the .model method defined in your class
+const QuestionBank = db.model('QuestionBank', questionBankSchema);
 module.exports = QuestionBank;
