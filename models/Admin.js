@@ -1,5 +1,5 @@
 // Admin.js
-const mongoose = require('./db'); // This points to the singleton
+const mongoose = require('./Connection'); // This points to the singleton
 
 const AdminSchema = new mongoose.Schema({
   name: { type: String, required: true },
