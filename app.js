@@ -42,6 +42,8 @@ Admin.adminAddScore();
 Admin.dashboard();
 Admin.getStudents();
 Exams.startExam();
+Exams.showScore();
+Exams.getScore()
 Home.AppListening ();
 const port = 3000;
 Exams.addQuestion();
