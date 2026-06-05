@@ -1,0 +1,50 @@
+<div class="container">
+	<div>
+	<input type="text" name="name" id="name" placeholder="Enter Student Name">
+		
+	</div>
+	<div>
+		<button type="button" id="get-scores">Get Scores</button>
+	</div>
+	<style>
+		table{
+			padding: 40px;
+		}
+		tr,td{
+			padding:10px;
+		}
+		tr,th{
+			padding: 10px;
+		}
+	</style>
+</div>
+<table id="result-table">
+	<tr>
+		<th>Subject</th>
+		<th>Total Questions</th>
+		<th>Score</th>
+		<th>Type</th>
+		<th>Percentage</th>
+	</tr>
+</table>
+<script>
+	document.getElementById('get-scores').addEventListener('click', async function(){
+let name = document.getElementById('name').value;
+console.log(name);
+let score = await fetch('/get-score',{
+	method:'POST',
+	headers:{
+		'Content-Type':'application/json'
+	},
+	body:JSON.stringify({name:name})
+});
+let result = await score.json();
+console.log(result.score) 
+result.score.forEach(el=>{
+	console.log(el);
+	let tr = `<tr><td>${el.subject}</td><td>${el.totalQuestions}</td><td>${el.score}</td><td>${el.type}</td><td>${el.percentage}</td></tr>`;
+	document.getElementById('result-table').innerHTML +=tr;
+})
+
+	});
+</script>
