@@ -1,9 +1,23 @@
 // Score.js
 const mongoose = require('mongoose');
-require('dotenv').config();
 
-// Create a unique connection instance for this model
-const scoreConn = mongoose.createConnection(process.env.MONGO_URI);
+// Load .env only in development
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const uri = process.env.NODE_ENV === 'production'
+  ? process.env.MONGO_URI
+  : process.env.MONGO_URI_LOCAL;
+
+if (!uri) throw new Error("MongoDB URI is not defined");
+
+// Create a unique connection for this model
+const scoreConn = mongoose.createConnection(uri);
+
+// Add event listeners for consistent monitoring
+scoreConn.on('connected', () => console.log("✅ Score Model: Connected to MongoDB"));
+scoreConn.on('error', err => console.error("❌ Score Model: Connection error:", err));
 
 const scoreSchema = new mongoose.Schema({
     student_name: String,
