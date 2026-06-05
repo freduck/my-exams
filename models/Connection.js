@@ -1,9 +1,6 @@
-// Load .env first
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
-
+// connection.js
 const mongoose = require('mongoose');
+require('dotenv').config(); // Load once
 
 class Connection {
   constructor() {
@@ -24,4 +21,5 @@ class Connection {
   }
 }
 
-module.exports = Connection;
+// Export a single instance
+module.exports = new Connection();
