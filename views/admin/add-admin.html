@@ -1,56 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-    /* Modal Styles */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6); /* Slightly darker for better contrast */
-        backdrop-filter: blur(4px);    /* Adds a modern blur effect to the background */
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        padding: 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 15px; /* Added padding for mobile screen edges */
+        }
 
-    .modal-content {
-        background: white;
-        width: 90%;             /* Broadens the modal */
-        max-width: 600px;       /* Sets a comfortable maximum width */
-        padding: 40px;          /* Increased padding for better breathing room */
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            /* Allows content to scroll if it exceeds screen height on small phones */
+            max-height: 90vh;
+            overflow-y: auto; 
+        }
 
-    /* Form Element Styles */
-    .space { padding: 10px 0; }
-    input { 
-        padding: 12px; 
-        width: 100%; 
-        box-sizing: border-box; /* Ensures padding doesn't increase width */
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-    }
-    button { 
-        padding: 14px; 
-        width: 100%; 
-        cursor: pointer; 
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    button:disabled { background-color: #aaa; }
-    h2 { text-align: center; margin-top: 0; color: #333; }
-</style>
+        /* Responsive adjustments for mobile */
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 20px;
+            }
+            h2 { font-size: 1.2rem; }
+        }
+
+        /* Form Element Styles */
+        .space { padding: 10px 0; }
+        input { 
+            padding: 12px; 
+            width: 100%; 
+            box-sizing: border-box; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px; /* 16px prevents iOS zoom on focus */
+        }
+        button { 
+            padding: 14px; 
+            width: 100%; 
+            cursor: pointer; 
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:disabled { background-color: #aaa; }
+        h2 { text-align: center; margin-top: 0; color: #333; }
+    </style>
 </head>
 <body>
 
@@ -78,7 +91,6 @@
 </div>
 
 <script>
-    // Trigger modal on load
     window.addEventListener('DOMContentLoaded', () => {
         document.getElementById('adminModal').style.display = 'flex';
     });
