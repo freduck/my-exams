@@ -1,68 +1,104 @@
-
-
+<!DOCTYPE html>
+<html>
+<head>
 <style>
-	.container{
-		width: 950px;
-		margin: 0 auto;
-		padding: 30px;
-		margin-top: 10%;
-	}
-	.space{
-		padding: 6px;
-	}
-	input{
-		padding: 8px;
-		width: 100%;
-	}
-button{
-	padding: 10px;
-}
-h2{
-	text-align: center;
-}
+    /* Modal Styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none; /* Hidden by default */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background: white;
+        width: 400px;
+        padding: 30px;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    /* Existing Styles */
+    .space { padding: 6px; }
+    input { padding: 8px; width: 95%; }
+    button { padding: 10px; width: 100%; cursor: pointer; }
+    h2 { text-align: center; }
 </style>
-<div class="container">
-	<div class="space">
-		<h2>Add Admin</h2>
-	</div>
-	<div class="space">
-		<input type="text" name="" id="name" placeholder="Name">
-	</div>
-	<div class="space"><input type="email" name="" id="email" placeholder="E-mail"></div>
-	<div class="space">
-		<input type="text" name="" id="user-name" placeholder="user-name">
-	</div>
-	<div class="space">
-		<input type="password" name="" id="password" placeholder="Password">
-	</div>
-	<div class="space">
-		<button type="button" class="btn-login">Upload</button>
-	</div>
+</head>
+<body>
+
+<div class="modal-overlay" id="adminModal">
+    <div class="modal-content">
+        <div class="space">
+            <h2>Add Admin</h2>
+        </div>
+        <div class="space">
+            <input type="text" id="name" placeholder="Name">
+        </div>
+        <div class="space">
+            <input type="email" id="email" placeholder="E-mail">
+        </div>
+        <div class="space">
+            <input type="text" id="user-name" placeholder="user-name">
+        </div>
+        <div class="space">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <div class="space">
+            <button type="button" class="btn-login">Upload</button>
+        </div>
+    </div>
 </div>
 
 <script>
-	const button = document.querySelector('.btn-login');
-	const name = document.getElementById('name')
-	const email = document.getElementById('email')
-	const username = document.getElementById('user-name');
-	const password = document.getElementById('password');
-	button.addEventListener('click', async function(){
-		const data = {
-			name:name.value,email:email.value,
-			username:username.value,password:password.value
-		}
-		this.textContent = 'Uploading Adming !';
-   await  new Promise(resolve=>setTimeout(resolve,3000));
-      // console.log(data);
-   let login = await fetch('/add-admin',{
-   	method:'POST',
-   	headers:{
-   		'Content-Type':'application/json'
-   	},
-   	body:JSON.stringify(data)
-   });
-   const result = await login.json();
-   console.log(result);
-   this.textContent = 'Upload'
-	})
+    // Logic to show modal on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('adminModal').style.display = 'flex';
+    });
+
+    const button = document.querySelector('.btn-login');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const username = document.getElementById('user-name');
+    const password = document.getElementById('password');
+
+    button.addEventListener('click', async function(){
+        const data = {
+            name: name.value,
+            email: email.value,
+            username: username.value,
+            password: password.value
+        };
+        
+        this.textContent = 'Uploading Admin...';
+        this.disabled = true;
+
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        try {
+            let login = await fetch('/add-admin', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await login.json();
+            console.log(result);
+            
+            // Close modal on success
+            document.getElementById('adminModal').style.display = 'none';
+        } catch (error) {
+            console.error('Error:', error);
+        } finally {
+            this.textContent = 'Upload';
+            this.disabled = false;
+        }
+    });
 </script>
+</body>
+</html>
