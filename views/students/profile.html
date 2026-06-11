@@ -5,40 +5,192 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Dashboard - DE-LAMBO COLLEGE</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: system-ui, -apple-system, sans-serif; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
 .layout {
   display: grid;
-  grid-template-areas: "top top" "left main" "footer footer";
+  grid-template-areas:
+    "top top"
+    "left main"
+    "footer footer";
   grid-template-columns: 240px 1fr;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  gap: 0; /* killed the 80px gap that was pushing content apart */
 }
 
-.top-bar { grid-area: top; background: crimson; color: white; display: flex; align-items: center; justify-content: space-between; padding: 20px; }
-.left-bar { grid-area: left; background: crimson; color: white; padding: 20px; }
-.main { grid-area: main; background: #f8fafc; padding: 20px; }
-.footer { grid-area: footer; background: crimson; color: white; display: flex; justify-content: center; padding: 15px; }
-
-/* Modal Styles */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.top-bar {
+  grid-area: top;
+  background: crimson;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(15px, 3vw, 30px);
+  flex-wrap: wrap;
+  gap: 10px;
 }
-.modal-content { background: white; padding: 20px; border-radius: 8px; width: 80%; max-width: 600px; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 
-/* Carousel Styles (Omitted for brevity, kept from your original) */
-.carousel { position: relative; max-width: 100%; margin: 0 auto 30px; overflow: hidden; border-radius: 10px; }
-.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
-.carousel-slide { min-width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; background: #ef4444; }
+.left-bar, .footer {
+  background: crimson;
+  color: white;
+}
+
+.left-bar {
+  grid-area: left;
+  padding: 20px;
+}
+
+.main {
+  grid-area: main;
+  background: #f8fafc;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.top-bar .right h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+ul.left-bar-menu-list li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+ul.left-bar-menu-list li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+ul.left-bar-menu-list li a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.date-menu {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.carousel-slide:nth-child(1) { background: #ef4444; }
+.carousel-slide:nth-child(2) { background: #3b82f6; }
+.carousel-slide:nth-child(3) { background: #22c55e; }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.carousel-btn:hover { background: rgba(0,0,0,0.7); }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active { background: crimson; }
+
+/* Mobile: stack everything */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-areas:
+      "top"
+      "left"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .top-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .carousel-slide {
+    height: 180px;
+    font-size: 1.2rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -46,84 +198,199 @@ th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 <div class="layout">
   <header class="top-bar">
     <h2>DE-LAMBO COLLEGE</h2>
-    <div class="right"><h4 class="student-name"></h4></div>
+    <div class="right">
+      <h4 class="student-name"></h4>
+    </div>
   </header>
 
   <aside class="left-bar">
-    <div class="image"></div>
+    <div class="image"></div><br>
+    <hr>
+    <br>
     <ul class="left-bar-menu-list">
       <li><a href="/start-exam">Take Exam</a></li>
-      <li><a href="#" id="view-result-nav">View Result</a></li>
+      <li><a href="#" id="get-score">View Result</a></li>
+      <li><a href="/information">View Information</a></li>
+      <li><a href="/contact-school">Contact School</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </aside>
 
   <main class="main">
+    <!-- Carousel -->
     <div class="carousel">
       <div class="carousel-track">
         <div class="carousel-slide">Welcome to DE-LAMBO COLLEGE</div>
+        <div class="carousel-slide">Check Your Exam Results</div>
+        <div class="carousel-slide">Contact Us for Support</div>
       </div>
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+      <div class="carousel-dots"></div>
     </div>
 
-    <h3>Check Scores</h3>
-    <div class="container">
-        <input type="text" id="name-input" placeholder="Enter Student Name">
-        <button type="button" id="get-scores-btn">Get Scores</button>
-    </div>
+    <h3>
+Contact
+</h3>
+    <p>
+<div class="container">
+    <input type="text" name="name" id="name" placeholder="Enter Student Name">
+    <button type="button" id="
+get-scores
+">Get Scores</button>
+</div>
 
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-content">
-            <button id="close-modal">&times;</button>
-            <table id="result-table">
-                <thead><tr><th>Subject</th><th>Score</th></tr></thead>
-                <tbody id="result-body"></tbody>
-            </table>
-        </div>
+<div id="modal-overlay" class="modal-overlay">
+    <div class="modal-content">
+        <button id="close-modal">&times;</button>
+        <table id="result-table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Total Questions</th>
+                    <th>Score</th>
+                    <th>Type</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody id="result-body">
+                </tbody>
+        </table>
     </div>
+</div>
+
+
+
+</p>
   </main>
+
+  <footer class="footer">
+    <span>&copy; DE-LAMBO COLLEGE</span>
+    <h4 class="date-menu"></h4>
+  </footer>
 </div>
 
 <script>
-// Load user data
-window.onload = function(){
-  const name = localStorage.getItem('name');
-  if(!name){ location.href = '/login-student'; return; }
-  document.querySelector('.student-name').textContent = name;
-  document.querySelector('.image').innerHTML = `<img src='${localStorage.getItem('image')}' style="width:100px; border-radius:50%">`;
+// Format date
+function formatDate(date) {
+  const d = new Date(date);
+  const day = d.getDate();
+  const suffix = (day > 3 && day < 21) ? 'th' : ['th','st','nd','rd','th','th','th','th','th','th'][day % 10];
+  const monthYear = new Intl.DateTimeFormat('en-GB',{month:'long',year:'numeric'}).format(d);
+  const timePart = new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:true}).format(d);
+  return `Today's Date: ${day}${suffix} ${monthYear} | Time: ${timePart}`;
 }
 
-// Fetch Results Logic
+// Load user data
+let name = localStorage.getItem('name');
+window.onload = function(){
+  if(!name){ // fixed: was = null, should be !name
+    location.href = '/login-student';
+    return;
+  }
+  document.querySelector('.student-name').textContent = name;
+  document.querySelector('.image').innerHTML = `<img src='${localStorage.getItem('image')}'>`;
+  document.querySelector('.date-menu').textContent = formatDate(new Date());
+}
+
+// Carousel logic
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextBtn = document.querySelector('.carousel-btn.next');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const dotsContainer = document.querySelector('.carousel-dots');
+
+let currentSlide = 0;
+
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  if(i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+});
+const dots = Array.from(dotsContainer.children);
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+nextBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+// Auto slide every 4s
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+}, 4000);
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    const overlay = document.getElementById('modal-overlay');
-    const resultBody = document.getElementById('result-body');
-    const btn = document.getElementById('get-scores-btn');
-    const closeBtn = document.getElementById('close-modal');
+        const overlay = document.getElementById('modal-overlay');
+        const resultBody = document.getElementById('result-body');
+        const btnn = document.getElementById('get-scores');
+        const closeBtn = document.getElementById('close-modal');
 
-    btn.addEventListener('click', async function() {
-        const studentName = document.getElementById('name-input').value || localStorage.getItem('name');
-        
-        try {
-            let response = await fetch('/get-score', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: studentName })
-            });
-            
-            let result = await response.json();
-            resultBody.innerHTML = '';
-            
-            result.score.forEach(el => {
-                resultBody.innerHTML += `<tr><td>${el.subject}</td><td>${el.score}</td></tr>`;
-            });
+        btn.addEventListener('click', async function() {
+            letnamee=localStorage.getItem('name');
+            //if (!name) return 
+//alert("Please enter a name");
 
-            overlay.style.display = 'flex';
-        } catch (err) {
-            console.error("Error:", err);
-            alert("Failed to fetch data.");
-        }
+            try {
+                let response = await fetch('/get-score', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name })
+                });
+                
+                let result = await response.json();
+                
+                // Clear previous results
+                resultBody.innerHTML = '';
+                
+                // Populate new results
+                result.score.forEach(el => {
+                    let row = `<tr>
+                        <td>${el.subject}</td>
+                        <td>${el.totalQuestions}</td>
+                        <td>${el.score}</td>
+                        <td>${el.type}</td>
+                        <td>${el.percentage}%</td>
+                    </tr>`;
+                    resultBody.innerHTML += row;
+                });
+
+                // Show Modal
+                overlay.style.display = 'flex';
+            } catch (err) {
+                console.error("Error fetching data:", err);
+                alert("Failed to fetch data. Ensure your server is running.");
+            }
+        });
+
+        // Close functionality
+        closeBtn.onclick = () => overlay.style.display = 'none';
+        window.onclick = (event) => { if (event.target == overlay) overlay.style.display = 'none'; };
     });
 
-    closeBtn.onclick = () => overlay.style.display = 'none';
-});
+
 </script>
+
 </body>
 </html>
+Fix this code
