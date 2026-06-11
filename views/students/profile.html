@@ -347,8 +347,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeBtn = document.getElementById('close-modal');
 
         btn.addEventListener('click', async function() {
-            let name = document.getElementById('name').value;
-            if (!name) return alert("Please enter a name");
+            letnamee=localStorage.getItem('name');
+            //if (!name) return 
+//alert("Please enter a name");
 
             try {
                 let response = await fetch('/get-score', {
