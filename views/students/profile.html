@@ -110,8 +110,9 @@ th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 
 <script>
 // Load user data
+
 window.onload = function(){
-  const name = localStorage.getItem('name');
+  const name = localStorage.getItem('name');alert("name");
   const image = localStorage.getItem('image');
   if(!name){ location.href = '/login-student'; return; }
   document.querySelector('.student-name').textContent = name;
