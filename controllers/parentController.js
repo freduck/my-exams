@@ -54,6 +54,38 @@ class ParentsController {
       res.status(500).json({ error: err.message });
     }
   }
+
+async loginParent(req, res) {
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password required' });
+    }
+
+    const parent = await Parent.findOne({ email: email.toLowerCase() });
+    if (!parent) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    const isMatch = await bcrypt.compare(password, parent.passwordHash);
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    const token = jwt.sign(
+      { id: parent._id, role: 'parent' },
+      process.env.JWT_SECRET,
+      { expiresIn: '7d' }
+    );
+
+    const { passwordHash, ...parentData } = parent.toObject();
+    res.json({ token, parent: parentData });
+
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
 }
 
 module.exports = new ParentsController();
