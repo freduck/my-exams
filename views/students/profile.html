@@ -39,7 +39,15 @@ ul.left-bar-menu-list li a:hover { background: rgba(255,255,255,0.15); }
 }
 .modal-content { background: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; position: relative; }
 #close-modal { float: right; cursor: pointer; font-size: 1.5rem; border: none; background: none; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+
+/* Responsive Table Wrapper */
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  margin-top: 10px;
+}
+table { width: 100%; border-collapse: collapse; min-width: 500px; } /* Min-width forces scroll */
 th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 
 /* Carousel Styles */
@@ -88,18 +96,20 @@ th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         <button id="close-modal">&times;</button>
         <div id="modal-student-img" style="text-align: center; margin-bottom: 15px;"></div>
         <h3>My Exam Results</h3>
-        <table id="result-table">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Total Questions</th>
-                    <th>Score</th>
-                    <th>Type</th>
-                    <th>Percentage</th>
-                </tr>
-            </thead>
-            <tbody id="result-body"></tbody>
-        </table>
+        <div class="table-container">
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Total Questions</th>
+                        <th>Score</th>
+                        <th>Type</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody id="result-body"></tbody>
+            </table>
+        </div>
     </div>
   </div>
 
@@ -109,17 +119,14 @@ th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 </div>
 
 <script>
-// Load user data
-
 window.onload = function(){
-  const name = localStorage.getItem('name');alert(name);
+  const name = localStorage.getItem('name');
   const image = localStorage.getItem('image');
   if(!name){ location.href = '/login-student'; return; }
   document.querySelector('.student-name').textContent = name;
   document.querySelector('.image').innerHTML = `<img src='${image}'>`;
 }
 
-// Result Modal Logic
 const overlay = document.getElementById('modal-overlay');
 const resultBody = document.getElementById('result-body');
 const viewResultBtn = document.getElementById('get-result-link');
@@ -130,7 +137,6 @@ viewResultBtn.addEventListener('click', async function(e) {
     const studentName = localStorage.getItem('name');
     const studentImg = localStorage.getItem('image');
     
-    // Inject image into modal
     document.getElementById('modal-student-img').innerHTML = 
         `<img src="${studentImg}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid crimson;">`;
 
