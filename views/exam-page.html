@@ -39,7 +39,6 @@
     .paginate { padding: 10px 15px; min-width: 45px; border: 1px solid whitesmoke; color: white; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s ease; }
     .paginate:disabled { opacity: 0.6; cursor: not-allowed; }
     
-    /* State changes */
     .paginate.unanswered { background-color: crimson; }
     .paginate.answered { background-color: #2e7d32; border-color: #1b5e20; }
 
@@ -98,15 +97,6 @@
     <h3 id="timer">00:00:00</h3>
     <hr class="i"><br>
     <div class="flex">
-      <select name="student-name" id="student-name">
-        <option value="">Select Student</option>
-        <option>Adeniji Jubril</option>
-        <option>Olalekan Al-Ammen</option>
-        <option>Olarewaju Ayomide Victor</option>
-        <option>Oyelami Joseph</option>
-        <option>Shehu Zainab</option>
-        <option>Shehu Umairah</option>
-      </select>
       <select name="subject" id="subject">
         <option value="">Select Subject</option>
         <option>Maths</option>
@@ -163,14 +153,11 @@
     let userAnswers = {};
     let finalResultData = null; 
     
-    // Storage keys configuration
     const storageKey = 'exam_elapsed_seconds';
     const pagesKey = 'exam_answered_pages';
 
-    // Parse answered pages object status mapping or fallback to fresh object
     let answeredPages = JSON.parse(localStorage.getItem(pagesKey)) || {};
 
-    // Fetch question banks and accurately track current page context
     async function fetchQuestionBanks(page) {
       currentPage = page; 
       const title = document.getElementById('subject').value;
@@ -221,7 +208,6 @@
         btn.textContent = i;
         btn.className = 'paginate';
         
-        // Attach structural state styling depending on answer tracking data
         if (answeredPages[i]) {
           btn.classList.add('answered');
         } else {
@@ -234,15 +220,11 @@
       }
     }
 
-    // Capture state actions, flag page as answered, and refresh button attributes instantly
     function handleAnswerChange(answerKey, value, pageNum) {
       userAnswers[answerKey] = value;
       answeredPages[pageNum] = true;
-      
-      // Save completed page numbers cleanly to local cache
       localStorage.setItem(pagesKey, JSON.stringify(answeredPages));
       
-      // Select the specific pagination button slice and swap colors instantly
       const activePaginateButtons = document.querySelectorAll('.pagination .paginate');
       if (activePaginateButtons[pageNum - 1]) {
         activePaginateButtons[pageNum - 1].classList.remove('unanswered');
@@ -250,19 +232,18 @@
       }
     }
 
-    // Logic for Subject Selection
     document.getElementById('subject').addEventListener('change', () => {
       fetchQuestionBanks(1);
     });
 
-    // Submission Logic -> Triggers Modal
     document.getElementById('submit-btn').onclick = async () => {
-      const studentName = document.getElementById('student-name').value;
+      // Get name from local storage
+      const studentName = localStorage.getItem('name');
       const subject = document.getElementById('subject').value;
 
       if (!studentName) {
-        alert('Please Select Student Name before submitting.');
-        document.getElementById('student-name').focus();
+        alert('Student session expired. Please log in again.');
+        location.href = '/login-student';
         return;
       }
 
@@ -275,22 +256,18 @@
         const result = await response.json();
         finalResultData = result;
 
-        // Clean cache entries upon complete process confirmation
         localStorage.removeItem(storageKey);
         localStorage.removeItem(pagesKey);
 
-        // Populate Modal
         document.getElementById('res-student').textContent = `Name: ${result.student_name}`;
         document.getElementById('res-score').textContent = `Score: ${result.score}`;
         document.getElementById('res-total').textContent = `Out Of: ${result.totalQuestions}`;
         document.getElementById('res-percent').textContent = `Percentage: ${result.percentage}%`;
         
-        // Show Modal
         document.getElementById('resultModal').style.display = 'flex';
       } catch (error) { console.error(error); }
     };
 
-    // Nodemailer call
     async function sendEmail() {
       const email = document.getElementById('parent-email').value;
       if (!email) return alert("Please enter a valid email.");
@@ -310,14 +287,12 @@
       finally { btn.textContent = "Send Result to Email"; }
     }
 
-    // Clean drop configurations and clear context upon explicit termination action
     function finishAndExit() {
       localStorage.removeItem(storageKey);
       localStorage.removeItem(pagesKey);
       location.reload();
     }
 
-    // --- BULLETPROOF PROGRESSIVE TIMER LOGIC ---
     let elapsedSeconds = localStorage.getItem(storageKey);
     elapsedSeconds = elapsedSeconds ? parseInt(elapsedSeconds, 10) : 0;
 
