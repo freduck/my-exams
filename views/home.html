@@ -5,129 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DE-LAMBO COLLEGE</title>
 <style>
-  /* Sticky Footer Setup */
   * { padding: 0; margin: 0; box-sizing: border-box; }
-  body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: #f8fafc; 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 100vh; 
-  }
+  body { font-family: sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
 
-  /* Header & Navigation */
-  .top {
-    padding: 20px 40px;
-    background: #b91c1c;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-  }
-  .top h2 { font-size: 1.2rem; letter-spacing: 1px; }
-
-  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
-  .hamburger span { display: block; width: 25px; height: 3px; background: white; border-radius: 2px; }
+  .top { padding: 20px; background: #b91c1c; color: white; display: flex; justify-content: space-between; align-items: center; }
   
-  .divider { 
-    display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; 
-    background: #991b1b; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; 
-  }
-  .divider.active { max-height: 200px; }
-  .divider a { color: white; text-decoration: none; padding: 15px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
-
-  /* Main & Carousel */
-  main { flex: 1; padding: 20px 8px; }
-  .carousel { position: relative; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: #000; }
-  .carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-  .carousel-slide { flex: 0 0 100%; height: 300px; position: relative; display: flex; align-items: center; justify-content: center; }
+  main { flex: 1; padding: 20px; overflow: hidden; }
+  .carousel { position: relative; max-width: 1000px; margin: 0 auto; overflow: hidden; background: #333; height: 400px; }
+  .carousel-track { display: flex; transition: 0.5s; height: 100%; }
+  .carousel-slide { min-width: 100%; height: 100%; position: relative; }
+  
+  /* Use object-fit to ensure images cover the area without distorting */
   .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
-  .carousel-slide span { 
-    position: absolute; background: rgba(0, 0, 0, 0.6); color: white; padding: 15px 25px; 
-    border-radius: 8px; z-index: 2; font-size: 1.2rem; text-align: center; 
-  }
-
-  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 12px; cursor: pointer; z-index: 10; }
-  .carousel-btn.prev { left: 8px; }
-  .carousel-btn.next { right: 8px; }
-
-  /* Footer */
-  footer { 
-    background: #b91c1c; color: white; padding: 30px; text-align: center; font-size: 0.9rem; 
-    margin-top: auto; 
-  }
-
-  @media (min-width: 768px) {
-    .hamburger { display: none; } 
-    .divider { position: static; flex-direction: row; max-height: none; background: transparent; width: auto; }
-    .divider a { padding: 5px 15px; border: 1px solid rgba(255,255,255,0.4); margin-left: 10px; border-radius: 4px; }
-    .carousel-slide { height: 450px; }
-  }
+  
+  .carousel-slide span { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.5); color: white; padding: 10px; }
+  
+  footer { background: #b91c1c; color: white; padding: 20px; text-align: center; }
 </style>
 </head>
 <body>
 
   <header class="top">
     <h2>DE-LAMBO COLLEGE</h2>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-    <nav class="divider" id="navMenu">
-      <a href="/login-admin">Admin</a>
-      <a href="/login-student">Students</a>	
-      <a href="/parent-login">Parents</a>
-      <a href="/teacher/">Teachers</a>
-    </nav>
   </header>
 
   <main>
     <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-slide"><span>Welcome to DE-LAMBO COLLEGE</span><img src="./images/img.jpg" alt="Slide 1"></div>
-        <div class="carousel-slide"><span>Excellence in Education Since 2010</span><img src="./images/img-1.jpg" alt="Slide 2"></div>
-        <div class="carousel-slide"><span>Join Us Today – Admissions Open</span><img src="./images/img-2.jpg" alt="Slide 3"></div>
-        <div class="carousel-slide"><span>State-of-the-Art Facilities</span><img src="./images/img-5.jpg" alt="Slide 4"></div>
-        <div class="carousel-slide"><span>Building Tomorrow's Leaders</span><img src="./images/img-6.jpg" alt="Slide 5"></div>
+      <div class="carousel-track" id="track">
+        <div class="carousel-slide"><img src="images/img.jpg" alt="Slide"><span>Image 1</span></div>
+        <div class="carousel-slide"><img src="images/img-1.jpg" alt="Slide"><span>Image 2</span></div>
+        <div class="carousel-slide"><img src="images/img-2.jpg" alt="Slide"><span>Image 3</span></div>
+        <div class="carousel-slide"><img src="images/img-5.jpg" alt="Slide"><span>Image 4</span></div>
+        <div class="carousel-slide"><img src="images/img-6.jpg" alt="Slide"><span>Image 5</span></div>
       </div>
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
     </div>
   </main>
 
-  <footer>
-    <div id="datetime">Loading...</div>
-    <p style="margin-top: 10px; opacity: 0.8;">&copy; 2026 De-Lambo College <br/> <b>Powered By Fredrickson Dev</b></p>
-  </footer>
+  <footer>&copy; 2026 De-Lambo College</footer>
 
 <script>
-  // Mobile Menu
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  hamburger.onclick = () => navMenu.classList.toggle('active');
+  let index = 0;
+  const track = document.getElementById('track');
+  const slides = document.querySelectorAll('.carousel-slide');
 
-  // Carousel
-  const track = document.querySelector('.carousel-track');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
-  let currentSlide = 0;
-  const totalSlides = 5;
-
-  function updateCarousel() {
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-  }
-
-  nextBtn.onclick = () => { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); };
-  prevBtn.onclick = () => { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; updateCarousel(); };
-  setInterval(() => { currentSlide = (currentSlide + 1) % totalSlides; updateCarousel(); }, 5000);
-
-  // Date and Time
-  function updateDateTime() {
-    document.getElementById('datetime').textContent = new Date().toLocaleString('en-US', {
-      dateStyle: 'full', timeStyle: 'medium'
-    });
-  }
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000);
 </script>
 </body>
 </html>
