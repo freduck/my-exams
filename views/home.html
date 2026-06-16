@@ -1,3 +1,6 @@
+To add a live date and time display to your dashboard, you need to add an HTML element to hold the time and a function in your <script> tag to update it every second.
+Here is the complete code with the date and time functionality added to the header:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,52 +9,102 @@
 <title>DE-LAMBO COLLEGE</title>
 <style>
   * { padding: 0; margin: 0; box-sizing: border-box; }
-  body { font-family: sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; }
 
-  .top { padding: 20px; background: #b91c1c; color: white; display: flex; justify-content: space-between; align-items: center; }
+  .top { padding: 40px; background: #b91c1c; color: white; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 100; }
+  .top h2 { font-size: 1.2rem; letter-spacing: 1px; }
   
-  main { flex: 1; padding: 20px; overflow: hidden; }
-  .carousel { position: relative; max-width: 1000px; margin: 0 auto; overflow: hidden; background: #333; height: 400px; }
-  .carousel-track { display: flex; transition: 0.5s; height: 100%; }
-  .carousel-slide { min-width: 100%; height: 100%; position: relative; }
-  
-  /* Use object-fit to ensure images cover the area without distorting */
+  /* Added style for the date/time display */
+  #datetime { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; }
+
+  /* Navigation */
+  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+  .hamburger span { display: block; width: 25px; height: 3px; background: white; border-radius: 2px; }
+  .divider { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #991b1b; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .divider.active { max-height: 200px; border-bottom: 3px solid #7f1d1d; }
+  .divider a { color: white; text-decoration: none; padding: 15px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+
+  /* Carousel */
+  main { padding: 10px 8px; }
+  .carousel { position: relative; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: #000; }
+  .carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+  .carousel-slide { flex: 0 0 100%; height: 300px; position: relative; display: flex; align-items: center; justify-content: center; }
   .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
-  
-  .carousel-slide span { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.5); color: white; padding: 10px; }
-  
-  footer { background: #b91c1c; color: white; padding: 20px; text-align: center; }
+  .carousel-slide span { position: absolute; background: rgba(0, 0, 0, 0.6); color: white; padding: 15px 25px; border-radius: 8px; z-index: 2; font-size: 1.5rem; text-align: center; }
+
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 12px; cursor: pointer; z-index: 10; }
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
+
+  @media (min-width: 768px) {
+    .hamburger { display: none; } 
+    .divider { position: static; flex-direction: row; max-height: none; background: transparent; width: auto; }
+    .carousel-slide { height: 450px; }
+  }
 </style>
 </head>
 <body>
 
   <header class="top">
-    <h2>DE-LAMBO COLLEGE</h2>
+    <div>
+        <h2>DE-LAMBO COLLEGE</h2>
+        <div id="datetime">Loading date...</div>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <nav class="divider" id="navMenu">
+      <a href="/login-admin">Admin</a>
+      <a href="/login-student">Students</a>	
+      <a href="/parent-login">Parents</a>
+      <a href="/teacher/">Teachers</a>
+    </nav>
   </header>
 
   <main>
     <div class="carousel">
-      <div class="carousel-track" id="track">
-        <div class="carousel-slide"><img src="images/img.jpg" alt="Slide"><span>Image 1</span></div>
-        <div class="carousel-slide"><img src="images/img-1.jpg" alt="Slide"><span>Image 2</span></div>
-        <div class="carousel-slide"><img src="images/img-2.jpg" alt="Slide"><span>Image 3</span></div>
-        <div class="carousel-slide"><img src="images/img-5.jpg" alt="Slide"><span>Image 4</span></div>
-        <div class="carousel-slide"><img src="images/img-6.jpg" alt="Slide"><span>Image 5</span></div>
+      <div class="carousel-track">
+        <div class="carousel-slide"><span>Welcome to DE-LAMBO COLLEGE</span><img src="./images/img.jpg" alt="Slide 1"></div>
+        <div class="carousel-slide"><span>Excellence in Education Since 2010</span><img src="./images/img-1.jpg" alt="Slide 2"></div>
+        <div class="carousel-slide"><span>Join Us Today – Admissions Open</span><img src="./images/img-2.jpg" alt="Slide 3"></div>
+        <div class="carousel-slide"><span>State-of-the-Art Facilities</span><img src="./images/img-5.jpg" alt="Slide 4"></div>
+        <div class="carousel-slide"><span>Building Tomorrow's Leaders</span><img src="./images/img-6.jpg" alt="Slide 5"></div>
       </div>
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
   </main>
 
-  <footer>&copy; 2026 De-Lambo College</footer>
-
 <script>
-  let index = 0;
-  const track = document.getElementById('track');
-  const slides = document.querySelectorAll('.carousel-slide');
+  // Navigation
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.onclick = () => navMenu.classList.toggle('active');
 
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }, 3000);
+  // Carousel
+  const track = document.querySelector('.carousel-track');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  let currentSlide = 0;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  nextBtn.onclick = () => { currentSlide = (currentSlide + 1) % 5; updateCarousel(); };
+  prevBtn.onclick = () => { currentSlide = (currentSlide - 1 + 5) % 5; updateCarousel(); };
+  setInterval(() => { currentSlide = (currentSlide + 1) % 5; updateCarousel(); }, 5000);
+
+  // Date and Time Logic
+  function updateDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    document.getElementById('datetime').textContent = now.toLocaleDateString(undefined, options);
+  }
+  
+  // Update every second
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
 </script>
 </body>
 </html>
+
+```
