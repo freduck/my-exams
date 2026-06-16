@@ -43,11 +43,11 @@ ul.left-bar-menu-list li a:hover { background: rgba(255,255,255,0.15); }
 /* Responsive Table Wrapper */
 .table-container {
   width: 100%;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-top: 10px;
 }
-table { width: 100%; border-collapse: collapse; min-width: 500px; } /* Min-width forces scroll */
+table { width: 100%; border-collapse: collapse; min-width: 500px; }
 th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 
 /* Carousel Styles */
@@ -121,13 +121,25 @@ th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
 <script>
 window.onload = function(){
   const name = localStorage.getItem('name');
-alert(name);
   const image = localStorage.getItem('image');
   if(!name){ location.href = '/login-student'; return; }
   document.querySelector('.student-name').textContent = name;
   document.querySelector('.image').innerHTML = `<img src='${image}'>`;
 }
 
+// Carousel Logic
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+let currentIndex = 0;
+
+function moveCarousel() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    const amountToMove = -currentIndex * 100;
+    track.style.transform = `translateX(${amountToMove}%)`;
+}
+setInterval(moveCarousel, 3000);
+
+// Modal Logic
 const overlay = document.getElementById('modal-overlay');
 const resultBody = document.getElementById('result-body');
 const viewResultBtn = document.getElementById('get-result-link');
