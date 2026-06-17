@@ -11,6 +11,15 @@ app.use(bodyParser.json());
 app.use(express.json());
 // const express = require('express');
 app.use(cors());
+
+//const express = require('express');
+//const app = express();
+const path = require('path');
+
+// Expose your public directory containing /css, /js, and /images
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 const homeControll =  require('./controllers/HomeController');
 const ExamController = require('./controllers/ExamController');
 const AdminCon = require('./controllers/AdminController');
