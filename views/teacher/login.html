@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Login</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #dc143c 0%, #7a0b21 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background-color: #dc143c; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: linear-gradient(to right, #b00f30, #7a0b21);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .login-header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .login-header p {
+            font-size: 14px;
+            color: #ffccd5;
+        }
+
+        .login-form {
+            padding: 40px 30px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 6px;
+            font-size: 15px;
+            color: #1a1a1a;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #ffffff;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: #7a0b21;
+        }
+
+        .forgot-password {
+            color: #ffccd5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #ffffff;
+            color: #dc143c;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-submit:hover {
+            background-color: #fff0f2;
+        }
+        
+        .btn-submit:active {
+            transform: scale(0.99);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .login-footer {
+            text-align: center;
+            padding: 0 30px 40px 30px;
+            font-size: 14px;
+            color: #ffccd5;
+        }
+
+        .login-footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+                background: #dc143c;
+            }
+
+            .login-container {
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .login-header {
+                padding: 40px 24px 20px 24px;
+            }
+
+            .login-form {
+                padding: 30px 24px;
+            }
+
+            .login-footer {
+                padding: 0 24px 40px 24px;
+                margin-top: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Teacher Portal</h1>
+            <p>Welcome back! Please secure your credentials.</p>
+        </div>
+
+        <form class="login-form" id="loginForm">
+            <div class="error-message" id="errorMessage"></div>
+            
+            <div class="input-group">
+                <label for="email">School Email Address</label>
+                <input type="email" id="email" name="email" placeholder="name@school.edu" required autocomplete="email">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••" required autocomplete="current-password">
+            </div>
+
+            <div class="form-actions">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember" id="remember"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">Sign In</button>
+        </form>
+
+        <div class="login-footer">
+            Need an account? <a href="#">Contact Administration</a>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const errorMessage = document.getElementById('errorMessage');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // stop normal form submission
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+
+            // hide previous error
+            errorMessage.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Signing in...';
+
+            try {
+                const response = await fetch('/api/teachers/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password, remember })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || 'Login failed');
+                }
+
+                // Success - store token if you use JWT
+                if (data.token) {
+                    localStorage.setItem('teacherToken', data.token);
+                }
+
+                // Redirect to dashboard
+                window.location.href = '/teacher/dashboard';
+
+            } catch (err) {
+                errorMessage.textContent = err.message;
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign In';
+            }
+        });
+    </script>
+
+</body>
+</html>

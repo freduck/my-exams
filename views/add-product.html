@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Products</h1>
+  <div id="products"></div>
+  
+  <form id="add-product" enctype="multipart/form-data" action="/add-product" method="post">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="number" name="price" placeholder="Price" required>
+  <input type="text" name="description" placeholder="Description">
+  <input type="file" name="image" accept="image/*">
+  <button type="submit">Add</button>
+
+</form>
+
+<img src=".././uploads/1773749896988.png" alt="">
+   <script>
+
+   async function getProducts(){
+
+  let product =  await fetch('/products',{
+    method:'GET',
+    headers:{
+      'Content-Type':'application/json'
+    }
+  });
+     
+        let products = await  product.json();
+      console.log(products);
+        const container = document.getElementById('products');
+        products.forEach(product => {
+          console.log(product.image)
+          container.innerHTML += `
+            <div>
+              <img src="/${product.image}" width="100">
+              <h2>${product.name}</h2>
+              <p>${product.price}</p>
+            </div>
+          `;
+        });
+     }
+     getProducts();
+
+</script>
+</body>
+</html>

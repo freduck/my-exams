@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify User</title>
+</head>
+<body>
+  <button id="verify-btn">Verify User</button>
+
+  <script>
+    const verifyBtn = document.getElementById('verify-btn');
+    const token = localStorage.getItem('token');
+
+    verifyBtn.addEventListener('click', async  () => {
+     let v = await fetch('/protected', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type':'application/json'
+        },
+      })
+      let response = await v.json();
+      console.log(response);
+      if(response.message=='Invalid Token'){
+        
+      }
+ localStorage.setItem('admin_id',response.admin.adminId);
+    
+
+
+location.href = '/admin';
+
+
+      // console.log(response.user.userId);
+    });
+  </script>
+</body>
+</html>

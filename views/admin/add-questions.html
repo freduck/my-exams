@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Create Quiz</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #990000; /* Crimson Background */
+            color: #ffffff; 
+            padding: 20px; 
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .admin-container, .container { 
+            max-width: 800px; 
+            margin: 20px auto; 
+            background: #ffffff; 
+            color: #333333;
+            padding: 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+        }
+
+        h1, h3 { color: #ffffff; }
+        .admin-container h1 { color: #990000; margin-top: 0; }
+        .breakdown h3 { color: #990000; border-bottom: 2px solid #990000; display: inline-block; }
+
+        .question-block { 
+            border: 1px solid #e0e0e0; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            background: #fafafa; 
+        }
+        .question-block h3 { color: #333333; border: none; }
+
+        input, textarea, select { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 8px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            font-size: 1rem;
+        }
+
+        /* Responsive Grid for Options */
+        .options-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 10px;
+        }
+
+        .btn { 
+            padding: 12px 20px; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 1rem;
+            transition: background 0.2s ease;
+        }
+        .btn-add { background: #10b981; color: white; margin-bottom: 20px; width: auto; }
+        .btn-add:hover { background: #059669; }
+        .btn-submit { background: #990000; color: white; width: 100%; font-size: 1.1rem; }
+        .btn-submit:hover { background: #730000; }
+
+        /* Results section styling */
+        .score-card { 
+            text-align: center; 
+            padding: 20px; 
+            background: #fff; 
+            border-radius: 12px; 
+            color: #333;
+        }
+        .score-card h1 { color: #990000; }
+        .circular-progress { 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 50%; 
+            border: 10px solid #990000; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 20px auto; 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+        }
+        
+        .correct { color: #059669; background: #ecfdf5; padding: 10px; border-radius: 8px; margin-bottom: 10px; border-left: 5px solid #059669; }
+        .wrong { color: #dc2626; background: #fef2f2; padding: 10px; border-radius: 8px; margin-bottom: 10px; border-left: 5px solid #dc2626; }
+        .hidden { display: none; }
+        
+        #click-me {
+            background: #4F46E5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Utility Textarea below main box */
+        .utility-textarea {
+            max-width: 800px;
+            margin: 20px auto;
+            display: block;
+            background: #ffffff;
+            color: #333;
+        }
+
+        /* Tablet & Mobile Adjustments */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .admin-container, .container { padding: 15px; }
+            .btn-add { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <h1>Create Question</h1>
+    <input type="text" id="quiz-title" placeholder="Quiz Title (e.g. Maths Level 1)" style="font-size: 1.2rem; font-weight: bold;">
+    <select name="exam-type" id="question-type">
+        <option value="">Exam Type</option>
+        <option value="Exam">Exam</option>
+        <option value="Test">Test</option>
+    </select>
+    
+    <div id="questions-wrapper"></div>
+
+    <button type="button" class="btn btn-add" onclick="addQuestionBlock()">+ Add Question</button>
+    <button type="button" class="btn btn-submit" onclick="submitQuiz()">Save Quiz to Database</button>
+</div>
+
+<textarea class="utility-textarea" placeholder="Extra notes..." cols="50" rows="4"></textarea>
+
+<div id="results-container" class="container">
+    <div class="score-card">
+        <h1 id="status-title">Congratulations!</h1>
+        <div class="circular-progress">
+            <span id="score-percentage">85%</span>
+        </div>
+        <p id="score-text">You scored 2 out of 2</p>
+        
+        <button id="download-btn" onclick="downloadPDF()" class="hidden">
+            Download Certificate
+        </button>
+        <button type="button" id="click-me">Click Me</button>
+    </div>
+
+    <div class="breakdown">
+        <h3>Question Breakdown</h3>
+        <div id="questions-list"></div>
+    </div>
+</div>
+
+<script src="jquery.min.js"></script>
+<script>
+    let questionCount = 0;
+
+    function addQuestionBlock() {
+        questionCount++;
+        const wrapper = document.getElementById('questions-wrapper');
+        const div = document.createElement('div');
+        div.className = 'question-block';
+        div.innerHTML = `
+            <h3>Question ${questionCount}</h3>
+            <textarea class="q-text" placeholder="Enter question text..."></textarea>
+            <div class="options-grid">
+                <input type="text" class="opt" placeholder="Option 1">
+                <input type="text" class="opt" placeholder="Option 2">
+                <input type="text" class="opt" placeholder="Option 3">
+                <input type="text" class="opt" placeholder="Option 4">
+            </div>
+            <input type="text" class="q-correct" placeholder="Correct Answer (must match one of the options exactly)">
+            <textarea class="q-explanation" placeholder="Explain the solution..."></textarea>
+        `;
+        wrapper.appendChild(div);
+    }
+
+    async function submitQuiz() {
+        const title = document.getElementById('quiz-title').value;
+        const questionType = document.querySelector('#question-type').value;
+        const blocks = document.querySelectorAll('.question-block');
+        const questions = [];
+
+        blocks.forEach(block => {
+            const options = Array.from(block.querySelectorAll('.opt')).map(input => input.value);
+            questions.push({
+                question: block.querySelector('.q-text').value,
+                options: options,
+                correct: block.querySelector('.q-correct').value,
+                explanation: block.querySelector('.q-explanation').value
+            });
+        });
+
+        const payload = { title, questions, questionType };
+        console.log(payload);
+
+        const response = await fetch('/create', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            alert("Quiz created successfully!");
+            window.location.reload();
+        } else {
+            alert("Error creating quiz. Check console.");
+        }
+    }
+
+    // Add first block by default
+    addQuestionBlock();
+
+    document.getElementById('click-me').addEventListener('click', async function(){
+        let send = await fetch('/try',{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: 'hey' })
+        });
+        let result = await send.json();
+        console.log(result);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<style>
+    #product-container{
+        padding: 30px;
+        display: grid;
+        grid-template-columns:  auto auto;
+    }
+</style>
+<div class="response"></div>
+<div id="product-container"></div>
+
+<script>
+    async function loadProducts() {
+        try {
+            // 1. Fetch the data from your Express API
+            const response = await fetch('/api/all-products');
+            const products = await response.json();
+
+            const container = document.getElementById('product-container');
+            container.innerHTML = ''; // Clear container
+
+            // 2. Loop through products and build the HTML
+            products.forEach(p => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product-card';
+                
+                // IMPORTANT: We add '/uploads/' before the filename 
+                // because that is our virtual path in Express
+                productDiv.innerHTML = `
+                    <h3>${p.name}</h3>
+                    <p>${p.description}</p>
+                    <img src="/uploads/${p.image}" alt="${p.name}" style="width:200px; display:block; margin:10px 0;">
+                    <strong>$${p.price}</strong><br/>
+                    <button type='button' data-id=${p._id} id='delete'>Delete</button>
+                    <hr>
+                `;
+                container.appendChild(productDiv);
+            });
+            
+            
+                document.querySelectorAll('#delete').forEach(el=>{
+                    el.addEventListener('click', async function(){
+                    console.log(this.getAttribute('data-id'));
+                    let id = this.getAttribute('data-id');
+                    let data = {
+                        id:id
+                    }
+                    const deletep = await fetch('/delete-product',{
+                        method:'POST',
+                        headers:{
+                            'Content-Type':'application/json'
+                        },
+                        body:JSON.stringify({id:data.id})
+                    });
+                    let resp= await deletep.json();
+                    console.log(resp)
+                    document.querySelector('.response').innerHTML = `<h3 class='rep'>${resp.response}</h3>`;
+                })});
+        } catch (error) {
+            console.error('Error loading products:', error);
+        }
+    }
+
+    // Run the function when the page loads
+    loadProducts();
+</script>

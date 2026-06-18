@@ -4,6 +4,7 @@
 const QuestionBank = require('.././models/QuestionBank');
 const path = require ('path');
 const SScore = require('.././models/Score');
+const Test= require('.././models/Student_Test');
 class ExamController{
     constructor(app,path){
         this.app = app
@@ -12,7 +13,7 @@ class ExamController{
     }
     startExam(){
         this.app.get('/start-exam', async function(req,resp){
-resp.sendFile(path.join(__dirname,'.././test.html'));
+resp.sendFile(path.join(__dirname,'.././views/exam-page.html'));
 });
     }
 
@@ -47,7 +48,7 @@ const page = parseInt(req.query.page) || 1;
     const questionBanks = await QuestionBank.find(filter);
     let score = 0;
     let totalQuestions = 0;
-
+    let type = req.body.type;
     questionBanks.forEach((qb) => {
       qb.questions.forEach((q, index) => {
         totalQuestions++;
@@ -77,15 +78,15 @@ const page = parseInt(req.query.page) || 1;
     }
 addQuestion(){
     this.app.get('/add-question', async (req,resp)=>{
-  await  resp.sendFile(this.path.join(__dirname , '.././add-questions.html'));
+  await  resp.sendFile(this.path.join(__dirname , '.././views/admin/add-questions.html'));
 });
 }
 
 saveQuestion(){
     this.app.post('/create', async (req,resp)=>{
-const {title,questions}= req.body
-// console.log(req.body);
-let q = await QuestionBank.create({title:title,questions:questions})
+const {title,questions,questionType}= req.body
+console.log(req.body);
+let q = await QuestionBank.create({title:title,questions:questions,type:questionType})
     resp.status(200).json({message:'Question Added'});
     // console.log(req.body);
    let p = QuestionBank.find({});
@@ -94,9 +95,23 @@ let q = await QuestionBank.create({title:title,questions:questions})
 }
 addScore(){
     this.app.get('/add-score', (req,resp)=>{
-        resp.sendFile(this.path.join(__dirname,'.././add-score.html'));
+        resp.sendFile(this.path.join(__dirname,'.././views/add-score.html'));
     });
     // console.log();
+}
+getScore(){
+    this.app.get('/student-score', async (req,resp)=>{
+        resp.sendFile(this.path.join(__dirname,'.././views/students/get-scores.html'))
+    });
+}
+showScore(){
+    this.app.post('/get-score', async (req,resp)=>{
+        console.log(req.body.name);
+        const doc2 = await SScore.findOne({student_name: req.body.name});
+        let s = await SScore.find({student_name:req.body.name},'subject score totalQuestions percentage type -_id');
+        console.log(s)
+        resp.json({score:s})
+    })
 }
 }
 

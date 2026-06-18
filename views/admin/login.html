@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | DE-LAMBO COLLEGE</title>
+    <style>
+        /* your existing CSS unchanged */
+        * { padding: 0; margin: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: crimson; color: white; padding: 1.2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header h1 { font-size: 1.5rem; letter-spacing: 1px; }
+        main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { background: white; padding: 2.5rem 2rem; width: 100%; max-width: 380px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
+        .container h2 { text-align: center; margin-bottom: 2rem; color: #1e293b; font-size: 1.3rem; }
+        .space { margin-bottom: 1.2rem; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 14px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s; outline: none; }
+        input[type="text"]:focus, input[type="password"]:focus { border-color: crimson; }
+        input[type="button"] { width: 100%; padding: 14px; background: crimson; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.3s, transform 0.2s; margin-top: 10px; }
+        input[type="button"]:hover { opacity: 0.9; }
+        input[type="button"]:active { transform: scale(0.98); }
+        input[type="button"]:disabled { opacity: 0.6; cursor: not-allowed; }
+        footer { background: crimson; color: white; text-align: center; padding: 1.5rem; font-size: 0.85rem; }
+        #datetime { font-weight: 500; display: block; margin-bottom: 8px; letter-spacing: 0.5px; }
+        footer p { opacity: 0.9; }
+        @media (min-width: 768px) { header h1 { font-size: 2rem; } .container { padding: 3rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DE-LAMBO COLLEGE</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Portal Login</h2>
+            <div class="space">
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="space">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <div class="space">
+                <input type="button" value="LOGIN" id="login">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span id="datetime">Loading date and time...</span>
+        <p>&copy; 2026 DE-LAMBO COLLEGE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        document.getElementById('login').addEventListener('click', async () => {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('login');
+
+            if (!username || !password) {
+                alert('Please enter both username and password');
+                return;
+            }
+
+            loginBtn.disabled = true;
+            loginBtn.value = 'LOGGING IN...';
+
+            try {
+                const res = await fetch('/login-admin', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.status === 1) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('adminId', data.adminId);
+                    window.location.href = '/admin/dashboard';
+                } else {
+                    alert(data.message || 'Login failed');
+                }
+            } catch (err) {
+                alert('Network error. Please try again.');
+                console.error(err);
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.value = 'LOGIN';
+            }
+        });
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
