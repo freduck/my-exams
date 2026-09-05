@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Proposal - Olotoin A. Fredrick</title>
+    <!-- html2pdf.js CDN for client-side PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #222; margin: 0; padding: 20px; background-color: #f4f6f9; line-height: 1.5; }
+        .controls { max-width: 800px; margin: 0 auto 20px auto; text-align: right; }
+        .btn-download { background-color: #00529B; color: #fff; border: none; padding: 12px 24px; font-size: 15px; font-weight: bold; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
+        .btn-download:hover { background-color: #003366; }
+        .pdf-document { max-width: 800px; margin: 0 auto; background: #fff; padding: 40px 50px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .header { border-bottom: 2px solid #00529B; padding-bottom: 15px; margin-bottom: 25px; }
+        .header h1 { font-size: 22px; color: #00529B; margin: 0 0 5px 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin-top: 15px; font-size: 13.5px; }
+        .meta-item { display: flex; }
+        .meta-label { font-weight: bold; width: 150px; color: #444; }
+        .meta-val { color: #111; }
+        h2 { font-size: 15px; color: #00529B; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 22px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; page-break-after: avoid; }
+        p { font-size: 13.5px; margin: 0 0 10px 0; text-align: justify; }
+        ul { margin: 0 0 10px 0; padding-left: 18px; }
+        li { font-size: 13.5px; margin-bottom: 6px; }
+        .contact-info { font-size: 13px; color: #555; margin-top: 15px; }
+        .contact-info a { color: #00529B; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button class="btn-download" onclick="generatePDF()">📥 Download PDF Proposal</button>
+    </div>
+
+    <div class="pdf-document" id="proposal-content">
+        <div class="header">
+            <h1>Scholarship Proposal</h1>
+            <div style="font-weight: bold; color: #555; font-size: 14px;">Global Leadership Full-Tuition Scholarship</div>
+            
+            <div class="meta-grid">
+                <div class="meta-item"><span class="meta-label">Applicant Name:</span><span class="meta-val">Olotoin A. Fredrick</span></div>
+                <div class="meta-item"><span class="meta-label">Date:</span><span class="meta-val">September 5, 2026</span></div>
+                <div class="meta-item"><span class="meta-label">Country of Origin:</span><span class="meta-val">Nigeria</span></div>
+                <div class="meta-item"><span class="meta-label">Proposed Country:</span><span class="meta-val">Sweden</span></div>
+                <div class="meta-item" style="grid-column: span 2;"><span class="meta-label">Proposed Field:</span><span class="meta-val">B.Sc. / M.Sc. Software Engineering</span></div>
+            </div>
+        </div>
+
+        <h2>1. Executive Summary</h2>
+        <p>I am Olotoin A. Fredrick, applying for the Global Leadership Full-Tuition Scholarship to pursue Software Engineering at a leading university in Sweden. My mission is clear: <strong>master world-class software engineering in Sweden, and return to Nigeria to build scalable digital infrastructure that drives educational equality, creates employment, and expands tech access for African youth.</strong></p>
+        <p>Sweden is a global beacon of innovation, sustainability, and human-centered technology. Studying within this ecosystem will equip me with the technical standards and product methodologies needed to solve pressing developmental challenges in West Africa.</p>
+
+        <h2>2. Leadership Background & Impact</h2>
+        <p>I believe software engineers must also act as leaders and social innovators. With a solid foundation in computer science and educator experience across Ogun State, I have actively applied technology to serve my community:</p>
+        <ul>
+            <li><strong>Led & Taught:</strong> Coordinated hands-on coding bootcamps and digital literacy programs, mentoring over 50 secondary school students in web development fundamentals (HTML, CSS, JavaScript, and Python).</li>
+            <li><strong>Engineered for Local Impact:</strong> Developed and deployed a web-based <strong>Online Examination System</strong> for <strong>DE-LAMBO COLLEGE</strong> in Abeokuta, transitioning paper testing into an automated, anti-malpractice digital framework used by over 300 students.</li>
+            <li><strong>Built Sustainable Capacity:</strong> Organized technical training workshops for student administrators to manage database question banks independently, ensuring long-term continuity after my deployment.</li>
+        </ul>
+        <p>My philosophy centers on building sustainable systems. I focus not just on writing code, but on empowering others to maintain and scale digital solutions.</p>
+
+        <h2>3. Why Software Engineering in Sweden & Why Now</h2>
+        <p>Sweden is an unmatched hub for ethical, scalable technology. Tech giants like Spotify, Klarna, and Ericsson succeeded because of Sweden’s emphasis on flat team structures, clean code architecture, and sustainable engineering.</p>
+        <p>Studying Software Engineering in Sweden will give me:</p>
+        <ul>
+            <li><strong>Technical Excellence:</strong> Advanced training in cloud architecture, AI systems, cybersecurity, and microservices.</li>
+            <li><strong>Product Mindset:</strong> Practical experience in building simple, highly accessible, and fault-tolerant software.</li>
+            <li><strong>Global Leadership Network:</strong> Opportunities to collaborate with global innovators, researchers, and mentors dedicated to tech for social impact.</li>
+        </ul>
+        <p>Nigeria possesses one of the youngest populations globally, yet millions lack access to reliable digital infrastructure and testing centers. Bringing Swedish engineering standards to Africa at this time is vital for scaling tech-driven solutions.</p>
+
+        <h2>4. Vision & Post-Scholarship Plan</h2>
+        <p><strong>During Studies in Sweden:</strong></p>
+        <ul>
+            <li>Specialize in Software Engineering, focusing on Cloud Infrastructure, AI integration, and Cybersecurity.</li>
+            <li>Engage in practical industry projects and open-source communities to absorb Swedish product development culture.</li>
+            <li>Serve as an active student ambassador representing African perspectives in university tech forums.</li>
+        </ul>
+        <p><strong>0–2 Years Post-Graduation:</strong> Return to Nigeria and launch <strong>EduTest Africa</strong>, a platform evolved from my earlier exam system. Designed specifically for under-resourced secondary schools and tertiary institutions, it will feature <strong>AI-driven remote proctoring</strong> and an <strong>offline-first hybrid architecture</strong> to operate seamlessly in low-connectivity areas.</p>
+        <p><strong>5-Year Goal:</strong> Deploy <strong>EduTest Africa</strong> across <strong>100 institutions</strong>, serving over <strong>50,000 students</strong> and partnering with educational NGOs to provide free digital skills training.</p>
+        <p><strong>10-Year Goal:</strong> Establish a technology hub in Nigeria that builds enterprise-grade software and provides engineering jobs and mentorship for 1,000 young developers.</p>
+
+        <h2>5. Financial Need</h2>
+        <p>The financial commitment required for tuition and living expenses in Sweden exceeds my current financial capacity. Receiving the Global Leadership Full-Tuition Scholarship is essential for me to access this level of education. This support will allow me to dedicate my full focus to academic excellence, leadership development, and preparing my return to serve my community.</p>
+
+        <h2>6. Conclusion</h2>
+        <p>I am not merely seeking a degree; I am seeking the tools and leadership training to drive systemic change. Sweden will equip me to engineer software at the highest international standards. I am committed to returning to Nigeria to apply that knowledge—building infrastructure, expanding education, and creating opportunities for the next generation.</p>
+
+        <p style="margin-top: 20px;">Thank you for your time and consideration.</p>
+
+        <div style="margin-top: 30px;">
+            <p style="margin-bottom: 2px;">Sincerely,</p>
+            <p style="font-weight: bold; margin-bottom: 2px; font-size: 14px;">Olotoin A. Fredrick</p>
+            <div class="contact-info">
+                fredolotoin28@gmail.com | +2349038951142 | github.com/freduck
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('proposal-content');
+            const opt = {
+                margin:       [0.4, 0.4, 0.4, 0.4],
+                filename:     'Scholarship_Proposal_Olotoin_Fredrick.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, logging: false },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Generate PDF directly
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html>
